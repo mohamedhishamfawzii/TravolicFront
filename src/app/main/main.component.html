@@ -1,8 +1,11 @@
+<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 <app-sidenav *ngIf="mobVersion"></app-sidenav>
 <nz-layout *ngIf="webVersion">
   <nz-header style="background-color: white">
     <app-navbar ></app-navbar>
   </nz-header>
   <nz-content>
+    <app-menu></app-menu>
+<app-searchdiv></app-searchdiv>
   </nz-content>
 </nz-layout>

@@ -1,0 +1,32 @@
+<div class="divawy">
+  <div class="row1">
+    <nz-switch class="row1element" [ngModel]="true">
+      <i class=" anticon anticon-check" checked></i>
+      <i class=" anticon anticon-cross" unchecked></i>
+    </nz-switch>
+    <label class="row1element" style=" color: white;font-family: 'Cairo', sans-serif;font-size: 15px" > Direct only </label>
+    <nz-radio-group style=" padding-top: 60px; padding-left: 60px;" [(ngModel)]="type">
+      <label nz-radio-button  [nzValue]="'oneway'"><span>One way</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span>Round trip</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>Multi destination</span></label>
+    </nz-radio-group>
+    <nz-select style="padding-left: 60px; width: 300px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
+  </div>
+  <div class="row1">
+    <button style="right:150px;float: right ; width: 80px ; height: 80px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">
+      <i style="font-size: 50px" class="anticon anticon-search"></i>
+    </button>
+    <div style=" height:10px; width: 1px"></div>
+    <nz-select style=" padding-top: 60px; width: 200px" [(ngModel)]="selectedOption" [nzPlaceHolder]="'From'" nzAllowClear nzShowSearch></nz-select>
+
+
+    <nz-select style="padding-left: 5px;  width: 200px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'To'" nzAllowClear nzShowSearch></nz-select>
+    <nz-datepicker style=" padding-left: 20px;" [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
+    <nz-input-number [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
+    <nz-input-number  [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
+    <nz-input-number  [(ngModel)]="infants"  [nzPlaceHolder]="'Infants'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
+  </div>
+
+
+
+</div>
