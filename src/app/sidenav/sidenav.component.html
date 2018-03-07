@@ -1,0 +1,42 @@
+<div  style="margin :10px ;width:{{width}}">
+
+  <ul nz-menu [nzMode]="'inline'" nzTheme='light' >
+    <li nz-menu-item style="height: 100%;">
+       <span title>
+            <i style="margin:20px;font-size: 18px;" class="anticon anticon-global"></i>
+            <nz-select
+              style="font-size: 10px;width: 70%;"
+              [nzPlaceHolder]="'Country'"
+              [(ngModel)]="country"
+              nzShowSearch>
+        <nz-option
+          *ngFor="let option of countries"
+          [nzLabel]="option.name"
+          [nzValue]="option.name"
+        >
+        </nz-option>
+      </nz-select>
+          </span>
+
+  </li>
+    <li nz-menu-item style="height: 100%">
+       <span title>
+            <i style="margin:20px;font-size: 18px;" class="anticon anticon-red-envelope"></i>
+            <nz-select
+              style="font-size: 10px;width: 70%;vertical-align: middle;"
+              [nzPlaceHolder]="'Currency'"
+              [(ngModel)]="country"
+              nzShowSearch>
+        <nz-option
+          *ngFor="let option of countries"
+          [nzLabel]="option.name"
+          [nzValue]="option.name"
+        >
+        </nz-option>
+      </nz-select>
+          </span>
+
+    </li>
+
+  </ul>
+</div>

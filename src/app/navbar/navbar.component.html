@@ -1,0 +1,39 @@
+<div >
+<button class="btn" nz-button [nzType]="'default'">
+  <i class="anticon anticon-user"></i><span>Login</span>
+</button>
+  <nz-select class="sel"
+    [nzPlaceHolder]="'Country'"
+    [(ngModel)]="country"
+    nzShowSearch>
+    <nz-option
+      *ngFor="let option of countries"
+      [nzLabel]="option.name"
+      [nzValue]="option.name"
+    >
+    </nz-option>
+  </nz-select>
+  <nz-select class="sel"
+    [nzPlaceHolder]="'Currency'"
+    [(ngModel)]="currency"
+    nzShowSearch>
+    <nz-option
+      *ngFor="let option of currencies"
+      [nzLabel]="option.name"
+      [nzValue]="option.name"
+    >
+    </nz-option>
+  </nz-select>
+  <nz-select class="sel"
+    [nzPlaceHolder]="'Language'"
+    [(ngModel)]="language"
+    nzShowSearch>
+    <nz-option
+      *ngFor="let option of languages"
+      [nzLabel]="option.name"
+      [nzValue]="option.name"
+    >
+    </nz-option>
+  </nz-select>
+</div>
+<div >

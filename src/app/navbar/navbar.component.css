@@ -1,0 +1,26 @@
+.wrapper{
+
+}
+.sel{
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  position: relative;
+  float: right;
+  margin: 10px;
+
+}
+.btn{
+  text-align: center;
+  width: 100px;
+  height: 28px;
+  position: relative;
+  float: right;
+  margin: 10px;
+
+}
+.divawy{
+  position: absolute;
+  float : right;
+  top: 50px;
+}
