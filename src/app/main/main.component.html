@@ -1,7 +1,7 @@
 <app-sidenav *ngIf="mobVersion"></app-sidenav>
-<nz-layout>
+<nz-layout *ngIf="webVersion">
   <nz-header style="background-color: white">
-    <app-navbar *ngIf="webVersion"></app-navbar>
+    <app-navbar ></app-navbar>
   </nz-header>
   <nz-content>
   </nz-content>
