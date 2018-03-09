@@ -2,28 +2,28 @@
 
   <div class="row1">
 
-    <nz-switch class="row1element" [ngModel]="true">
+    <nz-switch style="left: 5px;" class="row1element" [ngModel]="true">
       <i class=" anticon anticon-check" checked></i>
       <i class=" anticon anticon-cross" unchecked></i>
     </nz-switch>
     <label class="row1element" style=" color: white;font-family: 'Cairo', sans-serif;font-size: 15px" > Direct only </label>
-    <nz-radio-group nzSize="large" style="  padding-top: 60px; padding-left: 60px;" [(ngModel)]="type">
+    <nz-radio-group class="row1element" nzSize="large" style="   padding-left: 60px;" [(ngModel)]="type">
       <label nz-radio-button  [nzValue]="'oneway'"><span>One way</span></label>
       <label nz-radio-button [nzValue]="'round'"><span>Round trip</span></label>
       <label nz-radio-button [nzValue]="'mul'"><span>Multi destination</span></label>
     </nz-radio-group>
-    <nz-datepicker nzSize="large" style=" left: 10px" [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
-    <nz-select nzSize="large" style="padding-left: 10px; width: 115px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
+    <nz-datepicker class="row1element" nzSize="large" style=" " [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
+    <nz-select class="row1element" nzSize="large" style=" width: 115px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
 
 
-    <nz-select nzSize="large" style=" left: 20px;  padding-top: 60px; width: 200px" [(ngModel)]="selectedOption" [nzPlaceHolder]="'From'" nzAllowClear nzShowSearch></nz-select>
+    <nz-select class="row1element" nzSize="large" style="   width: 200px" [(ngModel)]="selectedOption" [nzPlaceHolder]="'From'" nzAllowClear nzShowSearch></nz-select>
 
 
-    <nz-select nzSize="large" style="padding-left: 20px; width: 220px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'To'" nzAllowClear nzShowSearch></nz-select>
+    <nz-select class="row1element" nzSize="large" style=" width: 220px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'To'" nzAllowClear nzShowSearch></nz-select>
 
-    <nz-input-number nzSize="large" style="left: 10px " [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
-    <nz-input-number  nzSize="large" style="left: 10px" [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
-    <nz-input-number nzSize="large" style="left: 10px"  [(ngModel)]="infants"  [nzPlaceHolder]="'Infants'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
+    <nz-input-number nzSize="large"  [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
+    <nz-input-number   nzSize="large"  [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
+    <nz-input-number  nzSize="large"   [(ngModel)]="infants"  [nzPlaceHolder]="'Infants'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
     <button style=" margin:10px;left :20px ;width: 70px ; height: 70px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">
       <i style="  font-size: 20px" class="anticon anticon-search"></i>
     </button>
