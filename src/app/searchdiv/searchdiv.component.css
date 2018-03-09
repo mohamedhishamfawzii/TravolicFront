@@ -10,12 +10,15 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#495aff', endColorstr='#0acffe',GradientType=1 ); /* IE6-9 */
 }
 .row1{
-  width:70%; height:70px;margin:auto;
+  width:100%; height:100px;margin:auto;
+
 }
 .row1element{
+
   position: relative;
   top: 5%;
   transform: translateY(-50%);
   padding: 5px;
+  left: 50px;
 
 }
