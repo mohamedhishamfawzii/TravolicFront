@@ -8,7 +8,6 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { HttpModule } from '@angular/http';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import { MenuComponent } from './menu/menu.component';
 import { MainComponent } from './main/main.component';
 import { NZ_LOCALE, enUS } from 'ng-zorro-antd';
@@ -18,7 +17,6 @@ import { SearchdivComponent } from './searchdiv/searchdiv.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    SidenavComponent,
     MenuComponent,
     MainComponent,
     SearchdivComponent

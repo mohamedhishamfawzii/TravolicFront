@@ -15,11 +15,19 @@ export class NavbarComponent implements OnInit {
   currencies;
   language;
   languages;
+  isCollapsed = false;
+  width= screen.width;
+  mobVersion;
+  webVersion = true;
   constructor(private http: Http) { }
 
   ngOnInit() {
 
     this.http.get('json/countries.json')
       .subscribe(res => this.countries = res.json());
+    if (this.width < 740 ) {
+      this.mobVersion = true;
+      this.webVersion = false;
+    }
   }
 }
