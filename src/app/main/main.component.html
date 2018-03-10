@@ -1,10 +1,11 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 <app-navbar *ngIf="mobVersion"></app-navbar>
+<app-menu *ngIf="mobVersion"></app-menu>
 <nz-layout *ngIf="webVersion">
   <nz-header style="background-color: white">
     <app-navbar ></app-navbar>
   </nz-header>
-  <nz-content>
+  <nz-content >
     <app-menu></app-menu>
 <app-searchdiv></app-searchdiv>
   </nz-content>

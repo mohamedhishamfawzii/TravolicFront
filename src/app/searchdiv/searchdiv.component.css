@@ -1,5 +1,5 @@
 .divawy{
-  height: 600px;
+  height: 2000px;
   width: 100%;
   padding: 30px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#495aff+0,2989d8+50,0acffe+100 */
@@ -13,11 +13,13 @@
   width:100%; height:100px;margin:auto;
   text-align: center;
 margin-top: 50px;
+  display:table;
 }
 .row1element{
 
   position: relative;
   display: inline-block;
 padding: 5px;
+  margin-top: 5px;
 
 }
