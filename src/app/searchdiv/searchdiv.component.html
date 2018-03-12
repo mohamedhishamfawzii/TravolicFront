@@ -68,10 +68,40 @@
     <nz-select class="row1element" nzSize="large" style=" width: 115px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
 
 
-    <nz-select class="row1element" nzSize="large" style="   width: 200px" [(ngModel)]="selectedOption" [nzPlaceHolder]="'From'" nzAllowClear nzShowSearch></nz-select>
+    <nz-select class="row1element" nzSize="large" style="  width: 200px" [(ngModel)]="selectedOption" [nzPlaceHolder]="'From'"  nzShowSearch>
+
+      <nz-option style="font-size: 10px;  width:100px"
+        *ngFor="let option of airports"
+        [nzLabel]="option.email"
+        [nzValue]="option.code"
+      >
+       <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
+
+         <p style="font-family: 'Cairo', sans-serif;font-size: 13px" > {{option.country}} , {{option.city}}</p>
+
+ <p style="font-family: 'Cairo', sans-serif;font-size: 11px" > {{option.name}}</p>
+       </ng-template>
+
+      </nz-option>
+    </nz-select>
 
 
-    <nz-select class="row1element" nzSize="large" style=" width: 220px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'To'" nzAllowClear nzShowSearch></nz-select>
+    <nz-select class="row1element" nzSize="large" style=" width: 220px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'To'"  nzShowSearch>
+      <nz-option style="font-size: 10px; width:100px"
+        *ngFor="let option of airports"
+        [nzLabel]="option.email"
+        [nzValue]="option.code"
+      >
+      <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
+
+        <p style="font-family: 'Cairo', sans-serif;font-size: 13px" > {{option.country}} , {{option.city}}</p>
+
+<p style="font-family: 'Cairo', sans-serif;font-size: 11px" > {{option.name}}</p>
+      </ng-template>
+      </nz-option>
+
+
+    </nz-select>
 
     <nz-input-number nzSize="large"  [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
     <nz-input-number   nzSize="large"  [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>

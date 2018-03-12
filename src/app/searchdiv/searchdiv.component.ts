@@ -6,9 +6,10 @@ import {Http} from '@angular/http';
   templateUrl: './searchdiv.component.html',
   styleUrls: ['./searchdiv.component.css']
 })
-
 export class SearchdivComponent implements OnInit {
-  constructor() { }
+type = 'oneway';
+airports;
+  constructor(private http: Http) { }
   mobVersion;
   webVersion = true;
   width = screen.width;
@@ -17,5 +18,13 @@ export class SearchdivComponent implements OnInit {
       this.mobVersion = true;
       this.webVersion = false;
     }
+    this.http.get('json/airports.json')
+      .subscribe(res => {this.airports = res.json();
+
+        this.airports.forEach( function (airport)
+        {
+          airport.email = airport.name ;
+        } );
+      });
   }
 }

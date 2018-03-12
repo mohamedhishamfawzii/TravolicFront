@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MainComponent } from './main/main.component';
 import { NZ_LOCALE, enUS } from 'ng-zorro-antd';
 import { SearchdivComponent } from './searchdiv/searchdiv.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchdivComponent } from './searchdiv/searchdiv.component';
     NavbarComponent,
     MenuComponent,
     MainComponent,
-    SearchdivComponent
+    SearchdivComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule, NgZorroAntdModule.forRoot(), FormsModule ,
