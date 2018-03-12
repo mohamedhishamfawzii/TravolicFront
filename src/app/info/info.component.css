@@ -1,0 +1,21 @@
+.row1{
+  width:80%; height:250px;margin:auto;
+  text-align: center;
+margin-top:  30px;
+margin-bottom: 100px;
+  display:table;
+  background: #495aff; /* Old browsers */
+  background: -moz-linear-gradient(left, #495aff 0%, #2989d8 50%, #0acffe 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #495aff 0%,#2989d8 50%,#0acffe 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #495aff 0%,#2989d8 50%,#0acffe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#495aff', endColorstr='#0acffe',GradientType=1 ); /* IE6-9 */
+  border-radius: 30px
+}
+.row1element{
+
+  position: relative;
+  display: inline-block;
+padding: 5px;
+  margin-top: 5px;
+
+}

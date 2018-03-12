@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
 
     this.http.get('json/countries.json')
       .subscribe(res => this.countries = res.json());
+
     if (this.width < 740 ) {
       this.mobVersion = true;
       this.webVersion = false;

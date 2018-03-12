@@ -7,8 +7,9 @@
             <nz-select
               style="font-size: 10px;width: 70%;"
               [nzPlaceHolder]="'Country'"
-              [(ngModel)]="country"
+              [(ngModel)]="from"
               nzShowSearch>
+
         <nz-option
           *ngFor="let option of countries"
           [nzLabel]="option.name"
@@ -25,7 +26,7 @@
             <nz-select
               style="font-size: 10px;width: 70%;vertical-align: middle;"
               [nzPlaceHolder]="'Currency'"
-              [(ngModel)]="country"
+              [(ngModel)]="to"
               nzShowSearch>
         <nz-option
           *ngFor="let option of countries"
@@ -79,4 +80,3 @@
     </nz-option>
   </nz-select>
 </div>
-
