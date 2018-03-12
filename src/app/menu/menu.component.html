@@ -1,5 +1,14 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-<ul nz-menu [nzMode]="'horizontal'">
+<ul *ngIf="mobVersion" nz-menu [nzMode]="'horizontal'">
+  <li nz-menu-item [nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px" ><i style="font-size: 20px"  class="anticon anticon-rocket"></i></li>
+  <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-home"></i></li>
+  <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-car"></i></li>
+  <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-picture"></i></li>
+  <li nz-menu-item style=" font-family: 'Cairo', sans-serif; font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-notification"></i></li>
+  <li nz-menu-item style=" font-family: 'Cairo', sans-serif; font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-shop"></i></li>
+  <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i></li>
+</ul>
+<ul *ngIf="webVersion" nz-menu [nzMode]="'horizontal'">
   <li nz-menu-item [nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px" ><i style="font-size: 20px"  class="anticon anticon-rocket"></i> FLIGHTS</li>
   <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-home"></i> HOTELS</li>
   <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-car"></i> CAR RENTAL</li>
