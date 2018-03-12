@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   language;
   languages;
   isCollapsed = false;
-  width= screen.width;
+  width = screen.width;
   mobVersion;
   webVersion = true;
   constructor(private http: Http) { }
@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
 
     this.http.get('json/countries.json')
       .subscribe(res => this.countries = res.json());
-    if (this.width < 740 ) {
+    if (this.width < 860 ) {
       this.mobVersion = true;
       this.webVersion = false;
     }

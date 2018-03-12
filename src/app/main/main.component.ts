@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-
   constructor() { }
   mobVersion;
   webVersion = true;
   width = screen.width;
   ngOnInit() {
-    if (this.width < 740 ) {
+    if (this.width < 860 ) {
       this.mobVersion = true;
       this.webVersion = false;
     }
