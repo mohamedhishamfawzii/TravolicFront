@@ -1,11 +1,11 @@
-<div  *ngIf="mobVersion" style="margin :10px ;width:{{width}}">
+<div  *ngIf="mobVersion" style="margin:10px;width:{{width}};">
 
-  <ul nz-menu [nzMode]="'inline'" nzTheme='light' >
-    <li nz-menu-item style="height: 100%;">
+  <ul nz-menu [nzMode]="'inline'" nzTheme='dark'style="background: transparent;user-select: none" >
+    <li nz-menu-item style="user-select: none;height: 100%;text-align: center;vertical-align: center; margin-top: 20px;">
        <span title>
-            <i style="margin:20px;font-size: 18px;" class="anticon anticon-global"></i>
+            <i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-global"></i>
             <nz-select
-              style="font-size: 10px;width: 70%;"
+              style="font-size: 10px;width: 70%;vertical-align: middle;"
               [nzPlaceHolder]="'Country'"
               [(ngModel)]="from"
               nzShowSearch>
@@ -20,9 +20,9 @@
           </span>
 
     </li>
-    <li nz-menu-item style="height: 100%">
+    <li nz-menu-item style="height: 100%;text-align: center;vertical-align: center;user-select: none;">
        <span title>
-            <i style="margin:20px;font-size: 18px;" class="anticon anticon-red-envelope"></i>
+            <i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-red-envelope"></i>
             <nz-select
               style="font-size: 10px;width: 70%;vertical-align: middle;"
               [nzPlaceHolder]="'Currency'"

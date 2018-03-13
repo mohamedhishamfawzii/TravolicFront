@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -9,10 +9,13 @@ export class MenuComponent implements OnInit {
   mobVersion;
   webVersion = true;
   width = screen.width;
-  constructor() { }
+  width_text = 0.8 * (screen.width / 7);
+
+  constructor() {
+  }
 
   ngOnInit() {
-    if (this.width < 740 ) {
+    if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;
     }

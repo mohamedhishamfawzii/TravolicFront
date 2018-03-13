@@ -1,33 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
-import BackendService from '../backend.service';
+
 @Component({
   selector: 'app-searchdiv',
   templateUrl: './searchdiv.component.html',
   styleUrls: ['./searchdiv.component.css']
 })
 export class SearchdivComponent implements OnInit {
-type='oneway';
+type = 'oneway';
 airports;
-location;
-backConnect: BackendService;
   constructor(private http: Http) { }
-spin=false;
-from;
-to;
+  mobVersion;
+  webVersion = true;
+  width = screen.width;
   ngOnInit() {
+    if (this.width < 860 ) {
+      this.mobVersion = true;
+      this.webVersion = false;
+    }
     this.http.get('json/airports.json')
       .subscribe(res => {this.airports = res.json();
+
+        this.airports.forEach( function (airport)
+        {
+          airport.email = airport.name ;
+        } );
       });
-    this.location= this.backConnect.getLocation();
-
-
   }
-  spinner(){
-    this.spin=true;
-    setTimeout(() => {
-      this.spin = false;
-    }, 4000);
-  }
-
 }

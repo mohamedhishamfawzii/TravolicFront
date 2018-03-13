@@ -1,5 +1,51 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-<div class="divawy" xmlns="http://www.w3.org/1999/html">
+
+<div *ngIf="mobVersion" class="divawy" style="margin :5px ;width:{{width}}">
+
+  <app-navbar *ngIf="mobVersion"></app-navbar>
+
+  <div class="row1">
+    <label class="row1element" style="font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: white ; opacity: 0.7">THE CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
+    <br>
+    <label class="row1element" style="font-size: 25px; font-family: 'Cairo' , sans-serif; color: white  ">STEP TOWARDS YOUR TRIP</label>
+  </div>
+
+  <div class="row1" style="background-color: white;opacity: 0.9; border-radius: 5px">
+
+    <div style="margin-left: 80px;margin-right:80px;margin-top: 5px">
+    <nz-switch style="left: 5px;" class="row1element" [ngModel]="true">
+      <i class=" anticon anticon-check" checked></i>
+      <i class=" anticon anticon-cross" unchecked></i>
+    </nz-switch>
+    <label class="row1element" style=" color: black;font-family: 'Cairo', sans-serif;font-size: 15px" > Direct only </label>
+    </div>
+
+    <nz-radio-group class="row1element" nzSize="large" style="margin-left: 90px;margin-right:90px;" [(ngModel)]="type">
+      <label nz-radio-button  [nzValue]="'oneway'" style="margin-top:5px;width:130px"><span>One way</span></label>
+      <label nz-radio-button [nzValue]="'round'"style="margin-top:5px;width:130px"><span>Round trip</span></label>
+      <label nz-radio-button [nzValue]="'mul'"style="margin-top:5px;width:130px"><span>Multi-Destination</span></label>
+    </nz-radio-group>
+    <nz-datepicker class="row1element" nzSize="large" style="margin-right:60px;margin-left:60px;" [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
+
+    <div style="margin-right:80px;margin-left:80px;">
+    <nz-select class="row1element" nzSize="large" style=" width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
+    <nz-select class="row1element" nzSize="large" style="width: 120px" [(ngModel)]="selectedOption" [nzPlaceHolder]="'From'" nzAllowClear nzShowSearch></nz-select>
+    <nz-select class="row1element" nzSize="large" style="width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'To'" nzAllowClear nzShowSearch></nz-select>
+    </div>
+
+    <div style="margin:10px;margin-right: 90px;margin-left: 90px;">
+    <nz-input-number nzSize="large"  [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="10" [nzStep]="1"style="width:60px;margin-bottom:10px;" ></nz-input-number>
+    <nz-input-number   nzSize="large"  [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="10" [nzStep]="1"style="width:60px;margin-bottom:10px;" ></nz-input-number>
+    <nz-input-number  nzSize="large"   [(ngModel)]="infants"  [nzPlaceHolder]="'Infants'" [nzMin]="1" [nzMax]="10" [nzStep]="1"style="width:60px;margin-bottom:10px;" ></nz-input-number>
+    </div>
+    <button style="margin-bottom:20px;margin-right:90px;margin-left:90px;width:70px ; height: 70px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">
+      <i style="  font-size: 20px" class="anticon anticon-search"></i>
+    </button>
+
+  </div>
+</div>
+
+<div *ngIf="webVersion" class="divawy">
   <div class="row1">
     <label class="row1element" style="font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: white ; opacity: 0.7">THE CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
     <br>
@@ -66,5 +112,4 @@
     </button>
 
   </div>
-
 </div>
