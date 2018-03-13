@@ -26,7 +26,7 @@ backendConnect: BackendService;
     this.http.get('json/airports.json')
       .subscribe(res => {this.airports = res.json();
          this.backendConnect.getLocation().then((result)=> {
-           this.location=result;
+           this.location=result.json();
           console.log("locatiooooo",this.location);
           this.airports.forEach(function (airport) {
             if (airport.city==this.location.city){
