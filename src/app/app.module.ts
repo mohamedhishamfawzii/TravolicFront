@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {BackendService} from './backend.service';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -29,7 +29,7 @@ import { InfoComponent } from './info/info.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,HttpModule
   ],
-  providers: [HttpModule,{ provide: NZ_LOCALE, useValue: enUS }],
+  providers: [BackendService ,HttpModule,{ provide: NZ_LOCALE, useValue: enUS }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

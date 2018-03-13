@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
+import BackendService from '../backend.service';
 @Component({
   selector: 'app-searchdiv',
   templateUrl: './searchdiv.component.html',
@@ -8,21 +9,25 @@ import {Http} from '@angular/http';
 export class SearchdivComponent implements OnInit {
 type='oneway';
 airports;
+location;
+backConnect: BackendService;
   constructor(private http: Http) { }
-
+spin=false;
 from;
 to;
   ngOnInit() {
     this.http.get('json/airports.json')
       .subscribe(res => {this.airports = res.json();
-
-        this.airports.forEach( function (airport)
-  {
-      airport.email =airport.name ;
-  } );
       });
+    this.location= this.backConnect.getLocation();
 
 
+  }
+  spinner(){
+    this.spin=true;
+    setTimeout(() => {
+      this.spin = false;
+    }, 4000);
   }
 
 }

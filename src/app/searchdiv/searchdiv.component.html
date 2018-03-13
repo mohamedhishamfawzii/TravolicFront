@@ -22,11 +22,11 @@
     <nz-select class="row1element" nzSize="large" style=" width: 115px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
 
 
-    <nz-select class="row1element" nzSize="large" style="  width: 200px" [(ngModel)]="selectedOption" [nzPlaceHolder]="'From'"  nzShowSearch>
+    <nz-select class="row1element" nzSize="large" style="  width: 200px" [(ngModel)]="from" [nzPlaceHolder]="'From'"  nzShowSearch>
 
       <nz-option style="font-size: 10px;  width:100px"
         *ngFor="let option of airports"
-        [nzLabel]="option.email"
+        [nzLabel]="option.name"
         [nzValue]="option.code"
       >
        <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
@@ -36,14 +36,15 @@
  <p style="font-family: 'Cairo', sans-serif;font-size: 11px" > {{option.name}}</p>
        </ng-template>
 
+
       </nz-option>
     </nz-select>
 
 
-    <nz-select class="row1element" nzSize="large" style=" width: 220px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'To'"  nzShowSearch>
+    <nz-select class="row1element" nzSize="large" style=" width: 220px;" [(ngModel)]="to" [nzPlaceHolder]="'To'"  nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
         *ngFor="let option of airports"
-        [nzLabel]="option.email"
+        [nzLabel]="option.name"
         [nzValue]="option.code"
       >
       <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
