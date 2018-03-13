@@ -25,13 +25,15 @@ backendConnect: BackendService;
     }
     this.http.get('json/airports.json')
       .subscribe(res => {this.airports = res.json();
-        this.location = this.backendConnect.getLocation();
-        console.log("locatiooooo",this.location);
-        this.airports.forEach(function (airport) {
-          if (airport.city==this.location.city){
-            this.from=airport.code;
+        this.location = this.backendConnect.getLocation().then(function () {
+          console.log("locatiooooo",this.location);
+          this.airports.forEach(function (airport) {
+            if (airport.city==this.location.city){
+              this.from=airport.code;
+            }
+          });
           }
-        })
+        );
       });
 
   }
