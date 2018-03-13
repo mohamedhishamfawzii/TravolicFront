@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
+import {BackendService} from '../backend.service';
 
 @Component({
   selector: 'app-searchdiv',
@@ -9,10 +10,14 @@ import {Http} from '@angular/http';
 export class SearchdivComponent implements OnInit {
 type = 'oneway';
 airports;
+location;
+backendConnect: BackendService;
   constructor(private http: Http) { }
   mobVersion;
   webVersion = true;
   width = screen.width;
+  from ;
+  to;
   ngOnInit() {
     if (this.width < 860 ) {
       this.mobVersion = true;
@@ -20,11 +25,14 @@ airports;
     }
     this.http.get('json/airports.json')
       .subscribe(res => {this.airports = res.json();
-
-        this.airports.forEach( function (airport)
-        {
-          airport.email = airport.name ;
-        } );
+        this.location = this.backendConnect.getLocation();
+        console.log("locatiooooo",this.location);
+        this.airports.forEach(function (airport) {
+          if (airport.city==this.location.city){
+            this.from=airport.code;
+          }
+        })
       });
+
   }
 }

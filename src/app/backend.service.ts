@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 
 
 @Injectable()
-export default class BackendService {
+export  class BackendService {
 
   constructor(private http: Http) {
   }
