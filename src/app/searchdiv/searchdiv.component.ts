@@ -11,31 +11,62 @@ export class SearchdivComponent implements OnInit {
 type = 'oneway';
 airports;
 location;
-backendConnect: BackendService;
-  constructor(private http: Http) { }
+isSpinningFrom = false;
+isSpinningTo =false;
+  constructor(private backendConnect: BackendService, private http: Http) { }
   mobVersion;
   webVersion = true;
   width = screen.width;
   from ;
   to;
+  Aairports=[];
+  i;
   ngOnInit() {
     if (this.width < 860 ) {
       this.mobVersion = true;
       this.webVersion = false;
     }
     this.http.get('json/airports.json')
-      .subscribe(res => {this.airports = res.json();
+      .subscribe((res) => {
+         this.airports = res.json();
+         for ( var i =0 ; i<1000;i++ ){
+           this.Aairports.push(this.airports[i]);
+         }
+
          this.backendConnect.getLocation().then((result)=> {
            this.location=result.json();
-          console.log("locatiooooo",this.location);
-          this.airports.forEach(function (airport) {
-            if (airport.city==this.location.city){
-              this.from=airport.code;
-            }
-          });
+          console.log("locatiooooo",this.location,this.airports);
+           this.airports.forEach( (air) =>{
+             if (air.city === this.location.city)
+             {this.from = air.code; }
+           });
+           if (this.from === undefined){
+             this.airports.forEach( (air) =>{
+               if (air.country === this.location.country)
+               {this.from = air.code; }
+
+             });
+           }
+           console.log(this.from);
           }
         );
       });
 
   }
+  clickedfrom() {
+   console.log("clicked");
+   this.isSpinningFrom=true;
+   setTimeout(()=>{
+      this.isSpinningFrom=false;
+    },4000);
+
+  }
+  clickedto(){
+    this.isSpinningTo=true;
+    setTimeout(()=>{
+      this.isSpinningTo=false;
+    },4000);
+
+  }
+
 }

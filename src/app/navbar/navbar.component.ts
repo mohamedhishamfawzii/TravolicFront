@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
+import {BackendService} from '../backend.service';
 
 
 @Component({
@@ -11,15 +12,16 @@ export class NavbarComponent implements OnInit {
 
   country;
   countries;
-  currency;
-  currencies;
+  currency ;
+  currencies = ['EGP','USD','EUR'];
   language;
   languages;
+  location;
   isCollapsed = false;
   width = screen.width;
   mobVersion;
   webVersion = true;
-  constructor(private http: Http) { }
+  constructor(private backendConnect: BackendService,private http: Http) { }
 
   ngOnInit() {
 
@@ -29,5 +31,10 @@ export class NavbarComponent implements OnInit {
       this.mobVersion = true;
       this.webVersion = false;
     }
-  }
-}
+
+    this.backendConnect.getLocation().then((result)=> {
+      this.location=result.json();
+      this.country =this.location.country;
+      this.currency=this.location.currency;
+  });
+}}

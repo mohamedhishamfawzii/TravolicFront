@@ -59,7 +59,7 @@
       <i class=" anticon anticon-cross" unchecked></i>
     </nz-switch>
     <label class="row1element" style=" color: black;font-family: 'Cairo', sans-serif;font-size: 15px" > Direct only </label>
-    <nz-radio-group class="row1element" nzSize="large" style="   padding-left: 60px;" [(ngModel)]="type">
+    <nz-radio-group class="row1element" nzSize="large" style="   padding-left: 30px;" [(ngModel)]="type">
       <label nz-radio-button  [nzValue]="'oneway'"><span>One way</span></label>
       <label nz-radio-button [nzValue]="'round'"><span>Round trip</span></label>
       <label nz-radio-button [nzValue]="'mul'"><span>Multi destination</span></label>
@@ -67,47 +67,42 @@
     <nz-datepicker class="row1element" nzSize="large" style=" " [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
     <nz-select class="row1element" nzSize="large" style=" width: 115px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
 
-
-    <nz-select class="row1element" nzSize="large" style="  width: 200px" [(ngModel)]="from" [nzPlaceHolder]="'From'"  nzShowSearch>
+    <nz-select class="row1element" nzSize="large" style="  width: 200px" [(ngModel)]="from" [nzPlaceHolder]="'From'" (click)="clickedfrom()" nzShowSearch>
 
       <nz-option style="font-size: 10px;  width:100px"
-        *ngFor="let option of airports"
+        *ngFor="let option of Aairports"
         [nzLabel]="option.name"
         [nzValue]="option.code"
       >
        <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
 
-         <p style="font-family: 'Cairo', sans-serif;font-size: 13px" > {{option.country}} , {{option.city}}</p>
+         <p style="font-family: 'Cairo', sans-serif;font-size: 13px" >  {{option.country}}  {{option.city}}</p>
 
- <p style="font-family: 'Cairo', sans-serif;font-size: 11px" > {{option.name}}</p>
+ <p style="font-family: 'Cairo', sans-serif;font-size: 11px" > {{option.name}} ,{{option.country}} , {{option.city}}, {{option.code}}</p>
        </ng-template>
 
 
       </nz-option>
     </nz-select>
 
-
-    <nz-select class="row1element" nzSize="large" style=" width: 220px;" [(ngModel)]="to" [nzPlaceHolder]="'To'"  nzShowSearch>
+    <nz-select class="row1element"   nzSize="large" style=" width: 220px;" [(ngModel)]="to" [nzPlaceHolder]="'To'"  (click)="clickedto()"  nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
-        *ngFor="let option of airports"
+        *ngFor="let option of Aairports"
         [nzLabel]="option.name"
         [nzValue]="option.code"
       >
       <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
 
-        <p style="font-family: 'Cairo', sans-serif;font-size: 13px" > {{option.country}} , {{option.city}}</p>
+        <p style="font-family: 'Cairo', sans-serif;font-size: 10px" > {{option.country}} , {{option.city}}</p>
 
-<p style="font-family: 'Cairo', sans-serif;font-size: 11px" > {{option.name}}</p>
+<p style="font-family: 'Cairo', sans-serif;font-size: 8px" > {{option.name}} , {{option.country}} , {{option.city}} ,{{option.code}}</p>
       </ng-template>
       </nz-option>
-
-
     </nz-select>
-
     <nz-input-number nzSize="large"  [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
     <nz-input-number   nzSize="large"  [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
     <nz-input-number  nzSize="large"   [(ngModel)]="infants"  [nzPlaceHolder]="'Infants'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
-    <button style=" margin:10px;left :20px ;width: 70px ; height: 70px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">
+    <button  style=" margin:10px;left :20px ;width: 70px ; height: 70px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">
       <i style="  font-size: 20px" class="anticon anticon-search"></i>
     </button>
 
