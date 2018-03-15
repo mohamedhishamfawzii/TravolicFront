@@ -29,17 +29,17 @@ isSpinningTo =false;
     this.http.get('json/airports.json')
       .subscribe((res) => {
          this.airports = res.json();
-         for ( var i =0 ; i<1000;i++ ){
-           this.Aairports.push(this.airports[i]);
-         }
-
          this.backendConnect.getLocation().then((result)=> {
            this.location=result.json();
           console.log("locatiooooo",this.location,this.airports);
            this.airports.forEach( (air) =>{
+             air.email = (air.code +"    "+air.name + air.country + air.city);
              if (air.city === this.location.city)
              {this.from = air.code; }
            });
+           for ( var i =0 ; i<1000;i++ ){
+             this.Aairports.push(this.airports[i]);
+           }
            if (this.from === undefined){
              this.airports.forEach( (air) =>{
                if (air.country === this.location.country)
