@@ -31,9 +31,9 @@ isSpinningTo =false;
          this.airports = res.json();
          this.backendConnect.getLocation().then((result)=> {
            this.location=result.json();
-          console.log("locatiooooo",this.location,this.airports);
+          console.log("location result",this.location);
            this.airports.forEach( (air) =>{
-             air.email = (air.code +"    "+air.name + air.country + air.city);
+             air.email = (air.code +"    "+air.name +"          "+ air.country + air.city);
              if (air.city === this.location.city)
              {this.from = air.code; }
            });
