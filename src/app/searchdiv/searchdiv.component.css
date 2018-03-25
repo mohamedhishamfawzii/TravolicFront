@@ -3,17 +3,18 @@
   width: 100%;
   padding: 30px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#495aff+0,2989d8+50,0acffe+100 */
-  background: #495aff; /* Old browsers */
-  background: -moz-linear-gradient(left, #495aff 0%, #2989d8 50%, #0acffe 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #495aff 0%,#2989d8 50%,#0acffe 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #495aff 0%,#2989d8 50%,#0acffe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #29A4DD; /* Old browsers */
+  background: -moz-linear-gradient(left, #29A4DD 0%, #2989d8 50%, #0acffe 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #29A4DD 0%,#2989d8 50%,#0acffe 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,#29A4DD 0%,#2989d8 50%,#0acffe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#495aff', endColorstr='#0acffe',GradientType=1 ); /* IE6-9 */
 }
 .row1{
-  width:100%; height:100px;margin:auto;
+  width:70%; height:200px;margin:auto;
   text-align: center;
   margin-top: 50px;
   display:table;
+  padding: 20px;
 }
 .row1element{
 

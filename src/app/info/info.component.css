@@ -1,9 +1,9 @@
 .row1{
-  width:90%; height:250px;margin:auto;
+  width:90%; height:150px;margin:auto;
   text-align: center;
 margin-top:  100px;
 margin-bottom: 100px;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.2);
   display:table;
 
 

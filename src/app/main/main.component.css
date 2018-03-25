@@ -1,8 +1,8 @@
 .cont{
 
-  background: #495aff; /* Old browsers */
-  background: -moz-linear-gradient(left, #495aff 0%, #2989d8 50%, #0acffe 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #495aff 0%,#2989d8 50%,#0acffe 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #495aff 0%,#2989d8 50%,#0acffe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #29A4DD; /* Old browsers */
+  background: -moz-linear-gradient(left, #29A4DD 0%, #2989d8 50%, #0acffe 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #29A4DD 0%,#2989d8 50%,#0acffe 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #29A4DD 0%,#2989d8 50%,#0acffe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 }
