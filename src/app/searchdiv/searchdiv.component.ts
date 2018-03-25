@@ -32,16 +32,16 @@ isSpinningTo =false;
          this.backendConnect.getLocation().then((result)=> {
            this.location=result.json();
           console.log("location result",this.location);
-           this.airports.forEach( (air) =>{
+           for ( var i =0 ; i<1000;i++ ){
+             this.Aairports.push(this.airports[i]);
+           }
+           this.Aairports.forEach( (air) =>{
              air.email = (air.code +"    "+air.name +"          "+ air.country + air.city);
              if (air.city === this.location.city)
              {this.from = air.code; }
            });
-           for ( var i =0 ; i<1000;i++ ){
-             this.Aairports.push(this.airports[i]);
-           }
            if (this.from === undefined){
-             this.airports.forEach( (air) =>{
+             this.Aairports.forEach( (air) =>{
                if (air.country === this.location.country)
                {this.from = air.code; }
 

@@ -7,7 +7,7 @@
             <nz-select
               style="font-size: 10px;width: 70%;vertical-align: middle;"
               [nzPlaceHolder]="'Country'"
-              [(ngModel)]="from"
+              [(ngModel)]="country"
               nzShowSearch>
 
         <nz-option
@@ -26,12 +26,12 @@
             <nz-select
               style="font-size: 10px;width: 70%;vertical-align: middle;"
               [nzPlaceHolder]="'Currency'"
-              [(ngModel)]="to"
+              [(ngModel)]="currency"
               nzShowSearch>
         <nz-option
-          *ngFor="let option of countries"
-          [nzLabel]="option.name"
-          [nzValue]="option.name"
+          *ngFor="let option of currencies"
+          [nzLabel]="option"
+          [nzValue]="option"
         >
         </nz-option>
       </nz-select>
@@ -42,8 +42,11 @@
   </ul>
 </div>
 
-<div *ngIf="webVersion" >
-<button class="btn" nz-button [nzType]="'default'">
+<div *ngIf="webVersion"  >
+
+
+  <img src="../../assets/travolic.png" style="margin-top: 5px" height="50" width="170"/>
+  <button class="btn" nz-button [nzType]="'default'">
   <i class="anticon anticon-user"></i><span>Login</span>
 </button>
   <nz-select class="sel"
