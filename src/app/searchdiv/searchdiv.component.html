@@ -1,5 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 
+
 <div *ngIf="mobVersion"  style=" height: auto;margin :5px ;width:{{width}}">
 
   <app-navbar *ngIf="mobVersion"></app-navbar>
@@ -127,9 +128,9 @@
 
 <div *ngIf="webVersion" class="divawy">
   <div class="row1">
-    <label class="row1element" style="font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">THE CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
+    <label class="row1element" style="font-size: 30px; font-family: 'Hiruko-BlackAlternate' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">The cheapest ticket to your distination is one click away</label>
     <br>
-    <label class="row1element" style="font-size: 25px; font-family: 'Cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR TRIP</label>
+    <label class="row1element" style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Step to your trip</label>
 
 
   </div>
@@ -142,8 +143,9 @@
     </nz-radio-group>
     <br>
 <div style="margin-bottom: 10px">
-
-    <nz-select class="row1element" nzSize="large" style="top: 1px; font-size:15px ; width: 300px" [(ngModel)]="from" [nzPlaceHolder]="'From'" (click)="clickedfrom()" nzShowSearch>
+  <span class="row1element">
+  <label  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+    <nz-select  nzSize="large" style="top: 1px; font-size:15px ; width: 300px" [(ngModel)]="from" [nzPlaceHolder]="''" (click)="clickedfrom()" nzShowSearch>
 
       <nz-option style="font-size: 10px;  width:100px"
         *ngFor="let option of Aairports"
@@ -160,8 +162,10 @@
 
       </nz-option>
     </nz-select>
-
-    <nz-select class="row1element"   nzSize="large" style=" top: 1px;font-size:15px ; width: 300px;" [(ngModel)]="to" [nzPlaceHolder]="'To'"  (click)="clickedto()"  nzShowSearch>
+  </span>
+  <span class="row1element">
+  <label  style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+  <nz-select class="row1element"   nzSize="large" style=" top: 1px;font-size:15px ; width: 300px;" [(ngModel)]="to" [nzPlaceHolder]="''"  (click)="clickedto()"  nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
         *ngFor="let option of Aairports"
         [nzLabel]="option.email"
@@ -175,24 +179,33 @@
       </ng-template>
       </nz-option>
     </nz-select>
-  <nz-datepicker class="row1element" nzSize="large" style="width: 250px " [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
+  </span>
+  <span class="row1element">
+  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+    <nz-datepicker  nzSize="large" style=" left:5px; width: 250px " [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
+  </span>
   <br>
-  <nz-select class="row1element" nzSize="large" style=" width: 115px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
+      <span class="row1element">
+  <label  style="margin-right:5px;font-size: 20px; top: 2px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Class</label>
 
-  <nz-input-number nzSize="large"  [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
-    <nz-input-number   nzSize="large"  [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
-    <nz-input-number  nzSize="large"   [(ngModel)]="infants"  [nzPlaceHolder]="'Infants'" [nzMin]="1" [nzMax]="10" [nzStep]="1" ></nz-input-number>
-
-    <nz-switch style="margin-left: 20px" class="row1element" [ngModel]="true">
-      <i class=" anticon anticon-check" checked></i>
-      <i class=" anticon anticon-cross" unchecked></i>
-    </nz-switch>
-    <label class="row1element" style=" color: rgb(90,89,92);font-family: 'Cairo', sans-serif;font-size: 15px" > Direct only </label>
-</div>
+  <nz-select nzSize="large" style=" width: 115px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="''" nzAllowClear></nz-select>
+      </span>
+        <span class="row1element">
+  <label class="row1element" style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Travellers</label>
+  <nz-input-number nzSize="large"  [(ngModel)]="adults" [nzPlaceHolder]="'Adults'" [nzMin]="1" [nzMax]="9" [nzStep]="1" ></nz-input-number>
+    <nz-input-number   nzSize="large"  [(ngModel)]="children" [nzPlaceHolder]="'Children'" [nzMin]="1" [nzMax]="9" [nzStep]="1" ></nz-input-number>
+    <nz-input-number  nzSize="large"   [(ngModel)]="infants"  [nzPlaceHolder]="'Infants'" [nzMin]="1" [nzMax]="9" [nzStep]="1" ></nz-input-number>
+        </span>
+  <span class="row1element">
+    <label class="row1element" style=" margin-left: 10px; color: #128de7;font-family: 'Cairo', sans-serif;font-size: 20px" > Direct only </label>
+  <nz-switch style="margin-left: 5px" class="row1element" [ngModel]="false">
+    <i class=" anticon anticon-check" checked></i>
+    <i class=" anticon anticon-cross" unchecked></i>
+  </nz-switch>
+  </span>
     <br>
-    <button  style="width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'" >
-      <label style=" font-size:20px;font-family: 'Cairo' , sans-serif; "> SEARCH </label>
+    <button  style=" margin-top:20px;width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'" >
+      <label style=" font-size:20px;font-family: 'cairo' , sans-serif; "> SEARCH </label>
     </button>
-
-  </div>
+</div>
 </div>
