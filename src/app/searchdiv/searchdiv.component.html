@@ -5,9 +5,9 @@
   <app-navbar *ngIf="mobVersion"></app-navbar>
 
   <div class="row1">
-    <label class="row1element" style="font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: white ; opacity: 0.7">THE CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
+    <label class="row1element" style="font-size: 220%; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">THE CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
     <br>
-    <label class="row1element" style="font-size: 25px; font-family: 'Cairo' , sans-serif; color: white  ">STEP TO YOUR TRIP</label>
+    <label class="row1element" style="font-size: 200%; font-family: 'Cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR TRIP</label>
   </div>
 
   <div class="row1" style="background-color: white;opacity: 0.9; border-radius: 5px">
@@ -102,7 +102,7 @@
     </div>
 
 
-    <div style="margin-left: 80px;margin-right:80px;margin-top: 5px;margin-bottom: 15px">
+    <div style="margin-left: 80px;margin-right:80px;margin-top: 5px;margin-bottom: 25px">
     <nz-switch style="left: 5px;" class="row1element" [ngModel]="true">
       <i class=" anticon anticon-check" checked></i>
       <i class=" anticon anticon-cross" unchecked></i>
@@ -114,8 +114,12 @@
     <div style="margin-right:80px;margin-left:80px;">
     </div>
 
-    <button style="margin-bottom:20px;margin-right:90px;margin-left:90px;width:70px ; height: 70px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">
-      <i style="  font-size: 20px" class="anticon anticon-search"></i>
+    <!--<button style="margin-bottom:20px;margin-right:90px;margin-left:90px;width:70px ; height: 70px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">-->
+      <!--<i style="  font-size: 20px" class="anticon anticon-search"></i>-->
+    <!--</button>-->
+
+    <button  style="width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'" >
+      <label style=" font-size:100%;font-family: 'Cairo' , sans-serif; "> SEARCH </label>
     </button>
 
   </div>
