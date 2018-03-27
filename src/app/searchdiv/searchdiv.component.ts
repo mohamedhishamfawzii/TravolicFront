@@ -24,6 +24,7 @@ isSpinningTo = false;
   from ;
   to;
   Aairports = [];
+  ABirports = [];
   i;
   ngOnInit() {
     if (this.width < 860 ) {
@@ -36,22 +37,19 @@ isSpinningTo = false;
          this.backendConnect.getLocation().then((result)=> {
            this.location = result.json();
           console.log("location result",this.location);
-           for (var i = 0; i < 1000; i++){
-             this.Aairports.push(this.airports[i]);
-           }
-           this.Aairports.forEach( (air) =>{
-             air.email = (air.code +"    "+air.name +"          "+ air.country + air.city);
-             if (air.city === this.location.city)
-             {this.from = air.code; }
+           this.airports.forEach( (air) =>{
+             if (air.City === this.location.city)
+             {this.from = air.IATA; }
            });
            if (this.from === undefined){
-             this.Aairports.forEach( (air) =>{
-               if (air.country === this.location.country)
-               {this.from = air.code; }
+             this.airports.forEach( (air) =>{
+               if (air.Country === this.location.country)
+               {this.from = air.IATA; }
 
              });
            }
            console.log(this.from);
+           console.log(this.airports);
           }
         );
       });
@@ -71,6 +69,58 @@ isSpinningTo = false;
       this.isSpinningTo=false;
     },4000);
 
+
+  }
+  changedfrom(searchtxt){
+    this.Aairports=[];
+    console.log("changed called ");
+    console.log(searchtxt);
+    if(searchtxt==""){
+      this.Aairports=[];
+    }
+    this.airports.forEach( (air) =>{
+      if (searchtxt.toLowerCase() === air.IATA.toLowerCase())
+      {
+
+        this.Aairports.push(air);
+      }
+      if (searchtxt.toLowerCase() === air.Country.toLowerCase())
+      {
+
+        this.Aairports.push(air);
+      }
+      if (searchtxt.toLowerCase() === air.City.toLowerCase()&&(searchtxt!=""))
+      {
+
+        this.Aairports.push(air);
+      }
+    });
+  }
+  changedto(searchtxt){
+    this.ABirports=[];
+    console.log("changed called ");
+    console.log(searchtxt);
+    if(searchtxt==""){
+      this.ABirports=[];
+    }
+
+    this.airports.forEach( (air) =>{
+      if (searchtxt.toLowerCase() === air.IATA.toLowerCase())
+      {
+          this.ABirports.push(air);
+
+      }
+       if (searchtxt.toLowerCase() === air.Country.toLowerCase())
+      {
+
+          this.ABirports.push(air);
+      }
+       if ((searchtxt.toLowerCase() === air.City.toLowerCase()) && (searchtxt!=""))
+      {
+
+          this.ABirports.push(air);
+      }
+    });
   }
 
 }
