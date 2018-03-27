@@ -1,13 +1,13 @@
-<div  *ngIf="mobVersion" style="margin:10px;width:{{width}};">
-  <ul nz-menu [nzMode]="'inline'" nzTheme='dark'style="background: transparent;user-select: none" >
-    <li nz-menu-item style="user-select: none;height: 100%;text-align: center;vertical-align: center; margin-top: 20px;">
-       <span title>
-            <i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-global"></i>
-            <nz-select
-              style="font-size: 10px;width: 70%;vertical-align: middle;"
-              [nzPlaceHolder]="'Country'"
-              [(ngModel)]="country"
-              nzShowSearch>
+<div *ngIf="mobVersion" style="margin:10px;width:{{width}};">
+
+  <div style="text-align: center;">
+    <div style="text-align: center;margin-right:20px; margin-left:20px;margin-top: 20px">
+      <!--<i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-global"></i>-->
+      <nz-select
+        style="font-size: 10px;width: 40%;vertical-align: middle;"
+        [nzPlaceHolder]="'Country'"
+        [(ngModel)]="country"
+        nzShowSearch>
 
         <nz-option
           *ngFor="let option of countries"
@@ -16,17 +16,15 @@
         >
         </nz-option>
       </nz-select>
-          </span>
+    </div>
 
-    </li>
-    <li nz-menu-item style="height: 100%;text-align: center;vertical-align: center;user-select: none;">
-       <span title>
-            <i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-red-envelope"></i>
-            <nz-select
-              style="font-size: 10px;width: 70%;vertical-align: middle;"
-              [nzPlaceHolder]="'Currency'"
-              [(ngModel)]="currency"
-              nzShowSearch>
+    <div style="text-align: center;margin-right:20px; margin-left:20px;margin-top: 5px">
+      <!--<i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-red-envelope"></i>-->
+      <nz-select
+        style="font-size: 10px;width: 40%;vertical-align: middle;"
+        [nzPlaceHolder]="'Currency'"
+        [(ngModel)]="currency"
+        nzShowSearch>
         <nz-option
           *ngFor="let option of currencies"
           [nzLabel]="option"
@@ -34,24 +32,38 @@
         >
         </nz-option>
       </nz-select>
-          </span>
+    </div>
 
-    </li>
+    <div style="text-align: center;margin-right:20px; margin-left:20px;margin-top: 5px">
+      <!--<i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-global"></i>-->
+      <nz-select
+        style="font-size: 10px;width: 40%;vertical-align: middle;"
+        [nzPlaceHolder]="'Language'"
+        [(ngModel)]="language"
+        nzShowSearch>
+        <nz-option
+          *ngFor="let option of languages"
+          [nzLabel]="option.name"
+          [nzValue]="option.name"
+        >
+        </nz-option>
+      </nz-select>
+    </div>
+  </div>
 
-  </ul>
 </div>
 
-<div *ngIf="webVersion"  >
+<div *ngIf="webVersion">
 
 
   <img src="../../assets/travolic.png" style="margin-top: 5px" height="50" width="170"/>
   <button class="btn" nz-button [nzType]="'default'">
-  <i class="anticon anticon-user"></i><span>Login</span>
-</button>
+    <i class="anticon anticon-user"></i><span>Login</span>
+  </button>
   <nz-select class="sel"
-    [nzPlaceHolder]="'Country'"
-    [(ngModel)]="country"
-    nzShowSearch>
+             [nzPlaceHolder]="'Country'"
+             [(ngModel)]="country"
+             nzShowSearch>
     <nz-option
       *ngFor="let option of countries"
       [nzLabel]="option.name"
@@ -60,9 +72,9 @@
     </nz-option>
   </nz-select>
   <nz-select class="sel"
-    [nzPlaceHolder]="'Currency'"
-    [(ngModel)]="currency"
-    nzShowSearch>
+             [nzPlaceHolder]="'Currency'"
+             [(ngModel)]="currency"
+             nzShowSearch>
     <nz-option
       *ngFor="let option of currencies"
       [nzLabel]="option"
@@ -71,9 +83,9 @@
     </nz-option>
   </nz-select>
   <nz-select class="sel"
-    [nzPlaceHolder]="'Language'"
-    [(ngModel)]="language"
-    nzShowSearch>
+             [nzPlaceHolder]="'Language'"
+             [(ngModel)]="language"
+             nzShowSearch>
     <nz-option
       *ngFor="let option of languages"
       [nzLabel]="option.name"
