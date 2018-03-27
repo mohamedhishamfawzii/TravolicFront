@@ -13,7 +13,7 @@
 
   <div class="row1" style="background-color: white;opacity: 0.9; border-radius: 5px">
 
-    <nz-radio-group class="row1element" nzSize="large" style="width: 100%" [(ngModel)]="type">
+    <nz-radio-group class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%" [(ngModel)]="type">
       <label nz-radio-button  [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>One Way</span></label>
       <label nz-radio-button [nzValue]="'round'"style="margin-top:5px;width:80%"><span>Round Trip</span></label>
       <label nz-radio-button [nzValue]="'mul'"style="margin-top:5px;width:80%"><span>Multi-Destination</span></label>
@@ -21,7 +21,11 @@
 
     <br>
 
-    <nz-select class="row1element" nzSize="large" style="width: 80%" [(ngModel)]="from" [nzPlaceHolder]="'From'" nzAllowClear nzShowSearch>
+    <label style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">From</label>
+
+    <br>
+
+    <nz-select class="row1element" nzSize="large" style="width: 80%" [(ngModel)]="from" [nzPlaceHolder]="''" nzAllowClear nzShowSearch>
       <nz-option style="font-size: 10px;  width:100px"
                  *ngFor="let option of Aairports"
                  [nzLabel]="option.email"
@@ -40,7 +44,11 @@
 
     <br>
 
-    <nz-select class="row1element" nzSize="large" style="width: 80%;" [(ngModel)]="to" [nzPlaceHolder]="'To'" nzAllowClear nzShowSearch>
+    <label style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">To</label>
+
+    <br>
+
+    <nz-select class="row1element" nzSize="large" style="width: 80%;" [(ngModel)]="to" [nzPlaceHolder]="''" nzAllowClear nzShowSearch>
       <nz-option style="font-size: 10px;  width:100px"
                  *ngFor="let option of Aairports"
                  [nzLabel]="option.email"
@@ -58,11 +66,23 @@
 
     <br>
 
+    <label style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+
+    <br>
+
     <nz-datepicker class="row1element" nzSize="large" style="margin-right:3px;margin-left:3px;width: 80%" [nzPlaceHolder]="'Departure Date'"  [(ngModel)]="dDate"></nz-datepicker>
 
     <br>
 
-    <nz-select class="row1element" nzSize="large" style=" width: 80%;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'Class'" nzAllowClear></nz-select>
+    <label style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Class</label>
+
+    <br>
+
+    <nz-select class="row1element" nzSize="large" style=" width: 80%;" [(ngModel)]="selectedOption" [nzPlaceHolder]="''" nzAllowClear></nz-select>
+
+    <br>
+
+    <label style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Travellers</label>
 
     <br>
 
@@ -103,12 +123,12 @@
     </div>
 
 
-    <div style="margin-left: 80px;margin-right:80px;margin-top: 5px;margin-bottom: 25px">
+    <div style="margin-top: 5px;margin-bottom: 25px">
     <nz-switch style="left: 5px;" class="row1element" [ngModel]="true">
       <i class=" anticon anticon-check" checked></i>
       <i class=" anticon anticon-cross" unchecked></i>
     </nz-switch>
-    <label class="row1element" style=" color: black;font-family: 'Cairo', sans-serif;font-size: 15px" > Direct only </label>
+    <label class="row1element" style=" color: black; font-family: 'Cairo', sans-serif;font-size: 15px" >Direct Only</label>
     </div>
 
 
