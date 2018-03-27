@@ -61,13 +61,14 @@ isSpinningTo = false;
    setTimeout(()=>{
       this.isSpinningFrom=false;
     },4000);
-
+    this.Aairports=[];
   }
   clickedto(){
     this.isSpinningTo=true;
     setTimeout(()=>{
       this.isSpinningTo=false;
     },4000);
+    this.ABirports=[];
 
 
   }

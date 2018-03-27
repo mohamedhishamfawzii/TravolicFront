@@ -172,6 +172,13 @@
         [nzLabel]="option.Airport"
         [nzValue]="option.IATA"
       >
+           <ng-template #nzOptionTemplate>
+           <label  style="font-size: 10px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:bold;">{{option.IATA}}</label>
+          <br>
+   <label  style="font-size: 8px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Airport}}</label>
+          <br>
+           <label  style="font-size: 5px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Country}}</label>
+        </ng-template>
       </nz-option>
     </nz-select>
   </span>
@@ -183,6 +190,13 @@
         [nzLabel]="option.Airport"
         [nzValue]="option.IATA"
       >
+        <ng-template #nzOptionTemplate>
+           <label  style="font-size: 10px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:bold;">{{option.IATA}}</label>
+          <br>
+   <label  style="font-size: 8px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Airport}}</label>
+          <br>
+           <label  style="font-size: 5px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Country}}</label>
+        </ng-template>
       </nz-option>
     </nz-select>
   </span>
