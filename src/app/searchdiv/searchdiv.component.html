@@ -148,9 +148,9 @@
 
 <div *ngIf="webVersion" class="divawy">
   <div class="row1">
-    <label class="row1element" style="font-size: 30px; font-family: 'Hiruko-BlackAlternate' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">The cheapest ticket to your distination is one click away</label>
+    <label class="row1element" style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">THE CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
     <br>
-    <label class="row1element" style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Step to your trip</label>
+    <label class="row1element" style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR TRIP</label>
 
 
   </div>
@@ -165,38 +165,38 @@
 <div style="margin-bottom: 10px">
   <span class="row1element">
   <label  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
-    <nz-select  nzSize="large" style="top: 1px; font-size:15px ; width: 300px" [(ngModel)]="from" [nzPlaceHolder]="''" (click)="clickedfrom()" nzShowSearch>
+    <nz-select  nzSize="large"  style="top: 1px; font-size:15px ; width: 300px"  nzAllowClear   [nzFilter]="false" [(ngModel)]="from" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()" nzShowSearch>
 
       <nz-option style="font-size: 10px;  width:100px"
         *ngFor="let option of Aairports"
-        [nzLabel]="option.email"
-        [nzValue]="option.code"
+        [nzLabel]="option.Airport"
+        [nzValue]="option.IATA"
       >
-       <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
-
-         <p style="font-family: 'Cairo', sans-serif;font-size: 13px" >  {{option.country}}  {{option.city}}</p>
-
- <p style="font-family: 'Cairo', sans-serif;font-size: 11px" > {{option.name}} </p>
-       </ng-template>
-
-
+           <ng-template #nzOptionTemplate>
+           <label  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:bold;">{{option.IATA}}</label>
+          <br>
+   <label  style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Airport}}</label>
+          <br>
+           <label  style="font-size: 10px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Country}}</label>
+        </ng-template>
       </nz-option>
     </nz-select>
   </span>
   <span class="row1element">
   <label  style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
-  <nz-select class="row1element"   nzSize="large" style=" top: 1px;font-size:15px ; width: 300px;" [(ngModel)]="to" [nzPlaceHolder]="''"  (click)="clickedto()"  nzShowSearch>
+  <nz-select class="row1element"   nzAllowClear   [nzFilter]="false"  nzSize="large" style=" top: 1px;font-size:15px ; width: 300px;" [(ngModel)]="to" [nzPlaceHolder]="''" (nzSearchChange)="changedto($event)" (click)="clickedto()"  nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
-        *ngFor="let option of Aairports"
-        [nzLabel]="option.email"
-        [nzValue]="option.code"
+        *ngFor="let option of ABirports"
+        [nzLabel]="option.Airport"
+        [nzValue]="option.IATA"
       >
-      <ng-template #nzOptionTemplate><i class="anticon anticon-rocket"></i> <p style="font-weight:bold;font-family: 'Cairo', sans-serif;font-size: 15px"> {{option.code}}</p>
-
-        <p style="font-family: 'Cairo', sans-serif;font-size: 10px" > {{option.country}} , {{option.city}}</p>
-
-<p style="font-family: 'Cairo', sans-serif;font-size: 10px" > {{option.name}}</p>
-      </ng-template>
+        <ng-template #nzOptionTemplate>
+           <label  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:bold;">{{option.IATA}}</label>
+          <br>
+   <label  style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Airport}}</label>
+          <br>
+           <label  style="font-size: 10px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;">{{option.Country}}</label>
+        </ng-template>
       </nz-option>
     </nz-select>
   </span>
