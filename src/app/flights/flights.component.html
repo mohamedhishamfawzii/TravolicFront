@@ -1,36 +1,110 @@
-<nz-layout>
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" style="background: #108ee9">
-    <!--<div class="logo">-->
-    <!--Showing 1000 results-->
-    <!--</div>-->
-    <ul nz-menu [nzMode]="isCollapsed?'vertical':'inline'" style="background: transparent">
-      <li style="margin-left: 10px">
-        <span>Stops</span>
-      </li>
+<nz-layout style="border-radius: 20px">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null"
+            style="background-color: #1D759D; border-radius: 20px; padding:10px;">
+    <div style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
 
-      <li nz-checkbox="" style="margin-left: 15px">
-        <span>Direct</span>
-      </li>
-      <br>
-      <li nz-checkbox="" style="margin-left: 15px">
-        <span>Stops</span>
-      </li>
-    </ul>
+      <div style="margin-left: 8px; width: 100%; margin-bottom: 10px;">
+        <span style=" font-family: 'Cairo'; font-size:14px;">Stops</span>
+      </div>
+      <label nz-checkbox [(ngModel)]="direct" (ngModelChange)="_console($event)"
+             style="margin-left: 8px; width: 100%">
+        <span style="font-family: 'Cairo'; font-size:12px">direct</span>
+      </label>
+      <label nz-checkbox [(ngModel)]="stops" (ngModelChange)="_console($event)"
+             style="width: 100%;">
+        <span style="font-family: 'Cairo'; font-size:12px">one or more stops</span>
+      </label>
+
+    </div>
+
+    <div style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
+
+      <div style="margin-left: 8px; width: 100%; margin-bottom: 10px;">
+        <span style=" font-family: 'Cairo'; font-size:14px;">Times</span>
+      </div>
+
+      <span style="margin-left: 8px; font-family: 'Cairo'; font-size:12px">Departure <br> {{departure}}</span>
+      <label [(ngModel)]="departure" [nzFormatter]="time_formatter" [nzMax]=23.75></label>
+      <nz-slider nzRange [(ngModel)]="departure" [nzTipFormatter]="time_formatter" [nzMax]=23.75  [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">
+      </nz-slider>
+
+      <span style="margin-left: 8px; font-family: 'Cairo'; font-size:12px">Arrival</span>
+      <nz-slider nzRange [(ngModel)]="arrival" [nzTipFormatter]="time_formatter" [nzMax]=23.75  [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">
+      </nz-slider>
+
+    </div>
+
+    <div style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
+
+      <div style="margin-left: 8px; width: 100%; margin-bottom: 10px;">
+        <span style=" font-family: 'Cairo'; font-size:14px;">Airlines</span>
+      </div>
+
+      <label nz-checkbox (ngModelChange)="_console($event)"
+             style="margin-left: 8px; width: 100%">
+        <span style="font-family: 'Cairo'; font-size:12px">Air Canada</span>
+      </label>
+      <label nz-checkbox (ngModelChange)="_console($event)"
+             style="width: 100%;">
+        <span style="font-family: 'Cairo'; font-size:12px">Egypt Air</span>
+      </label>
+
+    </div>
+
+
+    <div style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
+
+      <div style="margin-left: 8px; width: 100%; margin-bottom: 10px;">
+        <span style=" font-family: 'Cairo'; font-size:14px;">Alliance</span>
+      </div>
+
+      <label nz-checkbox (ngModelChange)="_console($event)"
+             style="margin-left: 8px; width: 100%">
+        <span style="font-family: 'Cairo'; font-size:12px">Air Canada</span>
+      </label>
+      <label nz-checkbox (ngModelChange)="_console($event)"
+             style="width: 100%;">
+        <span style="font-family: 'Cairo'; font-size:12px">Egypt Air</span>
+      </label>
+
+    </div>
+
+
+    <div style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
+
+      <div style="margin-left: 8px; width: 100%; margin-bottom: 10px;">
+        <span style=" font-family: 'Cairo'; font-size:14px;">Price</span>
+      </div>
+
+      <!--<span style="margin-left: 8px; font-family: 'Cairo'; font-size:12px">Departure</span>-->
+      <nz-slider nzRange [(ngModel)]="price" [nzTipFormatter]="price_formatter" [nzMax]=20000 [nzDefaultValue]="[0, 5000]">
+      </nz-slider>
+
+    </div>
+
+
+
   </nz-sider>
-  <nz-layout>
-    <nz-header style="background: #fff; padding:0;">
-      <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed"
-         (click)="isCollapsed=!isCollapsed"></i>
-    </nz-header>
+
+
+  <nz-layout style="border-radius: 20px;">
+
+    <!--<nz-header style="background: #fff; padding:0;">-->
+      <!--<i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed"-->
+         <!--(click)="isCollapsed=!isCollapsed"></i>-->
+    <!--</nz-header>-->
+
     <nz-content style="margin:0 16px;">
       <nz-breadcrumb style="margin:12px 0;">
-        <nz-breadcrumb-item>User</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+        <nz-breadcrumb-item>Flights</nz-breadcrumb-item>
       </nz-breadcrumb>
-      <div style="padding:24px; background: #fff; min-height: 360px;">
-        Bill is a cat.
+      <div style="padding:24px; min-height: 360px;">
       </div>
     </nz-content>
-    <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
   </nz-layout>
 </nz-layout>
+
+
+<!--<div style="border-radius: 50px; margin: 20px;">-->
+  <!--<app-flights></app-flights>-->
+<!--</div>-->

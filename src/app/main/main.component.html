@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 <body class="cont" *ngIf="mobVersion">
 <div *ngIf="mobVersion" style="background: white; text-align: center">
-<img src="../../assets/travolic.png" style="margin-top: 15px;" height="50" width="170"/>
+  <img src="../../assets/travolic.png" style="margin-top: 15px;" height="50" width="170"/>
 </div>
 
 <app-menu *ngIf="mobVersion"></app-menu>
@@ -10,13 +10,13 @@
 </body>
 <nz-layout *ngIf="webVersion">
   <nz-header style="background-color: white">
-    <app-navbar ></app-navbar>
+    <app-navbar></app-navbar>
   </nz-header>
   <nz-content class="cont">
 
     <app-menu></app-menu>
-<app-searchdiv></app-searchdiv>
-<app-info></app-info>
+    <app-searchdiv></app-searchdiv>
+    <app-info></app-info>
   </nz-content>
   <nz-footer style="height: 300px" class="cont"></nz-footer>
 </nz-layout>
