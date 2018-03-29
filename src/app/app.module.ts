@@ -6,14 +6,19 @@ import {BackendService} from './backend.service';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { RouterModule, Routes } from '@angular/router';
+import {MainComponent} from './main/main.component';
+import {FlightsComponent} from './flights/flights.component';
 import { HttpModule } from '@angular/http';
 import { MenuComponent } from './menu/menu.component';
-import { MainComponent } from './main/main.component';
 import { NZ_LOCALE, enUS } from 'ng-zorro-antd';
 import { SearchdivComponent } from './searchdiv/searchdiv.component';
 import { InfoComponent } from './info/info.component';
-
+const appRoutes: Routes = [
+  { path: '', component: MainComponent },
+  { path: 'flights/search', component: FlightsComponent},
+  { path: 'flights/search/:data', component: FlightsComponent},
+] ;
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +26,15 @@ import { InfoComponent } from './info/info.component';
     MenuComponent,
     MainComponent,
     SearchdivComponent,
-    InfoComponent
+    InfoComponent,FlightsComponent
   ],
   imports: [
     BrowserModule, NgZorroAntdModule.forRoot(), FormsModule ,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,HttpModule
+    NoopAnimationsModule,HttpModule,   RouterModule.forRoot(
+      appRoutes// <-- debugging purposes only
+    )
   ],
   providers: [BackendService ,HttpModule,{ provide: NZ_LOCALE, useValue: enUS }],
   bootstrap: [AppComponent]

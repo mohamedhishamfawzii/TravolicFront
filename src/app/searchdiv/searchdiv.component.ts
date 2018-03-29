@@ -1,127 +1,182 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Http} from '@angular/http';
 import {BackendService} from '../backend.service';
-
+import {ActivatedRoute, Router, RouterModule, Routes} from '@angular/router';
 @Component({
   selector: 'app-searchdiv',
   templateUrl: './searchdiv.component.html',
   styleUrls: ['./searchdiv.component.css']
 })
 export class SearchdivComponent implements OnInit {
-type = 'oneway';
-adults = ['1 adult', '2 adults', '3 adults', '4 adults', '5 adults', '6 adults', '7 adults', '8 adults', '9 adults'];
-children = ['1 child', '2 children', '3 children', '4 children', '5 children', '6 children', '7 children', '8 children', '9 children'];
-infants = ['1 infant', '2 infants', '3 infants', '4 infants', '5 infants', '6 infants', '7 infants', '8 infants', '9 infants'];
+  type = 'oneway';
+  adults = ['1 adult', '2 adults', '3 adults', '4 adults', '5 adults', '6 adults', '7 adults', '8 adults', '9 adults'];
+  children = ['1 child', '2 children', '3 children', '4 children', '5 children', '6 children', '7 children', '8 children', '9 children'];
+  infants = ['1 infant', '2 infants', '3 infants', '4 infants', '5 infants', '6 infants', '7 infants', '8 infants', '9 infants'];
+  adultss;
+  childrenn;
+  infantss;
+  airports;
+  twoDates;
+  error;
+  errmsg;
+  theTwodates;
+  date;
+  oneDate = true;
+  class;
+  direct = false;
+  location;
+  isSpinningFrom = false;
+  isSpinningTo = false;
 
-airports;
-location;
-isSpinningFrom = false;
-isSpinningTo = false;
-  constructor(private backendConnect: BackendService, private http: Http) { }
+  constructor(private backendConnect: BackendService, private http: Http ,private route: Router) {
+  }
+
   mobVersion;
   webVersion = true;
   width = screen.width;
-  from ;
+  from;
   to;
+  utcDate;
+  parameters;
   Aairports = [];
   ABirports = [];
   i;
+
   ngOnInit() {
-    if (this.width < 860 ) {
+    if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;
     }
     this.http.get('json/airports.json')
       .subscribe((res) => {
-         this.airports = res.json();
-         this.backendConnect.getLocation().then((result)=> {
-           this.location = result.json();
-          console.log("location result",this.location);
-           this.airports.forEach( (air) =>{
-             if (air.City === this.location.city)
-             {this.from = air.IATA; }
-           });
-           if (this.from === undefined){
-             this.airports.forEach( (air) =>{
-               if (air.Country === this.location.country)
-               {this.from = air.IATA; }
+        this.airports = res.json();
+        this.backendConnect.getLocation().then((result) => {
+            this.location = result.json();
+            console.log('location result', this.location);
+            this.airports.forEach((air) => {
+              if (air.City === this.location.city) {
+                this.Aairports.push(air);
+                this.from = air.IATA;
+              }
+            });
+            if (this.from === undefined) {
+              this.airports.forEach((air) => {
+                if (air.Country === this.location.country) {
+                  this.Aairports.push(air);
+                  this.from = air.IATA;
+                }
 
-             });
-           }
-           console.log(this.from);
-           console.log(this.airports);
+              });
+            }
+            console.log(this.from);
+            console.log(this.airports);
           }
         );
       });
 
   }
+
   clickedfrom() {
-   console.log("clicked");
-   this.isSpinningFrom=true;
-   setTimeout(()=>{
-      this.isSpinningFrom=false;
-    },4000);
-    this.Aairports=[];
+    console.log('clicked');
+    this.isSpinningFrom = true;
+    setTimeout(() => {
+      this.isSpinningFrom = false;
+    }, 4000);
+    this.Aairports = [];
   }
-  clickedto(){
-    this.isSpinningTo=true;
-    setTimeout(()=>{
-      this.isSpinningTo=false;
-    },4000);
-    this.ABirports=[];
+
+  clickedto() {
+    this.isSpinningTo = true;
+    setTimeout(() => {
+      this.isSpinningTo = false;
+    }, 4000);
+    this.ABirports = [];
 
 
   }
-  changedfrom(searchtxt){
-    this.Aairports=[];
-    console.log("changed called ");
+
+  changedfrom(searchtxt) {
+    this.Aairports = [];
+    console.log('changed called ');
     console.log(searchtxt);
-    if(searchtxt==""){
-      this.Aairports=[];
+    if (searchtxt == '') {
+      this.Aairports = [];
     }
-    this.airports.forEach( (air) =>{
-      if (searchtxt.toLowerCase() === air.IATA.toLowerCase())
-      {
+    this.airports.forEach((air) => {
+      if (searchtxt.toLowerCase() === air.IATA.toLowerCase()) {
 
         this.Aairports.push(air);
       }
-      if (searchtxt.toLowerCase() === air.Country.toLowerCase())
-      {
+      if (searchtxt.toLowerCase() === air.Country.toLowerCase()) {
 
         this.Aairports.push(air);
       }
-      if (searchtxt.toLowerCase() === air.City.toLowerCase()&&(searchtxt!=""))
-      {
+      if (searchtxt.toLowerCase() === air.City.toLowerCase() && (searchtxt != '')) {
 
         this.Aairports.push(air);
       }
     });
   }
-  changedto(searchtxt){
-    this.ABirports=[];
-    console.log("changed called ");
+
+  changedto(searchtxt) {
+    this.ABirports = [];
+    console.log('changed called ');
     console.log(searchtxt);
-    if(searchtxt==""){
-      this.ABirports=[];
+    if (searchtxt == '') {
+      this.ABirports = [];
     }
 
-    this.airports.forEach( (air) =>{
-      if (searchtxt.toLowerCase() === air.IATA.toLowerCase())
-      {
-          this.ABirports.push(air);
+    this.airports.forEach((air) => {
+      if (searchtxt.toLowerCase() === air.IATA.toLowerCase()) {
+        this.ABirports.push(air);
 
       }
-       if (searchtxt.toLowerCase() === air.Country.toLowerCase())
-      {
+      if (searchtxt.toLowerCase() === air.Country.toLowerCase()) {
 
-          this.ABirports.push(air);
+        this.ABirports.push(air);
       }
-       if ((searchtxt.toLowerCase() === air.City.toLowerCase()) && (searchtxt!=""))
-      {
+      if ((searchtxt.toLowerCase() === air.City.toLowerCase()) && (searchtxt != '')) {
 
-          this.ABirports.push(air);
+        this.ABirports.push(air);
       }
     });
   }
 
+  search() {
+
+    if (this.from == undefined || this.to == undefined || (this.date == undefined && this.theTwodates == undefined)) {
+      if (this.from == undefined) {
+        this.errmsg = 'you have to select a FROM Airport';
+        this.error = true;
+      }
+      if (this.to == undefined) {
+        this.errmsg = 'you have to select a TO Airport';
+        this.error = true;
+      }
+      if (this.date == undefined && this.theTwodates == undefined) {
+        this.errmsg = 'you have to select Date';
+        this.error = true;
+
+      }
+    }
+    else {
+      this.error = false;
+      this.utcDate=Date.UTC(this.date.getUTCFullYear(),this.date.getUTCMonth(),this.date.getUTCDate());
+      this.parameters=("type="+this.type+"&"+"departure="+this.from+"&"+"arrival="+this.to+"&"+"from="+this.utcDate);
+
+      this.route.navigate(['/flights/search/',this.parameters]);
+    }
+  }
+
+  switch() {
+    if (this.type == 'round') {
+      this.twoDates = true;
+      this.oneDate = false;
+    }
+    if (this.type == 'oneway') {
+      this.twoDates = false;
+      this.oneDate = true;
+    }
+  }
 }
+
