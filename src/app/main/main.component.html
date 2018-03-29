@@ -8,15 +8,15 @@
 <app-searchdiv *ngIf="mobVersion"></app-searchdiv>
 <app-info *ngIf="mobVersion"></app-info>
 </body>
-<nz-layout *ngIf="webVersion">
+<nz-layout class="cont"*ngIf="webVersion">
   <nz-header style="background-color: white">
     <app-navbar></app-navbar>
   </nz-header>
-  <nz-content class="cont">
+  <nz-content style="margin-bottom:200px" class="cont">
 
     <app-menu></app-menu>
     <app-searchdiv></app-searchdiv>
     <app-info></app-info>
   </nz-content>
-  <nz-footer style="height: 300px" class="cont"></nz-footer>
+
 </nz-layout>

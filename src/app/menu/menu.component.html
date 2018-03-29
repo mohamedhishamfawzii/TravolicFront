@@ -1,9 +1,11 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <div style="text-align: center">
 <ul *ngIf="mobVersion" nz-menu [nzMode]="'horizontal'" style=" left:100px ; width:100%;font-size: 100% ; text-align: center">
 
 
-  <li nz-menu-item [nzSelected]="true" style="width:14%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 25px;" ><i style=" font-size: 20px; float: inside"  class="anticon anticon-rocket"></i></li>
+  <li nz-menu-item [nzSelected]="true" style="width:14%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 25px;" ><i style="font-size: 20px"class="material-icons">local_airport</i></li>
   <li nz-menu-item style="width:14%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 25px" ><i style="font-size: 20px" class="anticon anticon-home"></i></li>
   <li nz-menu-item style="width:14%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 25px" ><i style="font-size: 20px" class="anticon anticon-car"></i></li>
   <li nz-menu-item style="width:14%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 25px" ><i style=" font-size: 20px" class="anticon anticon-picture"></i></li>
@@ -14,7 +16,7 @@
 
 </ul>
 <ul *ngIf="webVersion" nz-menu [nzMode]="'horizontal'">
-  <li nz-menu-item [nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px" ><i style="font-size: 20px"  class="anticon anticon-compass"></i> FLIGHTS</li>
+  <li nz-menu-item [nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px" ><i style="font-size: 20px"class="material-icons">local_airport</i> FLIGHTS</li>
   <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-home"></i> HOTELS</li>
   <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-car"></i> CAR RENTAL</li>
   <li nz-menu-item style=" font-family: 'Cairo', sans-serif;font-size: 15px" ><i style="font-size: 20px" class="anticon anticon-picture"></i> BLOG</li>
