@@ -10,7 +10,16 @@ import {BackendService} from '../backend.service';
   styleUrls: ['./flights.component.css']
 })
 export class FlightsComponent implements OnInit {
-  duration = 'test';
+  departure = '12:00 AM';
+  arrival = '11:45 PM';
+  departure_from = '12:00 AM';
+  departure_to = '11:45 PM';
+  arrival_from = '12:00 AM';
+  arrival_to = '11:45 PM';
+  duration_from = '0h 00m';
+  duration_to = '50h 00m';
+  price_from = 'USD 0';
+  price_to = 'USD 5000';
   isCollapsed;
   data;
   parameters;
@@ -46,23 +55,45 @@ export class FlightsComponent implements OnInit {
       hour = 12;
     }
     minute = (value - Math.floor(value)) * 60;
+    let zero = '';
     if (minute === 0) {
-      minute = '00';
+      zero = '0';
     }
-    return hour + ':' + minute + ' ' + period;
+    return hour + ':' + minute + zero + ' ' + period;
   }
 
   duration_formatter(value) {
     const hour = Math.floor(value);
-    let minute = (value - Math.floor(value)) * 60;
+    const minute = (value - Math.floor(value)) * 60;
+    let zero = '';
     if (minute === 0) {
-      minute = '00';
+      zero = '0';
     }
-    return hour + 'h ' + minute + 'm';
+    return hour + 'h ' + minute + zero + 'm';
+  }
+
+  onChange_departure(value) {
+    this.departure_from = this.time_formatter(value[0]);
+    this.departure_to = this.time_formatter(value[1]);
+  }
+
+  onChange_arrival(value) {
+    this.arrival_from = this.time_formatter(value[0]);
+    this.arrival_to = this.time_formatter(value[1]);
+  }
+
+  onChange_duration(value) {
+    this.duration_from = this.duration_formatter(value[0]);
+    this.duration_to = this.duration_formatter(value[1]);
   }
 
   price_formatter(value) {
     return 'USD ' + value;
+  }
+
+  onChange_price(value) {
+    this.price_from = this.price_formatter(value[0]);
+    this.price_to = this.price_formatter(value[1]);
   }
 
 }
