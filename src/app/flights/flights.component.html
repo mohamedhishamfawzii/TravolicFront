@@ -23,8 +23,8 @@
         <span style=" font-family: 'Cairo'; font-size:14px;">Times</span>
       </div>
 
-      <span style="margin-left: 8px; font-family: 'Cairo'; font-size:12px">Departure <br> {{departure}}</span>
-      <label [(ngModel)]="departure" [nzFormatter]="time_formatter" [nzMax]=23.75></label>
+      <span style="margin-left: 8px; font-family: 'Cairo'; font-size:12px">Departure</span>
+      <!--<label [(ngModel)]="departure" [nzFormatter]="time_formatter" [nzMax]=23.75></label>-->
       <nz-slider nzRange [(ngModel)]="departure" [nzTipFormatter]="time_formatter" [nzMax]=23.75  [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">
       </nz-slider>
 
