@@ -29,8 +29,8 @@ export class SearchdivComponent implements OnInit {
   date3;
   date4;
   date5;
-  second;
-  third;
+  second = true;
+  third = true;
   fourth;
   fifth;
   twoDates;
