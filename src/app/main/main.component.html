@@ -6,17 +6,25 @@
 
 <app-menu *ngIf="mobVersion"></app-menu>
 <app-searchdiv *ngIf="mobVersion"></app-searchdiv>
+<div *ngIf="mobVersion" style="border-radius: 50px; margin: 20px;">
+  <app-flights></app-flights>
+</div>
 <app-info *ngIf="mobVersion"></app-info>
 </body>
-<nz-layout class="cont"*ngIf="webVersion">
-  <nz-header style="background-color: white">
+<nz-layout class="cont" *ngIf="webVersion">
+  <nz-header style="background-color: white;">
     <app-navbar></app-navbar>
   </nz-header>
   <nz-content style="margin-bottom:200px" class="cont">
 
     <app-menu></app-menu>
-    <app-searchdiv></app-searchdiv>
-    <app-info></app-info>
+    <div style="background-image: url('../../assets/bg-png.png'); background-repeat: no-repeat; background-size: contain; background-position: center top;">
+      <app-searchdiv></app-searchdiv>
+      <!--<div style="border-radius: 50px; margin: 20px;">-->
+        <!--<app-flights></app-flights>-->
+      <!--</div>-->
+      <app-info></app-info>
+    </div>
   </nz-content>
   <div class="row1">
     <div style=" float:right; margin-top:20px; ">
