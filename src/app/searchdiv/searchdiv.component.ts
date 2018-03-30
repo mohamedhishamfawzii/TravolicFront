@@ -17,6 +17,18 @@ export class SearchdivComponent implements OnInit {
   infantss;
   airports;
   counter=1;
+  from2;
+  from3;
+  from4;
+  from5;
+  to2;
+  to3;
+  to4;
+  to5;
+  date2;
+  date3;
+  date4;
+  date5;
   second;
   third;
   fourth;
@@ -219,7 +231,7 @@ export class SearchdivComponent implements OnInit {
         this.counter--;}
       switch (this.counter) {
         case 1:
-          this.second=false;
+          this.second = false;
         case 2 :
           this.third = false;
           break;
