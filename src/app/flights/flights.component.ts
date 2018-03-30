@@ -56,7 +56,7 @@ export class FlightsComponent implements OnInit {
     const hour = Math.floor(value);
     let minute = (value - Math.floor(value)) * 60;
     if (minute === 0) {
-      minute = '00';
+     // minute = '00';
     }
     return hour + 'h ' + minute + 'm';
   }

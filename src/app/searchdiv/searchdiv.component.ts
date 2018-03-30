@@ -16,8 +16,14 @@ export class SearchdivComponent implements OnInit {
   childrenn;
   infantss;
   airports;
+  counter=1;
+  second;
+  third;
+  fourth;
+  fifth;
   twoDates;
   error;
+  showdiv = true ;
   errmsg;
   theTwodates;
   date;
@@ -36,6 +42,7 @@ export class SearchdivComponent implements OnInit {
   width = screen.width;
   from;
   to;
+  multi = false;
   utcDate;
   parameters;
   Aairports = [];
@@ -170,13 +177,60 @@ export class SearchdivComponent implements OnInit {
 
   switch() {
     if (this.type == 'round') {
+      this.showdiv=true;
       this.twoDates = true;
       this.oneDate = false;
+      this.multi=false;
     }
     if (this.type == 'oneway') {
+      this.showdiv=true;
       this.twoDates = false;
       this.oneDate = true;
+      this.multi=false;
+    }
+    if (this.type =='mul') {
+      this.showdiv=false;
+      this.multi=true;
+      console.log("here");
+      }
+  }
+  plus(){
+
+    if(this.counter<5){
+    this.counter++;}
+    switch (this.counter) {
+      case 2 :
+        this.second = true;
+        break;
+      case 3 :
+        this.third = true;
+        break;
+      case 4 :
+        this.fourth = true;
+        break;
+      case 5 :
+        this.fifth = true;
+
+    }}
+
+    minus(){
+
+      if(this.counter>1){
+        this.counter--;}
+      switch (this.counter) {
+        case 1:
+          this.second=false;
+        case 2 :
+          this.third = false;
+          break;
+        case 3 :
+          this.fourth = false;
+          break;
+        case 4 :
+          this.fifth = false;
+          break;
+      }
+
     }
   }
-}
 

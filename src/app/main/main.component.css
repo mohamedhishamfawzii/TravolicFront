@@ -6,3 +6,22 @@
   background: linear-gradient(to right, #29A4DD 0%,#2989d8 50%,#0acffe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 }
+.row1{
+  width: 100% ;height:150px;margin:auto;
+  text-align: center;
+
+  background-color: rgba(255,255,255);
+  display:table;
+
+
+
+}
+.row1element{
+
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  margin-top: 5px;
+
+}
+
