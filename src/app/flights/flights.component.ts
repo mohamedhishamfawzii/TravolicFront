@@ -21,9 +21,13 @@ export class FlightsComponent implements OnInit {
   price_from = 'USD 0';
   price_to = 'USD 5000';
   isCollapsed;
+  loading=true;
+  loaded = false;
   data;
   parameters;
   flights;
+  flightsData;
+  flightsNumber;
 
   constructor(private activatedRoute: ActivatedRoute, private route: ActivatedRoute, private service: BackendService) {
   }
@@ -37,6 +41,12 @@ export class FlightsComponent implements OnInit {
         this.service.getflights(this.data).then((result) => {
           this.flights = result.json();
           console.log(this.flights);
+          this.flightsData=this.flights.response.data;
+          this.flightsNumber=this.flights.response.number_of_results;
+          console.log(this.flights.response.data);
+          this.loaded=true;
+          this.loading=false;
+          console.log(this.flights.response.number_of_results);
         });
       }
     });

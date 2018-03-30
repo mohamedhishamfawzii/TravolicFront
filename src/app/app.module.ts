@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NZ_LOCALE, enUS } from 'ng-zorro-antd';
 import { SearchdivComponent } from './searchdiv/searchdiv.component';
 import { InfoComponent } from './info/info.component';
+import { LoadingpageComponent } from './loadingpage/loadingpage.component';
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: 'flights/search', component: FlightsComponent},
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
     MenuComponent,
     MainComponent,
     SearchdivComponent,
-    InfoComponent,FlightsComponent
+    InfoComponent,FlightsComponent, LoadingpageComponent
   ],
   imports: [
     BrowserModule, NgZorroAntdModule.forRoot(), FormsModule ,
