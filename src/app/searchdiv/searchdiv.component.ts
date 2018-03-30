@@ -16,7 +16,7 @@ export class SearchdivComponent implements OnInit {
   childrenn;
   infantss;
   airports;
-  counter=1;
+  counter=3;
   from2;
   from3;
   from4;
