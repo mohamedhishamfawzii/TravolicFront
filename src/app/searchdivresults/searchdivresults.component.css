@@ -1,0 +1,31 @@
+.divawy {
+  height: auto;
+  width: 100%;
+  padding: 30px;
+  background: transparent;
+  /*background-image: url("../../assets/bg-jpeg.jpg");*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: cover;*/
+}
+
+.row1 {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  /*margin-top: 50px;*/
+  display: table;
+  padding: 20px;
+}
+
+.row1element {
+
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  margin-top: 5px;
+
+}
+
+/*!* @font-face kit by Fonts2u (http://www.fonts2u.com) *! @font-face {font-family:"Hiruko-BlackAlternate";src:url("HirukoBlackAlternate.ttf") format("truetype");font-weight:normal;font-style:normal;}*/
+

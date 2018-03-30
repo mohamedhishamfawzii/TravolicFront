@@ -26,6 +26,25 @@ export class FlightsComponent implements OnInit {
   data;
   parameters;
   flights;
+  mobVersion;
+  webVersion = true;
+  width = screen.width;
+  isVisible = false;
+
+  showModal = () => {
+    this.isVisible = true;
+  }
+
+  handleOk = (e) => {
+    console.log('点击了确定');
+    this.isVisible = false;
+  }
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.isVisible = false;
+  }
+
   flightsData;
   flightsNumber;
 
@@ -33,6 +52,10 @@ export class FlightsComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.width < 860 ) {
+      this.mobVersion = true;
+      this.webVersion = false;
+    }
     this.route.params.subscribe((params: Params) => {
       if (params['data'] !== undefined) {
         // Get the param straight
