@@ -1,3 +1,5 @@
+<app-loadingpage *ngIf="loading"></app-loadingpage>
+<body *ngIf="loaded">
 <nz-layout *ngIf="webVersion" class="cont">
   <nz-header style="background-color: white;">
     <app-navbar></app-navbar>
@@ -144,6 +146,23 @@
             <!--<span style="color: #54B4E3; font-family: 'Cairo', sans-serif; font-size:14px;">showing 10 results</span>-->
             <!--</div>-->
             <div style="padding:24px; min-height: 360px;">
+              <nz-table #nzTable [nzDataSource]="flightsData" [nzPageSize]="10" nzShowSizeChanger>
+                <tbody nz-tbody>
+                <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
+                  <div class="row1">
+                    <div class="row1element" *ngFor="let option of data['flights']">
+                      <label  style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['airline']}}</label>
+                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['arrive']}}</label>
+                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['arrive_at']}}</label>
+                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['depart']}}</label>
+                    </div>
+                    <label  class="row1element" style="font-family: Cairo,sans-serif ; font-size: 20px">{{data['price']['value']}}</label>
+
+                  </div>
+                </tr>
+                </tbody>
+              </nz-table>
+
             </div>
           </nz-content>
         </nz-layout>
@@ -442,6 +461,23 @@
             <!--<span style="color: #54B4E3; font-family: 'Cairo', sans-serif; font-size:14px;">showing 10 results</span>-->
             <!--</div>-->
             <div style="padding:24px; min-height: 360px;">
+              <nz-table #nzTable [nzDataSource]="flightsData" [nzPageSize]="10" nzShowSizeChanger>
+                <tbody nz-tbody>
+                <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
+                  <div class="row1">
+                    <div class="row1element" *ngFor="let option of data['flights']">
+                      <label  style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['airline']}}</label>
+                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['arrive']}}</label>
+                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['arrive_at']}}</label>
+                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['depart']}}</label>
+                    </div>
+                    <label  class="row1element" style="font-family: Cairo,sans-serif ; font-size: 20px">{{data['price']['value']}}</label>
+
+                  </div>
+                </tr>
+                </tbody>
+              </nz-table>
+
             </div>
             <div style="text-align: center;">
               <button
@@ -457,6 +493,7 @@
     </div>
   </nz-content>
 </nz-layout>
+</body>
 
 <!--<div style="border-radius: 50px; margin: 20px;">-->
 <!--<app-flights></app-flights>-->

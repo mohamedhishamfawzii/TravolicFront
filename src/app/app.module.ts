@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     MenuComponent,
     MainComponent,
     SearchdivComponent,
-    InfoComponent,FlightsComponent, LoadingpageComponent
+    InfoComponent,FlightsComponent, LoadingpageComponent,
     InfoComponent,
     FlightsComponent,
     SearchdivresultsComponent
