@@ -180,7 +180,8 @@ export class SearchdivComponent implements OnInit {
     }
     else {
       this.error = false;
-      this.utcDate=Date.UTC(this.date.getUTCFullYear(),this.date.getUTCMonth(),this.date.getUTCDate());
+      this.utcDate=Date.parse(this.date);
+      console.log(this.date);
       this.parameters=("type="+this.type+"&"+"departure="+this.from+"&"+"arrival="+this.to+"&"+"from="+this.utcDate);
 
       this.route.navigate(['/flights/search/',this.parameters]);
