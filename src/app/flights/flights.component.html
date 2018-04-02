@@ -149,40 +149,19 @@
               <nz-table #nzTable [nzDataSource]="flightsData" [nzPageSize]="10" nzShowSizeChanger>
                 <tbody nz-tbody>
                 <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
-                  <!-- CSS Ticket inspired by -->
-                  <!-- https://dribbble.com/shots/2677752-Dribbble-invite-competition -->
+                  <div class="card">
 
-                  <div class="ticket">
-                    <div class="stub">
-                      <div class="top">
-                        <span class="admit">PRICE</span>
-                        <span class="line"></span>
-                      </div>
-                      <div style=" font-family: 'Montserrat', sans-serif; font-size:50px ; font-weight:bold;">{{data['price']['value']}}</div>
-
+                    <h3>{{data['price']['value']}}</h3>
+                    <div class="line">
                     </div>
-                    <div class="check">
-
-                      <span class="row1element" *ngFor="let option of data['flights']">
-
-                        <span class="big">
-                          {{option['depart']}}  <i style="font-size:20px"class="anticon anticon-right"></i> {{option['arrive']}}
-                        </span>
-                        <span>
-                        <section>
-                          <div style=" font-family: 'Montserrat', sans-serif; font-size:10px ; font-weight:bold;" >ARRIVAL</div>
-                          <div>{{option['arrive_at']}}</div>
-                        </section>
-                        <section>
-                          <div style=" font-family: 'Montserrat', sans-serif; font-size:10px ; font-weight:bold;" >Airline</div>
-                          <div>{{option['airline']}}</div>
-                        </section>
-                        </span>
-
-
-                      </span>
-
-                    </div>
+                    <p *ngFor="let option of data['flights']" >
+                      {{option['airline']}}
+                      {{option['arrive']}}
+                      {{option['arrive_at']}}
+                      {{option['depart']}}
+                    </p>
+                      <button nz-button
+                              [nzType]="'primary'" [nzSize]="'medium'" (click)="redirect(data['link'])">Select</button>
                   </div>
                 </tr>
 
@@ -491,19 +470,31 @@
               <nz-table #nzTable [nzDataSource]="flightsData" [nzPageSize]="10" nzShowSizeChanger>
                 <tbody nz-tbody>
                 <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
-                  <div class="row1">
-                    <div class="row1element" *ngFor="let option of data['flights']">
-                      <label  style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['airline']}}</label>
-                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['arrive']}}</label>
-                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['arrive_at']}}</label>
-                      <label   style="font-family: Cairo,sans-serif ; font-size: 20px">{{option['depart']}}</label>
-                    </div>
-                    <label  class="row1element" style="font-family: Cairo,sans-serif ; font-size: 20px">{{data['price']['value']}}</label>
+                  <!-- CSS Ticket inspired by -->
+                  <!-- https://dribbble.com/shots/2677752-Dribbble-invite-competition -->
 
+                  <div class="card">
+
+                    <h3>{{data['price']['value']}}</h3>
+                    <div class="line">
+                    </div>
+                    <p *ngFor="let option of data['flights']" >
+                      {{option['airline']}}
+                      {{option['arrive']}}
+                      {{option['arrive_at']}}
+                      {{option['depart']}}
+                    </p>
+                    <form style="display: inline" action="data['link']" method="get">
+                      <button nz-button
+                              [nzType]="'primary'" [nzSize]="'medium'" (click)="redirect(data['link'])">Select</button>
+                    </form>
                   </div>
                 </tr>
+
+
                 </tbody>
               </nz-table>
+
 
             </div>
             <div style="text-align: center;">

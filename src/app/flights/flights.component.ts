@@ -3,7 +3,11 @@ import {ActivatedRoute, ParamMap, Params} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import {Observable} from 'rxjs/Observable';
 import {BackendService} from '../backend.service';
+interface MyWindow extends Window {
+  myFunction(): void;
+}
 
+declare var window: MyWindow;
 @Component({
   selector: 'app-flights',
   templateUrl: './flights.component.html',
@@ -30,6 +34,8 @@ export class FlightsComponent implements OnInit {
   webVersion = true;
   width = screen.width;
   isVisible = false;
+  flightsData;
+  flightsNumber;
 
   showModal = () => {
     this.isVisible = true;
@@ -44,10 +50,6 @@ export class FlightsComponent implements OnInit {
     console.log(e);
     this.isVisible = false;
   }
-
-  flightsData;
-  flightsNumber;
-
   constructor(private activatedRoute: ActivatedRoute, private route: ActivatedRoute, private service: BackendService) {
   }
 
@@ -128,5 +130,11 @@ export class FlightsComponent implements OnInit {
     this.price_from = this.price_formatter(value[0]);
     this.price_to = this.price_formatter(value[1]);
   }
+  redirect(link){
+
+window.open(link);
+  }
+
+
 
 }
