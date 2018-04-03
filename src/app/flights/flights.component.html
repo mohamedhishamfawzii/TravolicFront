@@ -150,18 +150,30 @@
                 <tbody nz-tbody>
                 <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
                   <div class="card">
-
-                    <h3>{{data['price']['value']}}</h3>
+<div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
+                    <label class="title" style="font-size: 30px">{{data['price']['value']}}</label>  <label class="title" style="font-size: 30px">{{data['price']['currency']}}</label>
+                    <button nz-button style="float: right; "
+                            [nzType]="'primary'" [nzSize]="'large'" (click)="redirect(data['link'])">Select</button>
                     <div class="line">
                     </div>
-                    <p *ngFor="let option of data['flights']" >
-                      {{option['airline']}}
-                      {{option['arrive']}}
-                      {{option['arrive_at']}}
-                      {{option['depart']}}
-                    </p>
-                      <button nz-button
-                              [nzType]="'primary'" [nzSize]="'medium'" (click)="redirect(data['link'])">Select</button>
+
+                    <div class="flight-info" *ngFor="let option of data['flights']">
+                      <div class="segments">
+                        <div class="segment departure">
+                          <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}} </time>
+                          <span class="airport">   {{option['depart']}}</span>
+                        </div>
+                        <div class="divider"><span class="plane"></span></div>
+
+                        <div class="segment destination">
+                          <time>{{option['arrive_at']['hour']}}:{{option['arrive_at']['minute']}}</time>
+                          <span class="airport">{{option['arrive']}}</span>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
+
                   </div>
                 </tr>
 
@@ -176,24 +188,9 @@
 
     </div>
   </nz-content>
-  <div class="row1">
-    <div style=" float:right; margin-top:20px; ">
-      <label
-        style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
-        Stay in touch
-      </label>
-      <br>
 
-      <i style="   margin-top:5px;margin-right: 30px; font-size: 20px ;font-family: 'Cairo' , sans-serif;"
-         class="anticon anticon-mail">info@travolic.com</i>
-
-    </div>
-    <img src="../../assets/Group.png"
-         style="margin-top:30px; margin-left: 30px; float:left; height: 90%; width: 250px"/>
-
-
-  </div>
 </nz-layout>
+
 
 <nz-layout *ngIf="mobVersion" class="cont">
   <div style="background: white; text-align: center">
@@ -474,20 +471,30 @@
                   <!-- https://dribbble.com/shots/2677752-Dribbble-invite-competition -->
 
                   <div class="card">
+                    <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
+                    <label class="title">{{data['price']['value']}}</label>  <label class="title"style="font-size: 30px">{{data['price']['currency']}}</label>
+                    <button nz-button style="float: right;"
+                            [nzType]="'primary'" [nzSize]="'medium'" (click)="redirect(data['link'])">Select</button>
 
-                    <h3>{{data['price']['value']}}</h3>
                     <div class="line">
                     </div>
-                    <p *ngFor="let option of data['flights']" >
-                      {{option['airline']}}
-                      {{option['arrive']}}
-                      {{option['arrive_at']}}
-                      {{option['depart']}}
-                    </p>
-                    <form style="display: inline" action="data['link']" method="get">
-                      <button nz-button
-                              [nzType]="'primary'" [nzSize]="'medium'" (click)="redirect(data['link'])">Select</button>
-                    </form>
+
+                    <div class="flight-info" *ngFor="let option of data['flights']">
+                      <div class="segments">
+                        <div class="segment departure">
+                          <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}} </time>
+                          <span class="airport">   {{option['depart']}}</span>
+                        </div>
+                        <div class="divider"><span class="plane"></span></div>
+
+                        <div class="segment destination">
+                          <time>{{option['arrive_at']['hour']}}:{{option['arrive_at']['minute']}}</time>
+                          <span class="airport">{{option['arrive']}}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
+
                   </div>
                 </tr>
 
@@ -511,6 +518,22 @@
     </div>
   </nz-content>
 </nz-layout>
+<div class="row1">
+  <div style=" float:right; margin-top:20px; ">
+    <label
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+      Stay in touch
+    </label>
+    <br>
+
+    <i style="   margin-top:5px;margin-right: 30px; font-size: 20px ;font-family: 'Cairo' , sans-serif;"
+       class="anticon anticon-mail">info@travolic.com</i>
+
+  </div>
+
+
+
+</div>
 </body>
 
 <!--<div style="border-radius: 50px; margin: 20px;">-->
