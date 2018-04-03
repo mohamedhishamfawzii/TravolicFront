@@ -3,6 +3,12 @@ import {BackendService} from '../backend.service';
 import {Router} from '@angular/router';
 import {Http} from '@angular/http';
 
+
+interface MyWindow extends Window {
+  myFunction(): void;
+}
+
+declare var window: MyWindow;
 @Component({
   selector: 'app-searchdivresults',
   templateUrl: './searchdivresults.component.html',
@@ -38,6 +44,7 @@ export class SearchdivresultsComponent implements OnInit {
   twoDates;
   error;
   showdiv = true ;
+  isloadingone =false;
   errmsg;
   theTwodates;
   date;
@@ -164,6 +171,7 @@ export class SearchdivresultsComponent implements OnInit {
   }
 
   search() {
+    this.isloadingone=true;
 
     if (this.from == undefined || this.to == undefined || (this.date == undefined && this.theTwodates == undefined)) {
       if (this.from == undefined) {
@@ -187,6 +195,10 @@ export class SearchdivresultsComponent implements OnInit {
 
       this.route.navigate(['/flights/search/',this.parameters]);
     }
+
+    setTimeout(_ => {
+      this.isloadingone = false;
+    }, 20000);
   }
 
   switch() {

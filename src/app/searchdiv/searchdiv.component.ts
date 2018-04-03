@@ -27,6 +27,7 @@ export class SearchdivComponent implements OnInit {
   to5;
   date2;
   date3;
+  utc1;
   date4;
   date5;
   second = true;
@@ -180,10 +181,17 @@ export class SearchdivComponent implements OnInit {
     }
     else {
       this.error = false;
-      this.utcDate=Date.parse(this.date);
       console.log(this.date);
-      this.parameters=("type="+this.type+"&"+"departure="+this.from+"&"+"arrival="+this.to+"&"+"from="+this.utcDate);
+      if(this.type=='oneway') {
+        this.utcDate=Date.parse(this.date);
+        this.parameters = ("type=" + this.type + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate);
+      }else if (this.type=='round')
+      {
+        this.utcDate=Date.parse(this.theTwodates[0]);
+        this.utc1=Date.parse(this.theTwodates[1]);
+        this.parameters = ("type=roundtrip"  + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate+ "&" + "to=" + this.utc1);
 
+      }
       this.route.navigate(['/flights/search/',this.parameters]);
     }
   }

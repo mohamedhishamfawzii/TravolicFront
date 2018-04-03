@@ -151,11 +151,11 @@
                 <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
                   <div class="card">
 <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
-                    <label class="title" style="font-size: 30px">{{data['price']['value']}}</label>  <label class="title" style="font-size: 30px">{{data['price']['currency']}}</label>
-                    <button nz-button style="float: right; "
+                    <label  style="
+   font-family: Cairo; color: #008dff ;font-size: 30px">{{data['price']['value']}}</label>
+                    <button nz-button style="float: right; margin:5px; "
                             [nzType]="'primary'" [nzSize]="'large'" (click)="redirect(data['link'])">Select</button>
-                    <div class="line">
-                    </div>
+
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
                       <div class="segments">
@@ -172,6 +172,8 @@
                       </div>
 
                     </div>
+                    <br>
+                    <br>
                     <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
 
                   </div>
@@ -472,12 +474,12 @@
 
                   <div class="card">
                     <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
-                    <label class="title">{{data['price']['value']}}</label>  <label class="title"style="font-size: 30px">{{data['price']['currency']}}</label>
-                    <button nz-button style="float: right;"
-                            [nzType]="'primary'" [nzSize]="'medium'" (click)="redirect(data['link'])">Select</button>
+                    <label  style="
+    font-family: Cairo;color: #008dff; font-size: 30px">{{data['price']['value']}}</label>
+                    <button nz-button
+                            [nzType]="'primary'" [nzSize]="'small'" (click)="redirect(data['link'])">Select</button>
 
-                    <div class="line">
-                    </div>
+
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
                       <div class="segments">

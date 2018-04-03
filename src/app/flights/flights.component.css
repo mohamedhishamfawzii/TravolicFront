@@ -337,11 +337,6 @@ h1{
   flex: 1 1 auto;
 }
 
-.card:hover{
-  transform: scale(1.05);
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
-}
-
 @media screen and (max-width: 1200px){
   .card{
     width:30%;
@@ -508,6 +503,7 @@ body {
 }
 .flight-info .segments {
   display: table-row;
+  margin: 5px;
 }
 .flight-info .segments > div {
   display: table-cell;
