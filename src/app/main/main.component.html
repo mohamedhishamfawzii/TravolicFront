@@ -7,7 +7,7 @@
 <app-menu *ngIf="mobVersion"></app-menu>
 <app-searchdiv *ngIf="mobVersion"></app-searchdiv>
 <div *ngIf="mobVersion" style="border-radius: 50px; margin: 20px;">
-  <app-flights></app-flights>
+
 </div>
 <app-info *ngIf="mobVersion"></app-info>
 </body>
@@ -20,9 +20,6 @@
     <app-menu></app-menu>
     <div style="background-image: url('../../assets/bg-png.png'); background-repeat: no-repeat; background-size: contain; background-position: center top;">
       <app-searchdiv></app-searchdiv>
-      <!--<div style="border-radius: 50px; margin: 20px;">-->
-        <!--<app-flights></app-flights>-->
-      <!--</div>-->
       <app-info></app-info>
     </div>
   </nz-content>

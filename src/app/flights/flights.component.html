@@ -160,6 +160,7 @@
                     <div class="flight-info" *ngFor="let option of data['flights']">
                       <div class="segments">
                         <div class="segment departure">
+                          <span class="airport">   {{option['airline_name']}}</span>
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}} </time>
                           <span class="airport">   {{option['depart']}}</span>
                         </div>
@@ -484,6 +485,8 @@
                     <div class="flight-info" *ngFor="let option of data['flights']">
                       <div class="segments">
                         <div class="segment departure">
+                          <span class="airport">   {{option['airline_name']}}</span>
+
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}} </time>
                           <span class="airport">   {{option['depart']}}</span>
                         </div>
