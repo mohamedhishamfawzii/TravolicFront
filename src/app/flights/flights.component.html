@@ -20,11 +20,11 @@
               <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Stops</span>
             </div>
             <div>
-              <label nz-checkbox [(ngModel)]="direct" (ngModelChange)="_console($event)"
+              <label nz-checkbox [(ngModel)]="direct" (ngModelChange)="onChange_filter()"
                      style="margin-left: 8px; width: 100%">
                 <span style="font-family: 'Cairo', sans-serif; font-size:12px">direct</span>
               </label>
-              <label nz-checkbox [(ngModel)]="stops" (ngModelChange)="_console($event)"
+              <label nz-checkbox [(ngModel)]="stops" (ngModelChange)="onChange_filter()"
                      style="width: 100%;">
                 <span style="font-family: 'Cairo', sans-serif; font-size:12px">one or more stops</span>
               </label>
@@ -45,7 +45,7 @@
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{departure_to}}</span>
             </div>
             <nz-slider nzRange [(ngModel)]="departure" (ngModelChange)="onChange_departure($event)"
-                       [nzTipFormatter]="time_formatter" [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">
+                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
             </nz-slider>
 
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
@@ -55,7 +55,7 @@
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{arrival_to}}</span>
             </div>
             <nz-slider nzRange [(ngModel)]="arrival" (ngModelChange)="onChange_arrival($event)"
-                       [nzTipFormatter]="time_formatter" [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">
+                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
             </nz-slider>
           </div>
 
@@ -105,11 +105,15 @@
 
             <label nz-checkbox (ngModelChange)="_console($event)"
                    style="margin-left: 8px; width: 100%">
-              <span style="font-family: 'Cairo', sans-serif; font-size:12px">Air Canada</span>
+              <span style="font-family: 'Cairo', sans-serif; font-size:12px">One World</span>
             </label>
             <label nz-checkbox (ngModelChange)="_console($event)"
                    style="width: 100%;">
-              <span style="font-family: 'Cairo', sans-serif; font-size:12px">Egypt Air</span>
+              <span style="font-family: 'Cairo', sans-serif; font-size:12px">Sky Team</span>
+            </label>
+            <label nz-checkbox (ngModelChange)="_console($event)"
+                   style="width: 100%;">
+              <span style="font-family: 'Cairo', sans-serif; font-size:12px">Star Alliance</span>
             </label>
 
           </div>
@@ -127,8 +131,8 @@
             </div>
 
             <nz-slider nzRange [(ngModel)]="price" (ngModelChange)="onChange_price($event)"
-                       [nzTipFormatter]="price_formatter" [nzMax]=20000
-                       [nzDefaultValue]="[0, 5000]">
+                       [nzTipFormatter]="price_formatter" [nzMax]=2000
+                       [nzDefaultValue]="[0, 2000]">
             </nz-slider>
           </div>
 
@@ -148,20 +152,20 @@
             <div style="padding:24px; min-height: 360px;">
               <nz-table #nzTable [nzDataSource]="flightsData" [nzPageSize]="10" nzShowSizeChanger>
                 <tbody nz-tbody>
-                <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
-                  <div class="card">
-<div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
-                    <label  style="
-   font-family: Cairo; color: #008dff ;font-size: 30px">{{data['price']['value']}}</label>
+                <tr nz-tbody-tr style="height: 50px" *ngFor="let data of nzTable.data">
+                  <div class="card" style="width: 98%; margin:5px; border: 2px solid #DBD527; padding: 2px;">
+                    <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
+                    <label style="margin-left: 5px; font-family: Cairo; color: #008dff ;font-size: 30px">USD {{data['price']['value']}}</label>
                     <button nz-button style="float: right; margin:5px; "
-                            [nzType]="'primary'" [nzSize]="'large'" (click)="redirect(data['link'])">Select</button>
+                            [nzType]="'primary'" [nzSize]="'large'" (click)="redirect(data['link'])">Select
+                    </button>
 
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
                       <div class="segments">
                         <div class="segment departure">
                           <span class="airport">   {{option['airline_name']}}</span>
-                          <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}} </time>
+                          <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
                           <span class="airport">   {{option['depart']}}</span>
                         </div>
                         <div class="divider"><span class="plane"></span></div>
@@ -210,11 +214,11 @@
             <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Stops</span>
           </div>
           <div>
-            <label nz-checkbox [(ngModel)]="direct" (ngModelChange)="_console($event)"
+            <label nz-checkbox [(ngModel)]="direct" (ngModelChange)="onChange_filter()"
                    style="margin-left: 8px; width: 100%">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px">direct</span>
             </label>
-            <label nz-checkbox [(ngModel)]="stops" (ngModelChange)="_console($event)"
+            <label nz-checkbox [(ngModel)]="stops" (ngModelChange)="onChange_filter()"
                    style="width: 100%;">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px">one or more stops</span>
             </label>
@@ -235,7 +239,7 @@
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{departure_to}}</span>
           </div>
           <nz-slider nzRange [(ngModel)]="departure" (ngModelChange)="onChange_departure($event)"
-                     [nzTipFormatter]="time_formatter" [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">
+                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
           </nz-slider>
 
           <span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
@@ -245,7 +249,7 @@
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{arrival_to}}</span>
           </div>
           <nz-slider nzRange [(ngModel)]="arrival" (ngModelChange)="onChange_arrival($event)"
-                     [nzTipFormatter]="time_formatter" [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">
+                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
           </nz-slider>
         </div>
 
@@ -317,8 +321,8 @@
           </div>
 
           <nz-slider nzRange [(ngModel)]="price" (ngModelChange)="onChange_price($event)"
-                     [nzTipFormatter]="price_formatter" [nzMax]=20000
-                     [nzDefaultValue]="[0, 5000]">
+                     [nzTipFormatter]="price_formatter" [nzMax]=2000
+                     [nzDefaultValue]="[0, 2000]">
           </nz-slider>
         </div>
       </div>
@@ -469,17 +473,16 @@
             <div style="padding:24px; min-height: 360px;">
               <nz-table #nzTable [nzDataSource]="flightsData" [nzPageSize]="10" nzShowSizeChanger>
                 <tbody nz-tbody>
-                <tr nz-tbody-tr  style="height: 50px" *ngFor="let data of nzTable.data">
+                <tr nz-tbody-tr style="height: 50px" *ngFor="let data of nzTable.data">
                   <!-- CSS Ticket inspired by -->
                   <!-- https://dribbble.com/shots/2677752-Dribbble-invite-competition -->
 
-                  <div class="card">
+                  <div class="card" style="width: 98%; margin:5px; border: 2px solid #DBD527;">
                     <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
-                    <label  style="
-    font-family: Cairo;color: #008dff; font-size: 30px">{{data['price']['value']}}</label>
-                    <button nz-button
-                            [nzType]="'primary'" [nzSize]="'small'" (click)="redirect(data['link'])">Select</button>
-
+                    <label style=" margin-left: 3px; font-family: Cairo;color: #008dff; font-size: 30px">USD {{data['price']['value']}}</label>
+                    <button nz-button style="float: right; margin-top: 11px;"
+                            [nzType]="'primary'" [nzSize]="'small'" (click)="redirect(data['link'])">Select
+                    </button>
 
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
@@ -487,7 +490,7 @@
                         <div class="segment departure">
                           <span class="airport">   {{option['airline_name']}}</span>
 
-                          <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}} </time>
+                          <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
                           <span class="airport">   {{option['depart']}}</span>
                         </div>
                         <div class="divider"><span class="plane"></span></div>
@@ -535,7 +538,6 @@
        class="anticon anticon-mail">info@travolic.com</i>
 
   </div>
-
 
 
 </div>
