@@ -169,18 +169,20 @@
       <!--<button style="margin-bottom:20px;margin-right:90px;margin-left:90px;width:70px ; height: 70px" nz-button [nzType]="'primary'" [nzSize]="'large'" [nzShape]="'circle'">-->
       <!--<i style="  font-size: 20px" class="anticon anticon-search"></i>-->
       <!--</button>-->
+      <button style="width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="search()">
+        <label style=" font-size:100%;font-family: 'Cairo' , sans-serif; "> SEARCH </label>
+      </button>
+      <nz-alert *ngIf="error" style="margin-top:10px" [nzType]="'error'" [nzMessage]="'Error'"
+                [nzDescription]="errmsg"
+      ></nz-alert>
     </div>
-    <button style="width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="search()">
-      <label style=" font-size:100%;font-family: 'Cairo' , sans-serif; "> SEARCH </label>
-    </button>
-    <nz-alert *ngIf="error" style="margin-top:10px" [nzType]="'error'" [nzMessage]="'Error'"
-              [nzDescription]="errmsg"
-    ></nz-alert>
+
     <div *ngIf="multi">
     <span class="row1element">
   <label
     style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
-    <nz-select nzSize="large" style="width: 70%;" nzAllowClear [nzFilter]="false"
+      <br>
+    <nz-select nzSize="large" style="width:200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
 
@@ -199,11 +201,12 @@
       </nz-option>
     </nz-select>
   </span>
-
+      <br>
       <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+        <br>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
-             style="width: 70%;" [(ngModel)]="to" [nzPlaceHolder]="''"
+             style="width:200px" [(ngModel)]="to" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
                  *ngFor="let option of ABirports"
@@ -220,10 +223,11 @@
       </nz-option>
     </nz-select>
   </span>
-
+      <br>
       <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
-    <nz-datepicker nzSize="large" style=" width: 70%; " [nzPlaceHolder]="'Departure Date'"
+        <br>
+    <nz-datepicker nzSize="large"style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date"></nz-datepicker>
 
   </span>
@@ -234,7 +238,8 @@
     <span class="row1element">
   <label
     style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
-    <nz-select nzSize="large" style="width: 70%;" nzAllowClear [nzFilter]="false"
+      <br>
+    <nz-select nzSize="large" style="width:200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from2" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
 
@@ -253,11 +258,12 @@
       </nz-option>
     </nz-select>
   </span>
-
+        <br>
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <br>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
-             style=" width: 70%;" [(ngModel)]="to2" [nzPlaceHolder]="''"
+             style="width:200px" [(ngModel)]="to2" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
                  *ngFor="let option of ABirports"
@@ -274,10 +280,11 @@
       </nz-option>
     </nz-select>
   </span>
-
+        <br>
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
-    <nz-datepicker nzSize="large" style=" width: 70%; " [nzPlaceHolder]="'Departure Date'"
+          <br>
+    <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date2"></nz-datepicker>
 
   </span>
@@ -287,7 +294,8 @@
     <span class="row1element">
   <label
     style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
-    <nz-select nzSize="large" style="width: 70%;" nzAllowClear [nzFilter]="false"
+      <br>
+    <nz-select nzSize="large" style="width:200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from3" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
 
@@ -306,11 +314,12 @@
       </nz-option>
     </nz-select>
   </span>
-
+        <br>
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <br>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
-             style=" width: 70%;" [(ngModel)]="to3" [nzPlaceHolder]="''"
+             style="width:200px" [(ngModel)]="to3" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
                  *ngFor="let option of ABirports"
@@ -327,10 +336,11 @@
       </nz-option>
     </nz-select>
   </span>
-
+        <br>
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
-    <nz-datepicker nzSize="large" style=" width: 70%; " [nzPlaceHolder]="'Departure Date'"
+          <br>
+    <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date3"></nz-datepicker>
 
   </span>
@@ -340,7 +350,8 @@
     <span class="row1element">
   <label
     style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
-    <nz-select nzSize="large" style="width: 70%;" nzAllowClear [nzFilter]="false"
+      <br>
+    <nz-select nzSize="large" style="width:200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from4" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
 
@@ -359,11 +370,12 @@
       </nz-option>
     </nz-select>
   </span>
-
+        <br>
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <br>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
-             style=" width: 70%;" [(ngModel)]="to4" [nzPlaceHolder]="''"
+             style="width:200px" [(ngModel)]="to4" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
                  *ngFor="let option of ABirports"
@@ -380,10 +392,11 @@
       </nz-option>
     </nz-select>
   </span>
-
+        <br>
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
-    <nz-datepicker nzSize="large" style=" width: 70%; " [nzPlaceHolder]="'Departure Date'"
+          <br>
+    <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date4"></nz-datepicker>
 
   </span>
@@ -393,7 +406,8 @@
     <span class="row1element">
   <label
     style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
-    <nz-select nzSize="large" style="width: 70%;" nzAllowClear [nzFilter]="false"
+      <br>
+    <nz-select nzSize="large" style="width:200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from5" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
 
@@ -412,11 +426,12 @@
       </nz-option>
     </nz-select>
   </span>
-
+        <br>
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <br>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
-             style="  width: 70%;" [(ngModel)]="to5" [nzPlaceHolder]="''"
+             style="width:200px" [(ngModel)]="to5" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
       <nz-option style="font-size: 10px; width:100px"
                  *ngFor="let option of ABirports"
@@ -436,7 +451,8 @@
 
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
-    <nz-datepicker nzSize="large" style=" width: 70%; " [nzPlaceHolder]="'Departure Date'"
+          <br>
+    <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date5"></nz-datepicker>
 
   </span>
