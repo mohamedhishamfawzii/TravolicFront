@@ -63,6 +63,7 @@ export class SearchdivComponent implements OnInit {
   i;
 
   ngOnInit() {
+    this.Aairports = [];
     if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;
@@ -75,14 +76,12 @@ export class SearchdivComponent implements OnInit {
             console.log('location result', this.location);
             this.airports.forEach((air) => {
               if (air.City === this.location.city) {
-                this.Aairports.push(air);
                 this.from = air.IATA;
               }
             });
             if (this.from === undefined) {
               this.airports.forEach((air) => {
                 if (air.Country === this.location.country) {
-                  this.Aairports.push(air);
                   this.from = air.IATA;
                 }
 
@@ -113,6 +112,12 @@ export class SearchdivComponent implements OnInit {
     this.ABirports = [];
 
 
+  }
+
+  clickedawy(option){
+    console.log(option);
+    this.from=option.IATA;
+    this.Aairports = [];
   }
 
   changedfrom(searchtxt) {

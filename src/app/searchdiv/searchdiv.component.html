@@ -31,6 +31,17 @@
         style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">From</label>
 
       <br>
+      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 80%" (ngModelChange)="changedfrom($event)"></nz-input>
+
+        <button nz-button [nzType]="'default'" style="width:80%"
+        *ngFor="let option of Aairports" (click)="clickedawy(option)">
+
+ {{option.IATA}}
+ <br>
+ {{option.Airport}}
+</button>
+<br>
+      
 
       <nz-select nzSize="large" style=" width: 80%" nzAllowClear [nzFilter]="false"
                  [(ngModel)]="from" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
@@ -486,6 +497,20 @@
     <label class="row1element"
            style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR
       TRIP</label>
+      <br>
+      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 80%" (ngModelChange)="changedfrom($event)"></nz-input>
+      <div style=" width: 80%">
+        <button nz-button [nzType]="'default'" style="width:100%"
+        *ngFor="let option of Aairports" (click)="clickedawy(option)">
+
+ {{option.IATA}}
+ <br>
+ {{option.Airport}}
+ <br>
+ {{option.City}} , {{option.Country}}
+</button>
+<br>
+      </div>
 
 
   </div>
