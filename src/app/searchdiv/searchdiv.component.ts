@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Http} from '@angular/http';
 import {BackendService} from '../backend.service';
 import {ActivatedRoute, Router, RouterModule, Routes} from '@angular/router';
+import { Console } from '@angular/core/src/console';
 @Component({
   selector: 'app-searchdiv',
   templateUrl: './searchdiv.component.html',
@@ -12,9 +13,9 @@ export class SearchdivComponent implements OnInit {
   adults = ['1 adult', '2 adults', '3 adults', '4 adults', '5 adults', '6 adults', '7 adults', '8 adults', '9 adults'];
   children = ['1 child', '2 children', '3 children', '4 children', '5 children', '6 children', '7 children', '8 children', '9 children'];
   infants = ['1 infant', '2 infants', '3 infants', '4 infants', '5 infants', '6 infants', '7 infants', '8 infants', '9 infants'];
-  adultss;
-  childrenn;
-  infantss;
+  adultss =1;
+  childrenn = 0;
+  infantss =0;
   airports;
   counter=3;
   from2;
@@ -63,6 +64,7 @@ export class SearchdivComponent implements OnInit {
   i;
 
   ngOnInit() {
+    console.log(this.backendConnect.currency);
     this.Aairports = [];
     if (this.width < 860) {
       this.mobVersion = true;
@@ -118,8 +120,61 @@ export class SearchdivComponent implements OnInit {
     console.log(option);
     this.from=option.IATA;
     this.Aairports = [];
+    
+  }
+  clickedawy2(option){
+    console.log(option);
+    this.from2=option.IATA;
+    this.Aairports = [];
+    
+  }
+  clickedawy3(option){
+    console.log(option);
+    this.from3=option.IATA;
+    this.Aairports = [];
+    
+  }
+  clickedawy4(option){
+    console.log(option);
+    this.from4=option.IATA;
+    this.Aairports = [];
+    
+  }
+  clickedawy5(option){
+    console.log(option);
+    this.from5=option.IATA;
+    this.Aairports = [];
+    
+  }
+  clickedawyto(option){
+    console.log(option);
+    this.to=option.IATA;
+    this.from2=option.IATA;
+    this.ABirports = [];
+    
+  }
+  clickedawyto2(option){
+    console.log(option);
+    this.to2=option.IATA;
+    this.from3=option.IATA;
+    this.ABirports = [];
+    
   }
 
+  clickedawyto3(option){
+    console.log(option);
+    this.to3=option.IATA;
+    this.from4=option.IATA;
+    this.ABirports = [];
+    
+  }
+  clickedawyto4(option){
+    console.log(option);
+    this.to4=option.IATA;
+    this.from5=option.IATA;
+    this.ABirports = [];
+    
+  }
   changedfrom(searchtxt) {
     this.Aairports = [];
     console.log('changed called ');
@@ -189,12 +244,12 @@ export class SearchdivComponent implements OnInit {
       console.log(this.date);
       if(this.type=='oneway') {
         this.utcDate=Date.parse(this.date);
-        this.parameters = ("type=" + this.type + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate);
+        this.parameters = ("type=" + this.type + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate + "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency);
       }else if (this.type=='round')
       {
         this.utcDate=Date.parse(this.theTwodates[0]);
         this.utc1=Date.parse(this.theTwodates[1]);
-        this.parameters = ("type=roundtrip"  + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate+ "&" + "to=" + this.utc1);
+        this.parameters = ("type=roundtrip"  + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate+ "&" + "to=" + this.utc1+ "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency);
 
       }
       this.route.navigate(['/flights/search/',this.parameters]);
