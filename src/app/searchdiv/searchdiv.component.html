@@ -41,7 +41,7 @@
  {{option.Airport}}
 </button>
 
-      
+
 
 
       <br>
@@ -53,7 +53,7 @@
       <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 80%" (ngModelChange)="changedto($event)"></nz-input>
 
       <button nz-button [nzType]="'default'" style="width:80%"
-      *ngFor="let option of Aairports" (click)="clickedawyTO(option)">
+      *ngFor="let option of ABirports" (click)="clickedawyto(option)">
 
 {{option.IATA}}
 <br>
@@ -178,7 +178,7 @@
 <br>
 {{option.Airport}}
 </button>
-   
+
   </span>
       <br>
       <span class="row1element">
@@ -187,8 +187,8 @@
         <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
         <button nz-button [nzType]="'default'" style="width:200px"
-        *ngFor="let option of Aairports" (click)="clickedawy(option)">
-  
+        *ngFor="let option of ABirports" (click)="clickedawyto(option)">
+
   {{option.IATA}}
   <br>
   {{option.Airport}}
@@ -224,11 +224,11 @@
         <span class="row1element">
   <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
           <br>
-          <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
+          <nz-input [(ngModel)]="to2" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
-          *ngFor="let option of Aairports" (click)="clickedawyto2(option)">
-    
+          *ngFor="let option of ABirports" (click)="clickedawyto2(option)">
+
     {{option.IATA}}
     <br>
     {{option.Airport}}
@@ -266,8 +266,8 @@
           <nz-input [(ngModel)]="to3" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
-          *ngFor="let option of Aairports" (click)="clickedawyto3(option)">
-    
+          *ngFor="let option of ABirports" (click)="clickedawyto3(option)">
+
     {{option.IATA}}
     <br>
     {{option.Airport}}
@@ -305,8 +305,8 @@
           <nz-input [(ngModel)]="to4" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
-          *ngFor="let option of Aairports" (click)="clickedawyto4(option)">
-    
+          *ngFor="let option of ABirports" (click)="clickedawyto4(option)">
+
     {{option.IATA}}
     <br>
     {{option.Airport}}
@@ -344,8 +344,8 @@
           <nz-input [(ngModel)]="to5" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
-          *ngFor="let option of Aairports" (click)="clickedawyto5(option)">
-    
+          *ngFor="let option of ABirports" (click)="clickedawyto5(option)">
+
     {{option.IATA}}
     <br>
     {{option.Airport}}
@@ -390,11 +390,11 @@
            style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR
       TRIP</label>
       <br>
-   
+
       </div>
 
 
-  </div>
+
 
   <div class="row1" style="background-color: white; margin-top: 10px;  opacity: 0.9; border-radius: 10px">
     <nz-radio-group class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
@@ -804,4 +804,4 @@
       </div>
     </div>
   </div>
-
+    </div>
