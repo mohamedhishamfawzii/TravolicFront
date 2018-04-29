@@ -120,45 +120,45 @@ export class SearchdivComponent implements OnInit {
     console.log(option);
     this.from=option.IATA;
     this.Aairports = [];
-    
+
   }
   clickedawy2(option){
     console.log(option);
     this.from2=option.IATA;
     this.Aairports = [];
-    
+
   }
   clickedawy3(option){
     console.log(option);
     this.from3=option.IATA;
     this.Aairports = [];
-    
+
   }
   clickedawy4(option){
     console.log(option);
     this.from4=option.IATA;
     this.Aairports = [];
-    
+
   }
   clickedawy5(option){
     console.log(option);
     this.from5=option.IATA;
     this.Aairports = [];
-    
+
   }
   clickedawyto(option){
     console.log(option);
     this.to=option.IATA;
     this.from2=option.IATA;
     this.ABirports = [];
-    
+
   }
   clickedawyto2(option){
     console.log(option);
     this.to2=option.IATA;
     this.from3=option.IATA;
     this.ABirports = [];
-    
+
   }
 
   clickedawyto3(option){
@@ -166,14 +166,86 @@ export class SearchdivComponent implements OnInit {
     this.to3=option.IATA;
     this.from4=option.IATA;
     this.ABirports = [];
-    
+
+  }
+  english(){
+    if(this.backendConnect.en){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  spanish(){
+    if(this.backendConnect.sp){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  italian(){
+    if(this.backendConnect.it){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  russian(){
+    if(this.backendConnect.ru){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  turkish(){
+    if(this.backendConnect.tr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  chinese(){
+    if(this.backendConnect.ch){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  japanese(){
+    if(this.backendConnect.jp){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  german(){
+    if(this.backendConnect.gr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  french(){
+    if(this.backendConnect.fr){
+    return true;
+  }
+  else{
+    return false;
+  }
   }
   clickedawyto4(option){
     console.log(option);
     this.to4=option.IATA;
     this.from5=option.IATA;
     this.ABirports = [];
-    
+
   }
   changedfrom(searchtxt) {
     this.Aairports = [];
@@ -314,4 +386,3 @@ export class SearchdivComponent implements OnInit {
 
     }
   }
-

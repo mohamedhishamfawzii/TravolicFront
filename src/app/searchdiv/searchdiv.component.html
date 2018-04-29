@@ -382,9 +382,33 @@
 
 <div *ngIf="webVersion" class="divawy">
   <div class="row1">
-    <label class="row1element"
+    <label class="row1element" *ngIf="english()"
            style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">THE
       CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
+      <label class="row1element" *ngIf="german()"
+             style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Das günstigste Ticket zu Ihrem Ziel ist nur einen Klick entfernt
+        </label>
+        <label class="row1element" *ngIf="italian()"
+               style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Il biglietto più economico per la tua destinazione è a un clic di distanza
+          </label>
+          <label class="row1element" *ngIf="chinese()"
+                 style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+            到目的地的最便宜的机票只需点击一下即可</label>
+            <label class="row1element" *ngIf="japanese()"
+                   style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">あなたの目的地への最も安いチケットはワンクリックです
+              </label>
+              <label class="row1element" *ngIf="spanish()"
+                     style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+                El billete más barato a su destino es un clic de distancia</label>
+                <label class="row1element" *ngIf="turkish()"
+                       style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Hedefinize en ucuz bilet bir tık uzakta
+                </label>
+                  <label class="row1element" *ngIf="russian()"
+                         style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Самый дешевый билет к месту назначения является одним щелчком мыши
+                    </label>
+                    <label class="row1element" *ngIf="french()"
+                           style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+                    Le billet le moins cher vers votre destination est à un clic</label>
     <br>
     <label class="row1element"
            style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR
