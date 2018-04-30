@@ -10,6 +10,7 @@
     <app-searchdivresults></app-searchdivresults>
     <div style="border-radius: 50px; margin: 20px;">
 
+
       <nz-layout style=" color:white;background: transparent;">
         <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null"
                   style="background-color: #107ECF; padding:10px;border-radius: 20px;">
@@ -45,7 +46,8 @@
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{departure_to}}</span>
             </div>
             <nz-slider nzRange [(ngModel)]="departure" (ngModelChange)="onChange_departure($event)"
-                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25
+                       [nzDefaultValue]="[1, 23.75]">
             </nz-slider>
 
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
@@ -55,7 +57,8 @@
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{arrival_to}}</span>
             </div>
             <nz-slider nzRange [(ngModel)]="arrival" (ngModelChange)="onChange_arrival($event)"
-                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25
+                       [nzDefaultValue]="[1, 23.75]">
             </nz-slider>
           </div>
 
@@ -155,7 +158,8 @@
                 <tr nz-tbody-tr style="height: 50px" *ngFor="let data of nzTable.data">
                   <div class="card" style="width: 98%; margin:5px; border: 2px solid #DBD527; padding: 2px;">
                     <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
-                    <label style="margin-left: 5px; font-family: Cairo; color: #008dff ;font-size: 30px">USD {{data['price']['value']}}</label>
+                    <label style="margin-left: 5px; font-family: Cairo; color: #008dff ;font-size: 30px">USD
+                      {{data['price']['value']}}</label>
                     <button nz-button style="float: right; margin:5px; "
                             [nzType]="'primary'" [nzSize]="'large'" (click)="redirect(data['link'])">Select
                     </button>
@@ -239,7 +243,8 @@
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{departure_to}}</span>
           </div>
           <nz-slider nzRange [(ngModel)]="departure" (ngModelChange)="onChange_departure($event)"
-                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25
+                     [nzDefaultValue]="[1, 23.75]">
           </nz-slider>
 
           <span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
@@ -249,7 +254,8 @@
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{arrival_to}}</span>
           </div>
           <nz-slider nzRange [(ngModel)]="arrival" (ngModelChange)="onChange_arrival($event)"
-                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25
+                     [nzDefaultValue]="[1, 23.75]">
           </nz-slider>
         </div>
 
@@ -479,7 +485,8 @@
 
                   <div class="card" style="width: 98%; margin:5px; border: 2px solid #DBD527;">
                     <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
-                    <label style=" margin-left: 3px; font-family: Cairo;color: #008dff; font-size: 30px">USD {{data['price']['value']}}</label>
+                    <label style=" margin-left: 3px; font-family: Cairo;color: #008dff; font-size: 30px">USD
+                      {{data['price']['value']}}</label>
                     <button nz-button style="float: right; margin-top: 11px;"
                             [nzType]="'primary'" [nzSize]="'small'" (click)="redirect(data['link'])">Select
                     </button>
