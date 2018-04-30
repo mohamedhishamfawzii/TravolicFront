@@ -7,6 +7,25 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export  class BackendService {
 
+ currency : string ;
+ language:string;
+ en = true ;
+ gr=false;
+ it=false;
+ ru=false;
+ ch=false;
+ jp=false;
+ sp=false;
+ tr=false;
+ fr=false;
+
+
+ getCurrency ():string{
+  return this.currency;
+ }
+ setCurrency(curr){
+   this.currency= curr;
+ }
   constructor(private http: Http) {
   }
 

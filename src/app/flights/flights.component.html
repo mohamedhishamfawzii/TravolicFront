@@ -166,9 +166,9 @@
 
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
+                        <nz-avatar nzShape="circle" style="right:100px; width:50px; height:50px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
                       <div class="segments">
                         <div class="segment departure">
-                          <span class="airport">   {{option['airline_name']}}</span>
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
                           <span class="airport">   {{option['depart']}}</span>
                         </div>
@@ -495,7 +495,9 @@
                     <div class="flight-info" *ngFor="let option of data['flights']">
                       <div class="segments">
                         <div class="segment departure">
-                          <span class="airport">   {{option['airline_name']}}</span>
+                            <img src="../../assests/airlines/" +{{option['marketing_airline']}}+".png"/>
+                            <span class="airport">   {{option['marketing_airline']}}</span>
+                            <span class="airport">  operated by {{option['operating_airline']}}</span>
 
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
                           <span class="airport">   {{option['depart']}}</span>

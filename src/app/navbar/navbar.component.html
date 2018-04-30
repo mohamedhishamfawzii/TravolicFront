@@ -43,8 +43,8 @@
         nzShowSearch>
         <nz-option
           *ngFor="let option of languages"
-          [nzLabel]="option.name"
-          [nzValue]="option.name"
+          [nzLabel]="option"
+          [nzValue]="option"
         >
         </nz-option>
       </nz-select>
@@ -85,11 +85,12 @@
   <nz-select class="sel"
              [nzPlaceHolder]="'Language'"
              [(ngModel)]="language"
-             nzShowSearch>
+             (nzOpenChange)="languageChanged()"
+             nzShowSearch >
     <nz-option
       *ngFor="let option of languages"
-      [nzLabel]="option.name"
-      [nzValue]="option.name"
+      [nzLabel]="option"
+      [nzValue]="option"
     >
     </nz-option>
   </nz-select>
