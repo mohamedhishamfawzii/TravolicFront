@@ -17,12 +17,12 @@ declare var window: MyWindow;
   styleUrls: ['./flights.component.css']
 })
 export class FlightsComponent implements OnInit {
-  departure = [1, 23.75];
-  arrival = [1, 23.75];
-  departure_from = this.time_formatter(this.departure[0]);
-  departure_to = this.time_formatter(this.departure[1]);
-  arrival_from = this.time_formatter(this.arrival[0]);
-  arrival_to = this.time_formatter(this.arrival[1]);
+  departure = '12:00 AM';
+  arrival = '11:45 PM';
+  departure_from = '11:00 AM';
+  departure_to = '11:45 PM';
+  arrival_from = '11:00 AM';
+  arrival_to = '11:45 PM';
   duration_from = '0h 00m';
   duration_to = '50h 00m';
   price_from = 'USD 0';
@@ -34,8 +34,8 @@ export class FlightsComponent implements OnInit {
   parameters;
   flights;
   mobVersion;
-  stops = true;
-  direct = true;
+  stops = false;
+  direct = false;
   price = [0, 2000];
 
   webVersion = true;
@@ -67,7 +67,6 @@ export class FlightsComponent implements OnInit {
       this.mobVersion = true;
       this.webVersion = false;
     }
-    this.onChange_filter();
     this.route.params.subscribe((params: Params) => {
       if (params['data'] !== undefined) {
         // Get the param straight
@@ -169,9 +168,6 @@ export class FlightsComponent implements OnInit {
     let flightsDataArrival = [];
     this.flightsData = [];
 
-    console.log("departure:", this.departure);
-    console.log("arrival:", this.arrival);
-
     this.flightsDataUnfiltered.forEach((ticket, index) => {
       if (this.direct == true) {
         if (ticket.flights.length == 1) {
@@ -193,14 +189,14 @@ export class FlightsComponent implements OnInit {
 
       const formattedDeparture_from = this.format_time(this.departure_from);
       const formattedDeparture_to = this.format_time(this.departure_to);
-      console.log("departure:",this.departure);
-      if (Number(ticket.flights[0].depart_at.hour) >= formattedDeparture_from[0] && Number(ticket.flights[0].depart_at.hour) <= formattedDeparture_to[0]) {
+      // console.log("departure:",this.departure);
 
-        flightsDataArrival.push(ticket);
+      if (Number(ticket.flights[0].depart_at.hour) >= formattedDeparture_from[0] && Number(ticket.flights[0].depart_at.hour) <= formattedDeparture_to[0]) {
+          flightsDataArrival.push(ticket);
       }
+
       const formettedArrival_from = this.format_time(this.arrival_from);
       const formettedArrival_to = this.format_time(this.arrival_to);
-      console.log("arrival:",this.arrival);
 
       if (Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) >= formettedArrival_from[0] && Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) <= formettedArrival_to[0]) {
         flightsDataArrival.push(ticket);
@@ -208,8 +204,6 @@ export class FlightsComponent implements OnInit {
 
     });
 
-    console.log("price: ", flightsDataArrival[0].price[0]);
-    console.log("price1: ", flightsDataArrival[0].price[1]);
     flightsDataArrival.forEach((ticket, index) => {
       if (Number(ticket.price.value) >= this.price[0] && Number(ticket.price.value <= this.price[1])) {
         this.flightsData.push(ticket);
