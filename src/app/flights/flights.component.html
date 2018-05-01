@@ -45,7 +45,7 @@
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{departure_to}}</span>
             </div>
             <nz-slider nzRange [(ngModel)]="departure" (ngModelChange)="onChange_departure($event)"
-                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                       [nzTipFormatter]="time_formatter" [nzMin]=0 [nzMax]=23 [nzStep]=1 [nzDefaultValue]="[0, 23]">
             </nz-slider>
 
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
@@ -55,7 +55,7 @@
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{arrival_to}}</span>
             </div>
             <nz-slider nzRange [(ngModel)]="arrival" (ngModelChange)="onChange_arrival($event)"
-                       [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                       [nzTipFormatter]="time_formatter" [nzMin]=0 [nzMax]=23 [nzStep]=1 [nzDefaultValue]="[0, 23]">
             </nz-slider>
           </div>
 
@@ -131,8 +131,8 @@
             </div>
 
             <nz-slider nzRange [(ngModel)]="price" (ngModelChange)="onChange_price($event)"
-                       [nzTipFormatter]="price_formatter" [nzMax]=2000
-                       [nzDefaultValue]="[0, 2000]">
+                       [nzTipFormatter]="price_formatter" [nzMax]=8000
+                       [nzDefaultValue]="[0, 8000]">
             </nz-slider>
           </div>
 
@@ -239,7 +239,7 @@
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{departure_to}}</span>
           </div>
           <nz-slider nzRange [(ngModel)]="departure" (ngModelChange)="onChange_departure($event)"
-                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                     [nzTipFormatter]="time_formatter" [nzMin]=0 [nzMax]=23 [nzStep]=1 [nzDefaultValue]="[0, 23]">
           </nz-slider>
 
           <span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
@@ -249,7 +249,7 @@
             <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{arrival_to}}</span>
           </div>
           <nz-slider nzRange [(ngModel)]="arrival" (ngModelChange)="onChange_arrival($event)"
-                     [nzTipFormatter]="time_formatter" [nzMin]=1 [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[1, 23.75]">
+                     [nzTipFormatter]="time_formatter" [nzMin]=0 [nzMax]=23 [nzStep]=1 [nzDefaultValue]="[0, 23]">
           </nz-slider>
         </div>
 
@@ -321,8 +321,8 @@
           </div>
 
           <nz-slider nzRange [(ngModel)]="price" (ngModelChange)="onChange_price($event)"
-                     [nzTipFormatter]="price_formatter" [nzMax]=2000
-                     [nzDefaultValue]="[0, 2000]">
+                     [nzTipFormatter]="price_formatter" [nzMax]=8000
+                     [nzDefaultValue]="[0, 8000]">
           </nz-slider>
         </div>
       </div>
@@ -370,7 +370,7 @@
         <!--<span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{departure_to}}</span>-->
         <!--</div>-->
         <!--<nz-slider nzRange [(ngModel)]="departure" (ngModelChange)="onChange_departure($event)"-->
-        <!--[nzTipFormatter]="time_formatter" [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">-->
+        <!--[nzTipFormatter]="time_formatter" [nzMax]=23 [nzStep]=1 [nzDefaultValue]="[0, 23]">-->
         <!--</nz-slider>-->
 
         <!--<span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>-->
@@ -380,7 +380,7 @@
         <!--<span style="font-family: 'Cairo', sans-serif; font-size:12px; float: right">{{arrival_to}}</span>-->
         <!--</div>-->
         <!--<nz-slider nzRange [(ngModel)]="arrival" (ngModelChange)="onChange_arrival($event)"-->
-        <!--[nzTipFormatter]="time_formatter" [nzMax]=23.75 [nzStep]=0.25 [nzDefaultValue]="[0, 23.75]">-->
+        <!--[nzTipFormatter]="time_formatter" [nzMax]=23 [nzStep]=1 [nzDefaultValue]="[0, 23]">-->
         <!--</nz-slider>-->
         <!--</div>-->
 
@@ -452,8 +452,8 @@
         <!--</div>-->
 
         <!--<nz-slider nzRange [(ngModel)]="price" (ngModelChange)="onChange_price($event)"-->
-        <!--[nzTipFormatter]="price_formatter" [nzMax]=20000-->
-        <!--[nzDefaultValue]="[0, 5000]">-->
+        <!--[nzTipFormatter]="price_formatter" [nzMax]=8000-->
+        <!--[nzDefaultValue]="[0, 8000]">-->
         <!--</nz-slider>-->
         <!--</div>-->
 
