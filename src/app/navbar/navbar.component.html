@@ -4,7 +4,7 @@
     <div style="text-align: center;margin-right:20px; margin-left:20px;margin-top: 20px">
       <!--<i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-global"></i>-->
       <nz-select
-        style="font-size: 10px;width: 40%;vertical-align: middle;"
+        style="font-size: 10px;width: 80%;vertical-align: middle;"
         [nzPlaceHolder]="'Country'"
         [(ngModel)]="country"
         nzShowSearch>
@@ -21,7 +21,7 @@
     <div style="text-align: center;margin-right:20px; margin-left:20px;margin-top: 5px">
       <!--<i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-red-envelope"></i>-->
       <nz-select
-        style="font-size: 10px;width: 40%;vertical-align: middle;"
+        style="font-size: 10px;width: 80%;vertical-align: middle;"
         [nzPlaceHolder]="'Currency'"
         [(ngModel)]="currency"
         nzShowSearch>
@@ -37,9 +37,10 @@
     <div style="text-align: center;margin-right:20px; margin-left:20px;margin-top: 5px">
       <!--<i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-global"></i>-->
       <nz-select
-        style="font-size: 10px;width: 40%;vertical-align: middle;"
+        style="font-size: 10px;width: 80%;vertical-align: middle;"
         [nzPlaceHolder]="'Language'"
         [(ngModel)]="language"
+        (nzOpenChange)="languageChanged()"
         nzShowSearch>
         <nz-option
           *ngFor="let option of languages"

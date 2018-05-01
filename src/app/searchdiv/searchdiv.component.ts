@@ -316,12 +316,12 @@ export class SearchdivComponent implements OnInit {
       console.log(this.date);
       if(this.type=='oneway') {
         this.utcDate=Date.parse(this.date);
-        this.parameters = ("type=" + this.type + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate + "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency);
+        this.parameters = ("type=" + this.type + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate + "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency +"&" + "directonly=" + this.direct);
       }else if (this.type=='round')
       {
         this.utcDate=Date.parse(this.theTwodates[0]);
         this.utc1=Date.parse(this.theTwodates[1]);
-        this.parameters = ("type=roundtrip"  + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate+ "&" + "to=" + this.utc1+ "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency);
+        this.parameters = ("type=roundtrip"  + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate+ "&" + "to=" + this.utc1+ "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency+"&" + "directonly=" + this.direct);
 
       }
       this.route.navigate(['/flights/search/',this.parameters]);

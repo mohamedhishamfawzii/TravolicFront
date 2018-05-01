@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
  languages = ['English','German','Français','Italian','Turkish','Chinese','Spanish','Japanese','Russian'];
   country;
   countries;
-  currency ;
+  currency ='USD' ;
   currencies = ['EGP','USD','EUR'];
   language = 'English';
   location;

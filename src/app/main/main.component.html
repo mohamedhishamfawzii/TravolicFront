@@ -10,6 +10,47 @@
 
 </div>
 <app-info *ngIf="mobVersion"></app-info>
+<div *ngIf="mobVersion" class="row1">
+  <div style=" float:right; margin-top:20px; ">
+    <label *ngIf="english()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+      Stay in touch
+    </label>
+    <label *ngIf="german()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  In Kontakt bleiben
+    </label>
+    <label *ngIf="french()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Reste en contact  </label>
+    <label *ngIf="italian()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Rimani in contatto    </label>
+    <label *ngIf="spanish()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Mantente en contacto  </label>
+    <label *ngIf="turkish()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  İletişimde kalın   </label>
+    <label *ngIf="chinese()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  保持联系    </label>
+    <label *ngIf="japanese()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  連絡を取り合う    </label>
+    <label *ngIf="russian()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Оставайтесь на связи    </label>
+    <br>
+
+    <i style="   margin-top:5px;margin-right: 30px; font-size: 20px ;font-family: 'Cairo' , sans-serif;"
+       class="anticon anticon-mail">info@travolic.com</i>
+
+  </div>
+
+
+
+</div>
 </body>
 <nz-layout class="cont" *ngIf="webVersion">
   <nz-header style="background-color: white;">
@@ -24,12 +65,37 @@
     </div>
   </nz-content>
 </nz-layout>
-<div class="row1">
+<div  *ngIf="webVersion"class="row1">
   <div style=" float:right; margin-top:20px; ">
-    <label
+    <label *ngIf="english()"
       style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
       Stay in touch
     </label>
+    <label *ngIf="german()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  In Kontakt bleiben
+    </label>
+    <label *ngIf="french()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Reste en contact  </label>
+    <label *ngIf="italian()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Rimani in contatto    </label>
+    <label *ngIf="spanish()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Mantente en contacto  </label>
+    <label *ngIf="turkish()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  İletişimde kalın   </label>
+    <label *ngIf="chinese()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  保持联系    </label>
+    <label *ngIf="japanese()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  連絡を取り合う    </label>
+    <label *ngIf="russian()"
+      style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+  Оставайтесь на связи    </label>
     <br>
 
     <i style="   margin-top:5px;margin-right: 30px; font-size: 20px ;font-family: 'Cairo' , sans-serif;"

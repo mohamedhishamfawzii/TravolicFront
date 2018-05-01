@@ -2,8 +2,86 @@
 
   <img src="../../assets/logowhite.png" style="margin-top:10px;" height="144" width="186"/>
   <br>
-  <label class="row1element" style="font-size: 250%; font-family: 'Hiruko-BlackAlternate' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">What is Travolic?</label>
+  <label *ngIf="english()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">What is Travolic?</label>
+  <label *ngIf="german()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">Was ist Travolic?</label>
+
+  <label *ngIf="french()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">Qu'est-ce que travolic</label>
+
+  <label *ngIf="italian()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">Qual è travolic</label>
+
+  <label *ngIf="spanish()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">¿Cuál es travolic</label>
+
+  <label *ngIf="turkish()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">Travolic nedir?</label>
+
+  <label *ngIf="chinese()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">什么是travolic</label>
+
+  <label *ngIf="japanese()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">travolicは何ですか</label>
+
+  <label *ngIf="russian()"class="row1element" style="font-size: 250%; font-family: 'cairo' , sans-serif; font-weight:normal;color:   rgb(219,213,39) ; ">Что такое travolic?</label>
+
+
+
   <br>
-  <label class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic is a free flight search site, that helps you search and compare flight prices on various airlines.</label>
+  <label *ngIf="english()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic is a free flight search site, that helps you search and compare flight prices on various airlines.</label>
+  <label *ngIf="german()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic ist eine kostenlose Flugsuchseite, mit der Sie die Flugpreise verschiedener Fluggesellschaften suchen und vergleichen können.</label>
+
+  <label *ngIf="french()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic est un site de recherche de vols gratuits, qui vous aide à rechercher et comparer les prix des vols sur diverses compagnies aériennes.</label>
+
+  <label *ngIf="italian()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic è un sito di ricerca voli gratuito che ti aiuta a cercare e confrontare i prezzi dei voli su varie compagnie aeree. </label>
+
+  <label *ngIf="spanish()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic es un sitio de búsqueda de vuelos gratuitos que le ayuda a buscar y comparar precios de vuelos en varias aerolíneas</label>
+
+  <label *ngIf="turkish()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic, çeşitli havayollarında uçuş fiyatlarını karşılaştırmanıza ve karşılaştırmanıza yardımcı olan ücretsiz bir uçuş arama sitesidir. </label>
+
+  <label *ngIf="chinese()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic是一个免费的航班搜索网站，它可以帮助您搜索和比较不同航空公司的航班价格。</label>
+
+  <label *ngIf="japanese()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolicは、さまざまな航空会社のフライト価格を検索して比較するのに役立つ無料のフライト検索サイトです。</label>
+
+  <label *ngIf="russian()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Travolic - это удобный сайт для поиска дешевых авиабилетов, для поиска дешевых авиабилетов.</label>
+
+    <br>
+     <br>
+     <button style=" margin-top:20px;width: 300px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'"
+             (click)="searchMulti()">
+             <label *ngIf="english()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Subscribe to our newsletter </label>
+               <label  *ngIf="german()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Newsletter abonnieren </label>
+                 <label *ngIf="french()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> S'inscrire à la Newsletter </label>
+                   <label  *ngIf="italian()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Iscriviti alla Newsletter </label>
+                     <label  *ngIf="spanish()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Suscríbete al boletín </label>
+                       <label *ngIf="turkish()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Haberlere kayıt ol </label>
+                         <label  *ngIf="chinese()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> 订阅电子报 </label>
+                           <label  *ngIf="japanese()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> ニュースレターを購読する </label>
+                             <label  *ngIf="russian()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Подписаться на новостную рассылку </label>
+     </button>
+   <br>
+   <label *ngIf="english()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Get our deals
+Sign up for our newsletter to get latest flight deals</label>
+   <label *ngIf="german()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Holen Sie sich unsere Angebote
+Melden Sie sich für unseren Newsletter an, um aktuelle Flugangebote zu erhalten</label>
+
+   <label *ngIf="french()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Obtenez nos offres
+Inscrivez-vous à notre newsletter pour recevoir les dernières offres pour les vols</label>
+
+   <label *ngIf="italian()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Ottieni le nostre offerte
+Iscriviti alla nostra newsletter per ottenere le ultime offerte di volo </label>
+
+   <label *ngIf="spanish()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Obtenga nuestras ofertas
+Suscríbase a nuestro boletín para obtener las últimas ofertas de vuelos</label>
+
+   <label *ngIf="turkish()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">Bizim fırsatlar olsun
+güncel uçuş fırsatlarını almak için bizim bültenine kaydolun </label>
+
+   <label *ngIf="chinese()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">获取我们的优惠
+注册我们的通讯以获取最新的航班优惠</label>
+
+   <label *ngIf="japanese()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  "> 私たちのお得な情報
+最新のフライト情報を得るために私達のニュースレターにサインアップ
+</label>
+
+   <label *ngIf="russian()" class="row1element" style=" margin-bottom:10px;font-size: 200%; font-family: 'cairo' , sans-serif; color:  white  ">
+     Получите наши предложения
+     Подпишитесь на нашу рассылку, чтобы получить последние предложения рейсов</label>
+
+
 
 </div>
