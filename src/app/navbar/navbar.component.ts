@@ -37,6 +37,8 @@ export class NavbarComponent implements OnInit {
       this.location=result.json();
       this.country =this.location.country;
       this.currency=this.location.currency;
+      this.backendConnect.country=this.location.country;
+      this.backendConnect.city=this.location.city;
   });
 }
 

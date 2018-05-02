@@ -11,6 +11,8 @@ export class InfoComponent implements OnInit {
 
   constructor(private backendConnect: BackendService) { }
 
+view=false;
+mail;
   ngOnInit() {
   }
   english(){
@@ -84,5 +86,13 @@ export class InfoComponent implements OnInit {
   else{
     return false;
   }}
+  newsletter(){
+    this.view=true;
+
+  }
+  newslettersend(){
+  console.log(this.backendConnect.addNewsletter(this.mail,this.backendConnect.country,this.backendConnect.city,this.backendConnect.language));
+ this.view=false;
+  }
 
 }

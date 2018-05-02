@@ -316,7 +316,7 @@ export class SearchdivComponent implements OnInit {
       console.log(this.date);
       if(this.type=='oneway') {
         this.utcDate=Date.parse(this.date);
-        this.parameters = ("type=" + this.type + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate + "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency +"&" + "directonly=" + this.direct);
+        this.parameters = ("type=" + this.type + "&" + "departure=" + this.from + "&" + "arrival=" + this.to + "&" + "from=" + this.utcDate + "&" + "adults=" + this.adultss+ "&" + "infants=" + this.infantss+ "&" + "children=" + this.childrenn+ "&" + "cabin=" + this.class+"&" + "curr=" + this.backendConnect.currency +"&" + "directonly=" + this.direct+"&" + "country=" + this.backendConnect.country+"&" + "city=" + this.backendConnect.city);
       }else if (this.type=='round')
       {
         this.utcDate=Date.parse(this.theTwodates[0]);
