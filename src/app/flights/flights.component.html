@@ -84,14 +84,16 @@
               <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Airlines</span>
             </div>
 
-            <label nz-checkbox (ngModelChange)="_console($event)"
+            <nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
+
+            <!-- <label nz-checkbox (ngModelChange)="_console($event)"
                    style="margin-left: 8px; width: 100%">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px">Air Canada</span>
             </label>
             <label nz-checkbox (ngModelChange)="_console($event)"
                    style="width: 100%;">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px">Egypt Air</span>
-            </label>
+            </label> -->
 
           </div>
 

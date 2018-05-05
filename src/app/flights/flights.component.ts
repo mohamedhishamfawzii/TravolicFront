@@ -38,6 +38,12 @@ export class FlightsComponent implements OnInit {
   direct = true;
   price = [0, 8000];
 
+  checkOptionsOne = [
+    { label: 'Apple\n', value: 'Apple\n', checked: true },
+    { label: 'Pear\n', value: 'Pear\n', checked: false },
+    { label: 'Orange\n', value: 'Orange\n', checked: false },
+  ];
+
   webVersion = true;
   width = screen.width;
   isVisible = false;
@@ -76,18 +82,17 @@ export class FlightsComponent implements OnInit {
           this.flights = result.json();
           console.log(this.flights);
           this.flightsDataUnfiltered = this.flights.response.data;
-          this.flightsData = this.flightsDataUnfiltered;
+          // this.flightsData = this.flightsDataUnfiltered;
           // console.log("Flights:",this.flightsData);
           this.onChange_filter();
           this.flightsNumber = this.flightsData.number_of_results;
-          console.log(this.flights.response.data);
+          console.log("response:",this.flights.response.data);
           this.loaded = true;
           this.loading = false;
           console.log(this.flights.response.number_of_results);
         });
       }
     });
-    // setTimeout(this.onChange_filter(),1000);
   }
 
   redirect(link) {
@@ -101,7 +106,7 @@ export class FlightsComponent implements OnInit {
     minute = Number(time[1].substring(0,2));
     period = time[1].substring(3,5);
 
-    if(period == 'PM')
+    if(period == 'PM' && hour != 12)
       hour += 12;
 
     if(period == 'AM' && hour == 12)
@@ -173,7 +178,12 @@ export class FlightsComponent implements OnInit {
   onChange_filter() {
     let flightsDataDirect = [];
     let flightsDataArrival = [];
+
+    console.log("flights data before before ", this.flightsData);
+
     this.flightsData = [];
+
+    console.log("flights data before ", this.flightsData);
 
     this.flightsDataUnfiltered.forEach((ticket, index) => {
       if (this.direct == true) {
@@ -192,30 +202,36 @@ export class FlightsComponent implements OnInit {
       }
     });
 
+    console.log("direct",flightsDataDirect);
+
     flightsDataDirect.forEach((ticket, index) => {
 
       const formattedDeparture_from = this.format_time(this.departure_from);
       const formattedDeparture_to = this.format_time(this.departure_to);
 
-      if (Number(ticket.flights[0].depart_at.hour) >= formattedDeparture_from[0]
-              && Number(ticket.flights[0].depart_at.hour) <= formattedDeparture_to[0]) {
-          flightsDataArrival.push(ticket);
-      }
-
       const formettedArrival_from = this.format_time(this.arrival_from);
       const formettedArrival_to = this.format_time(this.arrival_to);
 
-      if (Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) >= formettedArrival_from[0]
-              && Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) <= formettedArrival_to[0]) {
-        flightsDataArrival.push(ticket);
+      if (Number(ticket.flights[0].depart_at.hour) >= formattedDeparture_from[0]
+              && Number(ticket.flights[0].depart_at.hour) <= formattedDeparture_to[0]) {
+          if (Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) >= formettedArrival_from[0]
+                  && Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) <= formettedArrival_to[0]) {
+            flightsDataArrival.push(ticket);
+          }
       }
-
     });
+
+    console.log("arrival",flightsDataArrival);
 
     flightsDataArrival.forEach((ticket, index) => {
       if (Number(ticket.price.value) >= this.price[0] && Number(ticket.price.value <= this.price[1])) {
         this.flightsData.push(ticket);
       }
     });
+
+    console.log("flights data", this.flightsData);
+  }
+
+  updateSingleChecked() {
   }
 }
