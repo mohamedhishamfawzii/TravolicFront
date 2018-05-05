@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
  languages = ['English','German','Français','Italian','Turkish','Chinese','Spanish','Japanese','Russian'];
   country;
   countries;
-  currency ;
+  currency ='USD' ;
   currencies = ['EGP','USD','EUR'];
   language = 'English';
   location;
@@ -37,6 +37,8 @@ export class NavbarComponent implements OnInit {
       this.location=result.json();
       this.country =this.location.country;
       this.currency=this.location.currency;
+      this.backendConnect.country=this.location.country;
+      this.backendConnect.city=this.location.city;
   });
 }
 

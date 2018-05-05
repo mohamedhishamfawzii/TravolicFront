@@ -7,29 +7,136 @@
   <app-navbar *ngIf="mobVersion"></app-navbar>
 
   <div class="row1">
-    <label class="row1element"
-           style="font-size: 220%; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">THE
-      CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
-    <br>
-    <label class="row1element"
-           style="font-size: 200%; font-family: 'Cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR
-      TRIP</label>
+
+      <label class="row1element" *ngIf="english()"
+             style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">THE
+        CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
+        <label class="row1element" *ngIf="german()"
+               style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Das günstigste Ticket zu Ihrem Ziel ist nur einen Klick entfernt
+          </label>
+          <label class="row1element" *ngIf="italian()"
+                 style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Il biglietto più economico per la tua destinazione è a un clic di distanza
+            </label>
+            <label class="row1element" *ngIf="chinese()"
+                   style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+              到目的地的最便宜的机票只需点击一下即可</label>
+              <label class="row1element" *ngIf="japanese()"
+                     style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">あなたの目的地への最も安いチケットはワンクリックです
+                </label>
+                <label class="row1element" *ngIf="spanish()"
+                       style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+                  El billete más barato a su destino es un clic de distancia</label>
+                  <label class="row1element" *ngIf="turkish()"
+                         style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Hedefinize en ucuz bilet bir tık uzakta
+                  </label>
+                    <label class="row1element" *ngIf="russian()"
+                           style="font-size: 220%; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Самый дешевый билет к месту назначения является одним щелчком мыши
+                      </label>
+                      <label class="row1element" *ngIf="french()"
+                             style="font-size: 220% font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+                      Le billet le moins cher vers votre destination est à un clic</label>
+      <br>
+      <label class="row1element" *ngIf="english()"
+             style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR TRIP</label>
+             <label class="row1element" *ngIf="italian()"
+                    style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Passo al tuo viaggio</label>
+                    <label class="row1element" *ngIf="spanish()"
+                           style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Paso a tu viaje</label>
+                           <label class="row1element" *ngIf="japanese()"
+                                  style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">あなたの旅行へのステップ</label>
+                                  <label class="row1element" *ngIf="chinese()"
+                                         style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">步骤给您的出行</label>
+                                         <label class="row1element" *ngIf="turkish()"
+                                                style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">seyahatiniz için Adım</label>
+                                                <label class="row1element" *ngIf="french()"
+                                                       style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Étape à votre voyage</label>
+                                                       <label class="row1element" *ngIf="russian()"
+                                                              style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Шаг к вашей поездке</label>
+                                                              <label class="row1element" *ngIf="german()"
+                                                                     style="font-size: 200%; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Schritt zu deiner Reise</label>
+        <br>
+
   </div>
 
   <div class="row1" style="background-color: white;opacity: 0.9; border-radius: 5px">
 
-    <nz-radio-group class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%" [(ngModel)]="type"
-                    (click)="switch()">
-      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>One Way</span></label>
-      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>Round Trip</span></label>
-      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>Multi-Destination</span></label>
+
+    <nz-radio-group *ngIf="english()"class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>One way</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>Round trip</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>Multi destination</span></label>
     </nz-radio-group>
+    <nz-radio-group *ngIf="german()" class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>Einbahn</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>Hin- und Rückflug</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>Multi-Ziel</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="french()" class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>Aller simple</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span> Aller-retour</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>Destination multiple</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="italian()" class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>senso unico</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>Andata e ritorno</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>Multi destinazione</span></label>
+    </nz-radio-group>
+    <nz-radio-group  *ngIf="spanish()"class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>Un camino</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>Viaje ida y vuelta </span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>Multi destino</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="turkish()" class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>Tek yön</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span> gidiş dönüş</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span> Çoklu hedef</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="chinese()" class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>单程</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>往返</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>多目的地</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="japanese()" class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>一方通行</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>往復</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>複数の目的地</span></label>
+    </nz-radio-group>
+    <nz-radio-group  *ngIf="russian()" class="row1element" nzSize="large" style="margin-bottom:20px;width: 100%"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'" style="margin-top:5px;width:80%"><span>в одну сторону</span></label>
+      <label nz-radio-button [nzValue]="'round'" style="margin-top:5px;width:80%"><span>В обе стороны</span></label>
+      <label nz-radio-button [nzValue]="'mul'" style="margin-top:5px;width:80%"><span>Мульти место назначения</span></label>
+    </nz-radio-group>
+    <br>
 
     <br>
     <div *ngIf="showdiv">
-      <label
-        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">From</label>
-
+        <label *ngIf="english()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
       <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 80%" (ngModelChange)="changedfrom($event)"></nz-input>
 
@@ -46,7 +153,24 @@
 
       <br>
 
-      <label style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">To</label>
+      <label *ngIf="english()"
+        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
 
       <br>
 
@@ -61,9 +185,25 @@
 </button>
 
       <br>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                        <label *ngIf="english()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
 
-      <label
-        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
 
       <br>
 
@@ -76,8 +216,24 @@
 
       <br>
 
-      <label
-        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Class</label>
+        <label *ngIf="english()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Class</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Klasse</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Classe</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Classe</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Clase</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Sınıf</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">类</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">クラス</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Класс</label>
 
       <br>
 
@@ -95,8 +251,24 @@
 
       <br>
 
-      <label
-        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Travellers</label>
+        <label *ngIf="english()"
+          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Travellers</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Reisende</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Voyageurs</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Viaggiatori</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Viajeros</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Gezginler</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">旅行者</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">トラベラー</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Путешественники</label>
 
       <br>
 
@@ -141,12 +313,29 @@
 
 
       <div style="margin-top: 5px;margin-bottom: 25px">
-        <nz-switch style="left: 5px;" class="row1element" [ngModel]="direct">
+        <nz-switch style="left: 5px;" class="row1element" [(ngModel)]="direct">
           <i class=" anticon anticon-check" checked></i>
           <i class=" anticon anticon-cross" unchecked></i>
         </nz-switch>
-        <label class="row1element" style=" color: black; font-family: 'Cairo', sans-serif;font-size: 15px">Direct
-          Only</label>
+
+          <label *ngIf="english()"
+            style="font-size: 15px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Direct Flights</label>
+            <label *ngIf="german()"
+              style="font-size: 15px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Direkte Flüge</label>
+              <label *ngIf="french()"
+                style="font-size: 15px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Vols directs</label>
+                <label *ngIf="italian()"
+                  style="font-size: 15px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Voli diretti</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 15px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Vuelos directos</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 15px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Doğrudan uçuşlar</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 15px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">直飞</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 15px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">直行便</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 15px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Прямые рейсы</label>
       </div>
 
 
@@ -157,7 +346,15 @@
       <!--<i style="  font-size: 20px" class="anticon anticon-search"></i>-->
       <!--</button>-->
       <button style="width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="search()">
-        <label style=" font-size:100%;font-family: 'Cairo' , sans-serif; "> SEARCH </label>
+        <label *ngIf="english()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> SEARCH </label>
+          <label  *ngIf="german()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Suche </label>
+            <label *ngIf="french()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Chercher </label>
+              <label  *ngIf="italian()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Ricerca </label>
+                <label  *ngIf="spanish()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Buscar </label>
+                  <label *ngIf="turkish()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Arama </label>
+                    <label  *ngIf="chinese()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> 搜寻 </label>
+                      <label  *ngIf="japanese()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> サーチ </label>
+                        <label  *ngIf="russian()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Поиск </label>
       </button>
       <nz-alert *ngIf="error" style="margin-top:10px" [nzType]="'error'" [nzMessage]="'Error'"
                 [nzDescription]="errmsg"
@@ -166,8 +363,24 @@
 
     <div *ngIf="multi">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
       <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
 
@@ -182,7 +395,24 @@
   </span>
       <br>
       <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+        <label *ngIf="english()"
+          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
         <br>
         <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
@@ -196,7 +426,25 @@
   </span>
       <br>
       <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                        <label *ngIf="english()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
+
         <br>
     <nz-datepicker nzSize="large"style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date"></nz-datepicker>
@@ -207,8 +455,24 @@
       <br>
       <div *ngIf="second">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
       <nz-input [(ngModel)]="from2" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
 
@@ -222,7 +486,24 @@
   </span>
         <br>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <label *ngIf="english()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="german()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+              <label *ngIf="french()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                <label *ngIf="italian()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
           <nz-input [(ngModel)]="to2" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
@@ -236,7 +517,25 @@
   </span>
         <br>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                          <label *ngIf="english()"
+                            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
+
           <br>
     <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date2"></nz-datepicker>
@@ -246,8 +545,24 @@
       <br>
       <div *ngIf="third">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
       <nz-input [(ngModel)]="from3" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
 
@@ -261,7 +576,24 @@
   </span>
         <br>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <label *ngIf="english()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="german()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+              <label *ngIf="french()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                <label *ngIf="italian()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
           <nz-input [(ngModel)]="to3" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
@@ -275,7 +607,25 @@
   </span>
         <br>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                          <label *ngIf="english()"
+                            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
+
           <br>
     <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date3"></nz-datepicker>
@@ -285,8 +635,24 @@
       <br>
       <div *ngIf="fourth">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
       <nz-input [(ngModel)]="from4" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
 
@@ -300,7 +666,24 @@
   </span>
         <br>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <label *ngIf="english()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="german()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+              <label *ngIf="french()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                <label *ngIf="italian()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
           <nz-input [(ngModel)]="to4" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
@@ -314,7 +697,25 @@
   </span>
         <br>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                          <label *ngIf="english()"
+                            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
+
           <br>
     <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date4"></nz-datepicker>
@@ -324,8 +725,24 @@
       <br>
       <div *ngIf="fifth">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
       <nz-input [(ngModel)]="from5" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
 
@@ -339,7 +756,24 @@
   </span>
         <br>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <label *ngIf="english()"
+            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="german()"
+              style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+              <label *ngIf="french()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                <label *ngIf="italian()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
           <nz-input [(ngModel)]="to5" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
 
@@ -353,7 +787,25 @@
   </span>
 
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+          <label *ngIf="german()"
+            style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+            <label *ngIf="french()"
+              style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+              <label *ngIf="italian()"
+                style="font-size: 16px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                          <label *ngIf="english()"
+                            style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
+
           <br>
     <nz-datepicker nzSize="large" style="width:200px" [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date5"></nz-datepicker>
@@ -372,7 +824,15 @@
       <br>
       <button style=" margin-top:20px;width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'"
               (click)="searchMulti()">
-        <label style=" font-size:20px;font-family: 'cairo' , sans-serif; "> SEARCH </label>
+              <label *ngIf="english()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> SEARCH </label>
+                <label  *ngIf="german()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Suche </label>
+                  <label *ngIf="french()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Chercher </label>
+                    <label  *ngIf="italian()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Ricerca </label>
+                      <label  *ngIf="spanish()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Buscar </label>
+                        <label *ngIf="turkish()" style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Arama </label>
+                          <label  *ngIf="chinese()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> 搜寻 </label>
+                            <label  *ngIf="japanese()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> サーチ </label>
+                              <label  *ngIf="russian()"style=" font-size:100%;font-family: 'cairo' , sans-serif; "> Поиск </label>
       </button>
 
 
@@ -410,9 +870,24 @@
                            style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
                     Le billet le moins cher vers votre destination est à un clic</label>
     <br>
-    <label class="row1element"
-           style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR
-      TRIP</label>
+    <label class="row1element" *ngIf="english()"
+           style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR TRIP</label>
+           <label class="row1element" *ngIf="italian()"
+                  style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Passo al tuo viaggio</label>
+                  <label class="row1element" *ngIf="spanish()"
+                         style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Paso a tu viaje</label>
+                         <label class="row1element" *ngIf="japanese()"
+                                style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">あなたの旅行へのステップ</label>
+                                <label class="row1element" *ngIf="chinese()"
+                                       style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">步骤给您的出行</label>
+                                       <label class="row1element" *ngIf="turkish()"
+                                              style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">seyahatiniz için Adım</label>
+                                              <label class="row1element" *ngIf="french()"
+                                                     style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Étape à votre voyage</label>
+                                                     <label class="row1element" *ngIf="russian()"
+                                                            style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Шаг к вашей поездке</label>
+                                                            <label class="row1element" *ngIf="german()"
+                                                                   style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Schritt zu deiner Reise</label>
       <br>
 
       </div>
@@ -421,18 +896,82 @@
 
 
   <div class="row1" style="background-color: white; margin-top: 10px;  opacity: 0.9; border-radius: 10px">
-    <nz-radio-group class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+    <nz-radio-group *ngIf="english()"class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
                     [(ngModel)]="type" (click)="switch()">
       <label nz-radio-button [nzValue]="'oneway'"><span>One way</span></label>
       <label nz-radio-button [nzValue]="'round'"><span>Round trip</span></label>
       <label nz-radio-button [nzValue]="'mul'"><span>Multi destination</span></label>
     </nz-radio-group>
+    <nz-radio-group *ngIf="german()" class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>Einbahn</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span>Hin- und Rückflug</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>Multi-Ziel</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="french()" class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>Aller simple</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span> Aller-retour</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>Destination multiple</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="italian()" class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>senso unico</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span>Andata e ritorno</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>Multi destinazione</span></label>
+    </nz-radio-group>
+    <nz-radio-group  *ngIf="spanish()"class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>Un camino</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span>Viaje ida y vuelta </span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>Multi destino</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="turkish()" class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>Tek yön</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span> gidiş dönüş</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span> Çoklu hedef</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="chinese()" class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>单程</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span>往返</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>多目的地</span></label>
+    </nz-radio-group>
+    <nz-radio-group *ngIf="japanese()" class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>一方通行</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span>往復</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>複数の目的地</span></label>
+    </nz-radio-group>
+    <nz-radio-group  *ngIf="russian()" class="row1element" nzSize="large" style="margin-top: 10px ; margin-bottom: 10px;"
+                    [(ngModel)]="type" (click)="switch()">
+      <label nz-radio-button [nzValue]="'oneway'"><span>в одну сторону</span></label>
+      <label nz-radio-button [nzValue]="'round'"><span>В обе стороны</span></label>
+      <label nz-radio-button [nzValue]="'mul'"><span>Мульти место назначения</span></label>
+    </nz-radio-group>
     <br>
     <div style="margin-bottom: 10px">
       <div *ngIf="showdiv">
   <span class="row1element">
-  <label
+  <label *ngIf="english()"
     style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+    <label *ngIf="german()"
+      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+      <label *ngIf="french()"
+        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+        <label *ngIf="italian()"
+          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+          <label *ngIf="spanish()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="turkish()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+              <label *ngIf="chinese()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                <label *ngIf="japanese()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                  <label *ngIf="russian()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
     <nz-select nzSize="large" style="top: 1px; font-size:15px ; width: 300px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
@@ -453,7 +992,24 @@
     </nz-select>
   </span>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <label *ngIf="english()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
              style=" top: 1px;font-size:15px ; width: 300px;" [(ngModel)]="to" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
@@ -473,7 +1029,25 @@
     </nz-select>
   </span>
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+          <label *ngIf="german()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+            <label *ngIf="french()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+              <label *ngIf="italian()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                          <label *ngIf="english()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
+
     <nz-datepicker *ngIf="oneDate" nzSize="large" style=" left:5px; width: 250px " [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date"></nz-datepicker>
     <nz-rangepicker *ngIf="twoDates" nzSize="large" style=" left:5px; width: 250px "
@@ -481,9 +1055,24 @@
   </span>
         <br>
         <span class="row1element">
-  <label
-    style="margin-right:5px;font-size: 20px; top: 2px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Class</label>
-
+          <label *ngIf="english()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Class</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Klasse</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Classe</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Classe</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Clase</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Sınıf</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">类</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">クラス</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Класс</label>
   <nz-select nzSize="large" style=" width: 115px;" [(ngModel)]="class" [nzPlaceHolder]="''" nzAllowClear>
     <nz-option [nzLabel]="'Premium'" [nzValue]="'p'">
     </nz-option>
@@ -497,8 +1086,24 @@
   </nz-select>
       </span>
         <span class="row1element">
-  <label class="row1element"
-         style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Travellers</label>
+          <label *ngIf="english()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Travellers</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Reisende</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Voyageurs</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Viaggiatori</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Viajeros</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Gezginler</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">旅行者</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">トラベラー</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Путешественники</label>
           <nz-select nzSize="large" [(ngModel)]="adultss" [nzPlaceHolder]="'Adults'" style="width:80px;">
         <nz-option
           *ngFor="let number of adults; let i = index"
@@ -528,9 +1133,25 @@
         </nz-select>
         </span>
         <span class="row1element">
-    <label class="row1element"
-           style=" margin-left: 10px; color: #128de7;font-family: 'Cairo', sans-serif;font-size: 20px"> Direct only </label>
-  <nz-switch style="margin-left: 5px" class="row1element" [ngModel]="direct">
+          <label *ngIf="english()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Direct Flights</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Direkte Flüge</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Vols directs</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Voli diretti</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Vuelos directos</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Doğrudan uçuşlar</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">直飞</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">直行便</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Прямые рейсы</label>
+  <nz-switch style="margin-left: 5px" class="row1element" [(ngModel)]="direct">
     <i class=" anticon anticon-check" checked></i>
     <i class=" anticon anticon-cross" unchecked></i>
   </nz-switch>
@@ -538,7 +1159,15 @@
         <br>
         <button style=" margin-top:20px;width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'"
                 (click)="search()">
-          <label style=" font-size:20px;font-family: 'cairo' , sans-serif; "> SEARCH </label>
+          <label *ngIf="english()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> SEARCH </label>
+            <label  *ngIf="german()" style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Suche </label>
+              <label *ngIf="french()" style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Chercher </label>
+                <label  *ngIf="italian()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Ricerca </label>
+                  <label  *ngIf="spanish()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Buscar </label>
+                    <label *ngIf="turkish()" style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Arama </label>
+                      <label  *ngIf="chinese()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> 搜寻 </label>
+                        <label  *ngIf="japanese()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> サーチ </label>
+                          <label  *ngIf="russian()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Поиск </label>
         </button>
         <nz-alert *ngIf="error" style="margin-top:10px" [nzType]="'error'" [nzMessage]="'Error'"
                   [nzDescription]="errmsg"
@@ -546,8 +1175,24 @@
       </div>
       <div *ngIf="multi">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
     <nz-select nzSize="large" style="top: 1px; font-size:15px ; width: 200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
@@ -569,7 +1214,24 @@
   </span>
 
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+          <label *ngIf="english()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
              style=" top: 1px;font-size:15px ; width: 200px;" [(ngModel)]="to" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
@@ -590,7 +1252,24 @@
   </span>
 
         <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+          <label *ngIf="german()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+            <label *ngIf="french()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+              <label *ngIf="italian()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                <label *ngIf="spanish()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                  <label *ngIf="turkish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                    <label *ngIf="chinese()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                      <label *ngIf="japanese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                        <label *ngIf="russian()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                          <label *ngIf="english()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
     <nz-datepicker nzSize="large" style=" left:5px; width: 250px " [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date"></nz-datepicker>
 
@@ -600,8 +1279,24 @@
         <br>
         <div *ngIf="second">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
     <nz-select nzSize="large" style="top: 1px; font-size:15px ; width: 200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from2" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
@@ -623,7 +1318,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="english()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+              <label *ngIf="german()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+                <label *ngIf="french()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                  <label *ngIf="italian()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="spanish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                      <label *ngIf="turkish()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                        <label *ngIf="chinese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                          <label *ngIf="japanese()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                            <label *ngIf="russian()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
              style=" top: 1px;font-size:15px ; width: 200px;" [(ngModel)]="to2" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
@@ -644,7 +1356,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                            <label *ngIf="english()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
     <nz-datepicker nzSize="large" style=" left:5px; width: 250px " [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date2"></nz-datepicker>
 
@@ -653,8 +1382,24 @@
         <br>
         <div *ngIf="third">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
     <nz-select nzSize="large" style="top: 1px; font-size:15px ; width: 200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from3" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
@@ -676,7 +1421,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="english()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+              <label *ngIf="german()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+                <label *ngIf="french()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                  <label *ngIf="italian()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="spanish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                      <label *ngIf="turkish()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                        <label *ngIf="chinese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                          <label *ngIf="japanese()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                            <label *ngIf="russian()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
              style=" top: 1px;font-size:15px ; width: 200px;" [(ngModel)]="to3" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
@@ -697,7 +1459,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                            <label *ngIf="english()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
     <nz-datepicker nzSize="large" style=" left:5px; width: 250px " [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date3"></nz-datepicker>
 
@@ -706,8 +1485,24 @@
         <br>
         <div *ngIf="fourth">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
     <nz-select nzSize="large" style="top: 1px; font-size:15px ; width: 200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from4" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
@@ -729,7 +1524,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="english()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+              <label *ngIf="german()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+                <label *ngIf="french()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                  <label *ngIf="italian()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="spanish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                      <label *ngIf="turkish()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                        <label *ngIf="chinese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                          <label *ngIf="japanese()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                            <label *ngIf="russian()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
              style=" top: 1px;font-size:15px ; width: 200px;" [(ngModel)]="to4" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
@@ -750,7 +1562,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                            <label *ngIf="english()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
     <nz-datepicker nzSize="large" style=" left:5px; width: 250px " [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date4"></nz-datepicker>
 
@@ -759,8 +1588,24 @@
         <br>
         <div *ngIf="fifth">
     <span class="row1element">
-  <label
-    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+      <label *ngIf="english()"
+        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">From</label>
+        <label *ngIf="german()"
+          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Von</label>
+          <label *ngIf="french()"
+            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+            <label *ngIf="italian()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Da</label>
+              <label *ngIf="spanish()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">De</label>
+                <label *ngIf="turkish()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Dan</label>
+                  <label *ngIf="chinese()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">从</label>
+                    <label *ngIf="japanese()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">から</label>
+                      <label *ngIf="russian()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
     <nz-select nzSize="large" style="top: 1px; font-size:15px ; width: 200px" nzAllowClear [nzFilter]="false"
                [(ngModel)]="from5" [nzPlaceHolder]="''" (nzSearchChange)="changedfrom($event)" (click)="clickedfrom()"
                nzShowSearch>
@@ -782,7 +1627,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+            <label *ngIf="english()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">To</label>
+              <label *ngIf="german()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Zu</label>
+                <label *ngIf="french()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">À</label>
+                  <label *ngIf="italian()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                    <label *ngIf="spanish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">A</label>
+                      <label *ngIf="turkish()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Için</label>
+                        <label *ngIf="chinese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">到</label>
+                          <label *ngIf="japanese()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">に</label>
+                            <label *ngIf="russian()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
   <nz-select class="row1element" nzAllowClear [nzFilter]="false" nzSize="large"
              style=" top: 1px;font-size:15px ; width: 200px;" [(ngModel)]="to5" [nzPlaceHolder]="''"
              (nzSearchChange)="changedto($event)" (click)="clickedto()" nzShowSearch>
@@ -803,7 +1665,24 @@
   </span>
 
           <span class="row1element">
-  <label style="font-size: 20px;  font-family: 'Cairo' , sans-serif; font-weight:normal;color:#128de7 ;">Date</label>
+            <label *ngIf="german()"
+              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Datum</label>
+              <label *ngIf="french()"
+                style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">La Date</label>
+                <label *ngIf="italian()"
+                  style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Data</label>
+                  <label *ngIf="spanish()"
+                    style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Fecha</label>
+                    <label *ngIf="turkish()"
+                      style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Tarih</label>
+                      <label *ngIf="chinese()"
+                        style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日期</label>
+                        <label *ngIf="japanese()"
+                          style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">日付</label>
+                          <label *ngIf="russian()"
+                            style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Дата</label>
+                            <label *ngIf="english()"
+                              style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Date</label>
     <nz-datepicker nzSize="large" style=" left:5px; width: 250px " [nzPlaceHolder]="'Departure Date'"
                    [(ngModel)]="date5"></nz-datepicker>
 
@@ -821,7 +1700,15 @@
         <br>
         <button style=" margin-top:20px;width: 100px ; height: 50px" nz-button [nzType]="'primary'" [nzSize]="'large'"
                 (click)="searchMulti()">
-          <label style=" font-size:20px;font-family: 'cairo' , sans-serif; "> SEARCH </label>
+                <label *ngIf="english()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> SEARCH </label>
+                  <label  *ngIf="german()" style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Suche </label>
+                    <label *ngIf="french()" style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Chercher </label>
+                      <label  *ngIf="italian()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Ricerca </label>
+                        <label  *ngIf="spanish()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Buscar </label>
+                          <label *ngIf="turkish()" style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Arama </label>
+                            <label  *ngIf="chinese()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> 搜寻 </label>
+                              <label  *ngIf="japanese()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> サーチ </label>
+                                <label  *ngIf="russian()"style=" font-size:20px;font-family: 'cairo' , sans-serif; "> Поиск </label>
         </button>
 
 

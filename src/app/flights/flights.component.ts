@@ -97,6 +97,7 @@ export class FlightsComponent implements OnInit {
 
   redirect(link) {
     window.open(link);
+  console.log(this.service.addRedirection(link,this.service.country,this.service.city));
   }
 
   format_time(value) {
