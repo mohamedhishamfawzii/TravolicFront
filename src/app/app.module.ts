@@ -18,12 +18,14 @@ import { LoadingpageComponent } from './loadingpage/loadingpage.component';
 import { SearchdivresultsComponent } from './searchdivresults/searchdivresults.component';
 import { BlogComponent } from './blog/blog.component';
 import { NewsComponent } from './news/news.component';
+import { ArticleComponent } from './article/article.component';
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: 'flights/search', component: FlightsComponent},
   { path: 'flights/search/:data', component: FlightsComponent},
     { path: 'community/blog', component: BlogComponent},
-      { path: 'community/news', component: NewsComponent}
+      { path: 'community/news', component: NewsComponent},
+          { path: 'community/blog/:id', component: ArticleComponent},
 ] ;
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     FlightsComponent,
     SearchdivresultsComponent,
     BlogComponent,
-    NewsComponent
+    NewsComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule, NgZorroAntdModule.forRoot(), FormsModule ,
