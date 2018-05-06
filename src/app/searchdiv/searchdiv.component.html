@@ -138,7 +138,7 @@
                         <label *ngIf="russian()"
                           style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
-      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 80%" (ngModelChange)="changedfrom($event)"></nz-input>
+      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 80%" (keydown)="changedfrom($event)"></nz-input>
 
         <button nz-button [nzType]="'default'" style="width:80%"
         *ngFor="let option of Aairports" (click)="clickedawy(option)">

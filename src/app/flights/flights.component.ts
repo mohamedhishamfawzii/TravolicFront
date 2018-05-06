@@ -28,12 +28,13 @@ export class FlightsComponent implements OnInit {
   price_from = 'USD 0';
   price_to = 'USD 8000';
   isCollapsed;
-  loading = true;
-  loaded = false;
+  loading;
+  loaded ;
   data;
   parameters;
   flights;
   mobVersion;
+  filter=true;
   stops = true;
   direct = true;
   price = [0, 8000];
@@ -69,12 +70,27 @@ export class FlightsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loading = true;
+    this.loaded = false;
     if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;
     }
     if(this.service.multi){
 console.log('coming from multi maaaan !!');
+this.filter=false;
+this.service.addmulti(this.service.multiArgs).then(
+  (result)=>{
+    console.log(result);
+        this.flights = result;
+        this.flightsDataUnfiltered = this.flights.data;
+        this.flightsData=this.flights.data;
+        this.flightsNumber = this.flights.number_of_results;
+        this.loaded = true;
+        this.loading = false;
+
+  }
+);
     }else{
     this.route.params.subscribe((params: Params) => {
       if (params['data'] !== undefined) {

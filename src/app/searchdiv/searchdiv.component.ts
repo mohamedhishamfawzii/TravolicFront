@@ -22,6 +22,7 @@ export class SearchdivComponent implements OnInit {
   from3;
   from4;
   from5;
+  multiArgs;
   to2;
   to3;
   to4;
@@ -398,6 +399,94 @@ if (this.from === undefined) {
     }
     searchMulti(){
       this.route.navigate(['/flights/search/']);
+      switch(this.counter){
+     case 2:{
+       this.multiArgs=[{
+       'to': this.to ,
+       'from':this.from,
+       'date': this.date
+     },{
+     'to': this.to2 ,
+     'from':this.from2,
+     'date': this.date2
+   } ]
 
+   break;
+
+     }
+
+     case 3:{
+       this.multiArgs=[{
+       'to': this.to ,
+       'from':this.from,
+       'date': this.date
+     },{
+     'to': this.to2 ,
+     'from':this.from2,
+     'date': this.date2
+   },
+   {
+   'to': this.to3 ,
+   'from':this.from3,
+   'date': this.date3
+ }
+
+  ]
+   break;
+
+ }
+ case 4:{
+   this.multiArgs=[{
+   'to': this.to ,
+   'from':this.from,
+   'date': this.date
+ },{
+ 'to': this.to2 ,
+ 'from':this.from2,
+ 'date': this.date2
+},
+{
+'to': this.to3 ,
+'from':this.from3,
+'date': this.date3
+},{
+  'to': this.to4 ,
+  'from':this.from4,
+  'date': this.date4
+}
+
+]
+break;
+}
+case 5:{
+  this.multiArgs=[{
+  'to': this.to ,
+  'from':this.from,
+  'date': this.date
+},{
+'to': this.to2 ,
+'from':this.from2,
+'date': this.date2
+},
+{
+'to': this.to3 ,
+'from':this.from3,
+'date': this.date3
+},{
+ 'to': this.to4 ,
+ 'from':this.from4,
+ 'date': this.date4
+},{
+  'to': this.to5 ,
+  'from':this.from5,
+  'date': this.date5
+}
+]
+break;
+}
+}
+
+console.log(this.multiArgs);
+this.backendConnect.multiArgs=this.multiArgs
     }
   }
