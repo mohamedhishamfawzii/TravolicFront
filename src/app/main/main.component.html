@@ -1,16 +1,9 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 <body class="cont" *ngIf="mobVersion">
-<div *ngIf="mobVersion" style="background: white; text-align: center">
-  <img src="../../assets/travolic.png" style="margin-top: 15px;" height="50" width="170"/>
-</div>
-
-<app-menu *ngIf="mobVersion"></app-menu>
 <app-searchdiv *ngIf="mobVersion"></app-searchdiv>
-<div *ngIf="mobVersion" style="border-radius: 50px; margin: 20px;">
 
-</div>
 <app-info *ngIf="mobVersion"></app-info>
-<div *ngIf="mobVersion" class="row1">
+<div class="row1">
   <div style=" float:right; margin-top:20px; ">
     <label *ngIf="english()"
       style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
@@ -53,19 +46,16 @@
 </div>
 </body>
 <nz-layout class="cont" *ngIf="webVersion">
-  <nz-header style="background-color: white;">
-    <app-navbar></app-navbar>
-  </nz-header>
+
   <nz-content style="margin-bottom:20px" class="cont">
 
-    <app-menu></app-menu>
     <div style="background-image: url('../../assets/bg-png.png'); background-repeat: no-repeat; background-size: contain; background-position: center top;">
       <app-searchdiv></app-searchdiv>
       <app-info></app-info>
     </div>
   </nz-content>
 </nz-layout>
-<div  *ngIf="webVersion"class="row1">
+<div class="row1">
   <div style=" float:right; margin-top:20px; ">
     <label *ngIf="english()"
       style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">

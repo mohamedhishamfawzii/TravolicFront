@@ -16,10 +16,14 @@ import { SearchdivComponent } from './searchdiv/searchdiv.component';
 import { InfoComponent } from './info/info.component';
 import { LoadingpageComponent } from './loadingpage/loadingpage.component';
 import { SearchdivresultsComponent } from './searchdivresults/searchdivresults.component';
+import { BlogComponent } from './blog/blog.component';
+import { NewsComponent } from './news/news.component';
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: 'flights/search', component: FlightsComponent},
   { path: 'flights/search/:data', component: FlightsComponent},
+    { path: 'community/blog', component: BlogComponent},
+      { path: 'community/news', component: NewsComponent}
 ] ;
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ const appRoutes: Routes = [
     InfoComponent,FlightsComponent, LoadingpageComponent,
     InfoComponent,
     FlightsComponent,
-    SearchdivresultsComponent
+    SearchdivresultsComponent,
+    BlogComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule, NgZorroAntdModule.forRoot(), FormsModule ,

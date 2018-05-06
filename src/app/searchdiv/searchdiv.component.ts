@@ -64,6 +64,7 @@ export class SearchdivComponent implements OnInit {
   i;
 
   ngOnInit() {
+
     console.log(this.backendConnect.currency);
     this.Aairports = [];
     if (this.width < 860) {
@@ -78,17 +79,23 @@ export class SearchdivComponent implements OnInit {
             console.log('location result', this.location);
             this.airports.forEach((air) => {
               if (air.City === this.location.city) {
+                this.Aairports.push(air.IATA);
                 this.from = air.IATA;
               }
             });
             if (this.from === undefined) {
+              this.Aairports = [];
               this.airports.forEach((air) => {
                 if (air.Country === this.location.country) {
+                  this.Aairports.push(air.IATA);
                   this.from = air.IATA;
                 }
 
               });
             }
+if (this.from === undefined) {
+    this.Aairports = [];}
+
             console.log(this.from);
             console.log(this.airports);
           }

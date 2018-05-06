@@ -63,6 +63,7 @@ export class FlightsComponent implements OnInit {
   }
 
   ngOnInit() {
+this.service.flight=true;
     if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;

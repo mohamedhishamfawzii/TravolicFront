@@ -1,0 +1,19 @@
+<div style="text-align:center; background-color:#128de7;"class="type-word">
+</div>
+<div style="background-color:#128de7;">
+  <div class="container">
+    <div class="bell2"></div>
+    <div class="bell"></div>
+    <div class="bell1"></div>
+  </div>
+  </div>
+  <div style="width:70%"*ngFor="let option of news" class="card-container">
+    <div class="card u-clearfix">
+      <div class="card-body">
+        <h2 class="card-title">{{option.title}}</h2>
+              <span class="card-description subtle">{{option.body}}</span>
+      </div>
+      <img src="{{option.img}}" alt="" class="card-media" />
+    </div>
+    <div class="card-shadow"></div>
+  </div>

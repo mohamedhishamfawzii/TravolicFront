@@ -10,11 +10,14 @@ export class MenuComponent implements OnInit {
   webVersion = true;
   width = screen.width;
   width_text = 0.8 * (screen.width / 7);
-
+flight;
+blog;
+news;
   constructor(private backendConnect: BackendService) {
   }
 
   ngOnInit() {
+
     if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;

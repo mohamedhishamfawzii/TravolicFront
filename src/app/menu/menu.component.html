@@ -6,93 +6,93 @@
       style=" left:100px ; width:100%;font-size: 100% ; text-align: center">
 
 
-    <li nz-menu-item [nzSelected]="true" *ngIf="english()"
+    <li nz-menu-item [nzSelected]="flight" *ngIf="english()"
         style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
-      style="font-size: 20px" class="material-icons">local_airport</i><br>Flights</li>
-    <li nz-menu-item  *ngIf="english()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+      style="font-size: 20px" class="material-icons">local_airport</i> <br>Flights</li>
+    <li nz-menu-item [nzSelected]="blog"  *ngIf="english()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"> <a href="/community/blog"></a><i
       style=" font-size: 20px" class="anticon anticon-picture"></i> <br>Blog</li>
-    <li nz-menu-item  *ngIf="english()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+    <li nz-menu-item [nzSelected]="news" *ngIf="english()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
       style="font-size: 20px" class="anticon anticon-notification"></i> <br>News</li>
     <li nz-menu-item *ngIf="english()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
       style=" font-size: 20px" class="anticon anticon-bulb"></i> <br>About us</li>
 
-      <li nz-menu-item [nzSelected]="true" *ngIf="german()"
+      <li nz-menu-item [nzSelected]="flight" *ngIf="german()"
           style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
         style="font-size: 20px" class="material-icons">local_airport</i> <br>Flüge</li>
-      <li nz-menu-item  *ngIf="german()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+      <li nz-menu-item  [nzSelected]="blog" *ngIf="german()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"> <a href="/community/blog"></a><i
         style=" font-size: 20px" class="anticon anticon-picture"></i> <br>Blog</li>
-      <li nz-menu-item  *ngIf="german()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+      <li nz-menu-item [nzSelected]="news" *ngIf="german()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
         style="font-size: 20px" class="anticon anticon-notification"></i> <br>Nachrichten</li>
       <li nz-menu-item *ngIf="german()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
         style=" font-size: 20px" class="anticon anticon-bulb"></i> <br>Über uns</li>
 
-        <li nz-menu-item [nzSelected]="true" *ngIf="french()"
+        <li nz-menu-item [nzSelected]="flight" *ngIf="french()"
             style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
           style="font-size: 20px" class="material-icons">local_airport</i> <br>Vols</li>
-        <li nz-menu-item  *ngIf="french()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+        <li nz-menu-item  [nzSelected]="blog" *ngIf="french()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"> <a href="/community/blog"></a><i
           style=" font-size: 20px" class="anticon anticon-picture"></i> <br>Blog</li>
-        <li nz-menu-item  *ngIf="french()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+        <li nz-menu-item [nzSelected]="news" *ngIf="french()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
           style="font-size: 20px" class="anticon anticon-notification"></i> <br>Nouvelles</li>
         <li nz-menu-item *ngIf="french()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 8px"><i
           style=" font-size: 20px" class="anticon anticon-bulb"></i> <br>À propos de nous</li>
 
-          <li nz-menu-item [nzSelected]="true" *ngIf="italian()"
+          <li nz-menu-item [nzSelected]="flight" *ngIf="italian()"
               style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
             style="font-size: 20px" class="material-icons">local_airport</i> <br>voli</li>
-          <li nz-menu-item  *ngIf="italian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+          <li nz-menu-item [nzSelected]="blog" *ngIf="italian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"> <a href="/community/blog"></a><i
             style=" font-size: 20px" class="anticon anticon-picture"></i> <br>Blog</li>
-          <li nz-menu-item  *ngIf="italian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+          <li nz-menu-item  [nzSelected]="news"*ngIf="italian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
             style="font-size: 20px" class="anticon anticon-notification"></i> <br>Notizie</li>
           <li nz-menu-item *ngIf="italian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 8px"><i
             style=" font-size: 20px" class="anticon anticon-bulb"></i> <br>Riguardo a noi</li>
 
-            <li nz-menu-item [nzSelected]="true" *ngIf="spanish()"
+            <li nz-menu-item [nzSelected]="flight" *ngIf="spanish()"
                 style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
               style="font-size: 20px" class="material-icons">local_airport</i> <br>Vuelos</li>
-            <li nz-menu-item  *ngIf="spanish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+            <li nz-menu-item [nzSelected]="blog" *ngIf="spanish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"> <a href="/community/blog"></a><i
               style=" font-size: 20px" class="anticon anticon-picture"></i> <br>Blog</li>
-            <li nz-menu-item  *ngIf="spanish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+            <li nz-menu-item [nzSelected]="news" *ngIf="spanish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
               style="font-size: 20px" class="anticon anticon-notification"></i> <br>Noticias</li>
             <li nz-menu-item *ngIf="spanish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 8px"><i
               style=" font-size: 20px" class="anticon anticon-bulb"></i> <br>Acerca de nosotros</li>
 
-              <li nz-menu-item [nzSelected]="true" *ngIf="turkish()"
+              <li nz-menu-item [nzSelected]="flight" *ngIf="turkish()"
                   style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
                 style="font-size: 20px" class="material-icons">local_airport</i> <br>Uçuşlar</li>
-              <li nz-menu-item  *ngIf="turkish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+              <li nz-menu-item [nzSelected]="blog" *ngIf="turkish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"> <a href="/community/blog"></a><i
                 style=" font-size: 20px" class="anticon anticon-picture"></i> <br>Blog</li>
-              <li nz-menu-item  *ngIf="turkish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+              <li nz-menu-item [nzSelected]="news" *ngIf="turkish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
                 style="font-size: 20px" class="anticon anticon-notification"></i> <br>Haber</li>
               <li nz-menu-item *ngIf="turkish()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
                 style=" font-size: 20px" class="anticon anticon-bulb"></i> <br>Hakkımızda</li>
 
-                <li nz-menu-item [nzSelected]="true" *ngIf="chinese()"
+                <li nz-menu-item [nzSelected]="flight" *ngIf="chinese()"
                     style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
                   style="font-size: 20px" class="material-icons">local_airport</i> <br>航班</li>
-                <li nz-menu-item  *ngIf="chinese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+                <li nz-menu-item [nzSelected]="blog" *ngIf="chinese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><a href="/community/blog"></a><i
                   style=" font-size: 20px" class="anticon anticon-picture"></i> <br>博客</li>
-                <li nz-menu-item  *ngIf="chinese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+                <li nz-menu-item  [nzSelected]="news"*ngIf="chinese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
                   style="font-size: 20px" class="anticon anticon-notification"></i> <br>新闻</li>
                 <li nz-menu-item *ngIf="chinese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
                   style=" font-size: 20px" class="anticon anticon-bulb"></i><br> 关于我们
 </li>
 
-                  <li nz-menu-item [nzSelected]="true" *ngIf="japanese()"
+                  <li nz-menu-item [nzSelected]="flight" *ngIf="japanese()"
                       style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
                     style="font-size: 20px" class="material-icons">local_airport</i> <br>フライト</li>
-                  <li nz-menu-item  *ngIf="japanese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+                  <li nz-menu-item [nzSelected]="blog" *ngIf="japanese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"> <a href="/community/blog"></a><i
                     style=" font-size: 20px" class="anticon anticon-picture"></i> <br>ブログ</li>
-                  <li nz-menu-item  *ngIf="japanese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+                  <li nz-menu-item [nzSelected]="news" *ngIf="japanese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
                     style="font-size: 20px" class="anticon anticon-notification"></i> <br>ニュース</li>
                   <li nz-menu-item *ngIf="japanese()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 8px"><i
                     style=" font-size: 20px" class="anticon anticon-bulb"></i> <br>私たちに関しては</li>
 
-                    <li nz-menu-item [nzSelected]="true" *ngIf="russian()"
+                    <li nz-menu-item [nzSelected]="flight" *ngIf="russian()"
                         style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px;"><i
                       style="font-size: 20px" class="material-icons">local_airport</i> <br>Рейсы</li>
-                    <li nz-menu-item  *ngIf="russian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
+                    <li nz-menu-item [nzSelected]="blog" *ngIf="russian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><a href="/community/blog"></a><i
                       style=" font-size: 20px" class="anticon anticon-picture"></i> <br> Блог</li>
-                    <li nz-menu-item  *ngIf="russian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
+                    <li nz-menu-item [nzSelected]="news" *ngIf="russian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif; font-size: 10px"><i
                       style="font-size: 20px" class="anticon anticon-notification"></i> <br> Новости</li>
                     <li nz-menu-item *ngIf="russian()" style="width:25%;text-align:center; font-family: 'Cairo', sans-serif;font-size: 10px"><i
                       style=" font-size: 20px" class="anticon anticon-bulb"></i><br>  Насчет нас</li>
@@ -100,50 +100,50 @@
 
   </ul>
   <ul *ngIf="webVersion" nz-menu [nzMode]="'horizontal'">
-    <li nz-menu-item *ngIf="english()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Flights  </li>
-    <li nz-menu-item *ngIf="english()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
-    <li nz-menu-item *ngIf="english()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>News</li>
+    <li nz-menu-item *ngIf="english()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"> <a href="/"></a><i style="font-size: 20px" class="material-icons">local_airport</i> Flights  </li>
+    <li nz-menu-item *ngIf="english()" [nzSelected]="blog"style=" font-family: 'Cairo', sans-serif;font-size: 15px"> <a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
+    <li nz-menu-item *ngIf="english()"[nzSelected]="news" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>News</li>
     <li nz-menu-item *ngIf="english()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>About us</li>
 
-    <li nz-menu-item *ngIf="german()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Flüge  </li>
-    <li nz-menu-item *ngIf="german()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
-    <li nz-menu-item *ngIf="german()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>Nachrichten</li>
+    <li nz-menu-item *ngIf="german()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Flüge  </li>
+    <li nz-menu-item *ngIf="german()" [nzSelected]="blog"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
+    <li nz-menu-item *ngIf="german()"[nzSelected]="news" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>Nachrichten</li>
     <li nz-menu-item *ngIf="german()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>Über uns</li>
 
-    <li nz-menu-item *ngIf="french()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Vols  </li>
-    <li nz-menu-item *ngIf="french()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
-    <li nz-menu-item *ngIf="french()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>Nouvelles</li>
+    <li nz-menu-item *ngIf="french()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Vols  </li>
+    <li nz-menu-item *ngIf="french()" [nzSelected]="blog"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
+    <li nz-menu-item *ngIf="french()"[nzSelected]="news" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>Nouvelles</li>
     <li nz-menu-item *ngIf="french()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>À propos de nous</li>
 
-    <li nz-menu-item *ngIf="italian()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> voli  </li>
-    <li nz-menu-item *ngIf="italian()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
-    <li nz-menu-item *ngIf="italian()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>Notizie</li>
+    <li nz-menu-item *ngIf="italian()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> voli  </li>
+    <li nz-menu-item *ngIf="italian()"[nzSelected]="blog" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
+    <li nz-menu-item *ngIf="italian()" [nzSelected]="news"style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>Notizie</li>
     <li nz-menu-item *ngIf="italian()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>Riguardo a noi</li>
 
-    <li nz-menu-item *ngIf="spanish()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Vuelos  </li>
-    <li nz-menu-item *ngIf="spanish()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
-    <li nz-menu-item *ngIf="spanish()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>Noticias</li>
+    <li nz-menu-item *ngIf="spanish()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Vuelos  </li>
+    <li nz-menu-item *ngIf="spanish()"[nzSelected]="blog" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
+    <li nz-menu-item *ngIf="spanish()" [nzSelected]="news"style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>Noticias</li>
     <li nz-menu-item *ngIf="spanish()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>Acerca de nosotros</li>
 
-    <li nz-menu-item *ngIf="turkish()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Uçuşlar  </li>
-    <li nz-menu-item *ngIf="turkish()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
-    <li nz-menu-item *ngIf="turkish()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>Haber</li>
+    <li nz-menu-item *ngIf="turkish()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Uçuşlar  </li>
+    <li nz-menu-item *ngIf="turkish()" [nzSelected]="blog"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>Blog</li>
+    <li nz-menu-item *ngIf="turkish()"[nzSelected]="news" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>Haber</li>
     <li nz-menu-item *ngIf="turkish()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>Hakkımızda</li>
 
-    <li nz-menu-item *ngIf="chinese()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> 航班  </li>
-    <li nz-menu-item *ngIf="chinese()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>博客</li>
-    <li nz-menu-item *ngIf="chinese()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>新闻</li>
+    <li nz-menu-item *ngIf="chinese()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> 航班  </li>
+    <li nz-menu-item *ngIf="chinese()" [nzSelected]="blog"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>博客</li>
+    <li nz-menu-item *ngIf="chinese()" [nzSelected]="news"style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>新闻</li>
     <li nz-menu-item *ngIf="chinese()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>关于我们
 </li>
 
-    <li nz-menu-item *ngIf="japanese()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> フライト  </li>
-    <li nz-menu-item *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>ブログ</li>
-    <li nz-menu-item *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>ニュース</li>
+    <li nz-menu-item *ngIf="japanese()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> フライト  </li>
+    <li nz-menu-item *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>ブログ</li>
+    <li nz-menu-item *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>ニュース</li>
     <li nz-menu-item *ngIf="japanese()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>私たちに関しては</li>
 
-    <li nz-menu-item *ngIf="russian()"[nzSelected]="true" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Рейсы  </li>
-    <li nz-menu-item *ngIf="russian()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px"class="anticon anticon-picture"></i>Блог</li>
-    <li nz-menu-item *ngIf="russian()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px"class="anticon anticon-notification"></i>Новости</li>
-    <li nz-menu-item *ngIf="russian()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>Насчет нас</li>
+    <li nz-menu-item *ngIf="russian()"[nzSelected]="flight" style="font-family: 'Cairo', sans-serif; font-size: 15px"><i style="font-size: 20px" class="material-icons">local_airport</i> Рейсы  </li>
+    <li nz-menu-item *ngIf="russian()" style=" font-family: 'Cairo', sans-serif;font-size: 15px"><a href="/community/blog"></a><i style="font-size: 20px"class="anticon anticon-picture"></i>Блог</li>
+    <li nz-menu-item *ngIf="russian()" style=" font-family: 'Cairo', sans-serif; font-size: 15px"><a href="/community/news"></a><i style="font-size: 20px"class="anticon anticon-notification"></i>Новости</li>
+    <li nz-menu-item *ngIf="russian()"style=" font-family: 'Cairo', sans-serif;font-size: 15px"><i style="font-size: 20px" class="anticon anticon-bulb"></i>Насчет нас us</li>
   </ul>
 </div>
