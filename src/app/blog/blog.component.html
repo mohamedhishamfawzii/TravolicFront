@@ -73,14 +73,16 @@
   </div>
 </div>
 
-
 <div style="width:70%"*ngFor="let option of blog" class="card-container">
   <div class="card u-clearfix">
     <div class="card-body">
       <h2 class="card-title">{{option.title}}</h2>
       <div class="card-read"><a href="/community/blog/{{option._id}}" >Read the article</a></div>
     </div>
-    <img src="{{option.img}}" alt="" class="card-media" />
+    <div class="wrap">
+   <img src="{{option.img}}" alt="" class="card-media" />
+
+  </div>
   </div>
   <div class="card-shadow"></div>
 </div>

@@ -341,17 +341,21 @@ if (this.from === undefined) {
       this.twoDates = true;
       this.oneDate = false;
       this.multi=false;
+      this.backendConnect.multi=false;
+
     }
     if (this.type == 'oneway') {
       this.showdiv=true;
       this.twoDates = false;
       this.oneDate = true;
       this.multi=false;
+        this.backendConnect.multi=false;
     }
     if (this.type =='mul') {
       this.showdiv=false;
       this.multi=true;
       console.log("here");
+        this.backendConnect.multi=true;
       }
   }
   plus(){
@@ -390,6 +394,10 @@ if (this.from === undefined) {
           this.fifth = false;
           break;
       }
+
+    }
+    searchMulti(){
+      this.route.navigate(['/flights/search/']);
 
     }
   }

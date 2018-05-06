@@ -10,6 +10,7 @@ export  class BackendService {
  city;
 flight;
 blog;
+multi;
  currency : string ;
  language:string;
  en = true ;

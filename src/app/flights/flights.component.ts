@@ -73,6 +73,9 @@ export class FlightsComponent implements OnInit {
       this.mobVersion = true;
       this.webVersion = false;
     }
+    if(this.service.multi){
+console.log('coming from multi maaaan !!');
+    }else{
     this.route.params.subscribe((params: Params) => {
       if (params['data'] !== undefined) {
         // Get the param straight
@@ -92,7 +95,7 @@ export class FlightsComponent implements OnInit {
           console.log(this.flights.response.number_of_results);
         });
       }
-    });
+    });}
   }
 
   generateAirlines(){
@@ -271,5 +274,6 @@ export class FlightsComponent implements OnInit {
 
     console.log("filtered flights data", this.flightsData);
   }
+
 
 }
