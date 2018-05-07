@@ -19,6 +19,9 @@ import { SearchdivresultsComponent } from './searchdivresults/searchdivresults.c
 import { BlogComponent } from './blog/blog.component';
 import { NewsComponent } from './news/news.component';
 import { ArticleComponent } from './article/article.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShareButtonModule } from '@ngx-share/button';
+import {ShareButtonsModule} from 'ngx-sharebuttons';
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: 'flights/search', component: FlightsComponent},
@@ -43,14 +46,14 @@ const appRoutes: Routes = [
     ArticleComponent
   ],
   imports: [
-    BrowserModule, NgZorroAntdModule.forRoot(), FormsModule ,
-    ReactiveFormsModule,
+    BrowserModule, NgZorroAntdModule.forRoot(), FormsModule , ShareButtonModule.forRoot(),ShareButtonsModule.forRoot(),
+    ReactiveFormsModule,HttpClientModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,HttpModule,   RouterModule.forRoot(
       appRoutes// <-- debugging purposes only
     )
   ],
-  providers: [BackendService ,HttpModule,{ provide: NZ_LOCALE, useValue: enUS }],
+  providers: [HttpClientModule,BackendService ,HttpModule,{ provide: NZ_LOCALE, useValue: enUS }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

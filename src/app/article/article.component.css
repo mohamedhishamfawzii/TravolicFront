@@ -75,7 +75,13 @@ button:hover{
   box-shadow: inset 400px 0 0 0 #444;
   color: white;
 }
-
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+}
 @media only screen and (max-width: 1000px) {
     /* For tablets: */
   .articleText {
