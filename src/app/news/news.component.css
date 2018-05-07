@@ -1,4 +1,14 @@
-
+.wrap {
+	max-width:960px;
+	min-width:280px;
+	margin:auto;
+	position:relative;
+}
+.wrap img {
+	width:100%;
+	height:auto;
+	border:1px solid #000;
+}
 .type-word {
   font-family: 'Cairo', sans-serif;
   font-size: 7vw;

@@ -138,7 +138,7 @@
                         <label *ngIf="russian()"
                           style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
-      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 80%" (keydown)="changedfrom($event)"></nz-input>
+      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 80%" (input)="changedfrom($event.target.value)"></nz-input>
 
         <button nz-button [nzType]="'default'" style="width:80%"
         *ngFor="let option of Aairports" (click)="clickedawy(option)">
@@ -174,7 +174,7 @@
 
       <br>
 
-      <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 80%" (ngModelChange)="changedto($event)"></nz-input>
+      <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 80%" (input)="changedto($event.target.value)"></nz-input>
 
       <button nz-button [nzType]="'default'" style="width:80%"
       *ngFor="let option of ABirports" (click)="clickedawyto(option)">
@@ -382,7 +382,7 @@
                       <label *ngIf="russian()"
                         style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
-      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
+      <nz-input [(ngModel)]="from" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedfrom($event.target.value)"></nz-input>
 
       <button nz-button [nzType]="'default'" style="width:200px"
       *ngFor="let option of Aairports" (click)="clickedawy(option)">
@@ -414,7 +414,7 @@
                         <label *ngIf="russian()"
                           style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
         <br>
-        <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
+        <nz-input [(ngModel)]="to" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedto($event.target.value)"></nz-input>
 
         <button nz-button [nzType]="'default'" style="width:200px"
         *ngFor="let option of ABirports" (click)="clickedawyto(option)">
@@ -474,7 +474,7 @@
                       <label *ngIf="russian()"
                         style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
-      <nz-input [(ngModel)]="from2" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
+      <nz-input [(ngModel)]="from2" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedto($event.target.value)"></nz-input>
 
       <button nz-button [nzType]="'default'" style="width:200px"
       *ngFor="let option of Aairports" (click)="clickedawy2(option)">
@@ -505,7 +505,7 @@
                           <label *ngIf="russian()"
                             style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
-          <nz-input [(ngModel)]="to2" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
+          <nz-input [(ngModel)]="to2" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedto($event.target.value)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
           *ngFor="let option of ABirports" (click)="clickedawyto2(option)">
@@ -564,7 +564,7 @@
                       <label *ngIf="russian()"
                         style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
-      <nz-input [(ngModel)]="from3" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
+      <nz-input [(ngModel)]="from3" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedfrom($event.target.value)"></nz-input>
 
       <button nz-button [nzType]="'default'" style="width:200px"
       *ngFor="let option of Aairports" (click)="clickedawy3(option)">
@@ -595,7 +595,7 @@
                           <label *ngIf="russian()"
                             style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
-          <nz-input [(ngModel)]="to3" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
+          <nz-input [(ngModel)]="to3" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedto($event.target.value)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
           *ngFor="let option of ABirports" (click)="clickedawyto3(option)">
@@ -654,7 +654,7 @@
                       <label *ngIf="russian()"
                         style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
-      <nz-input [(ngModel)]="from4" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
+      <nz-input [(ngModel)]="from4" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedfrom($event.target.value)"></nz-input>
 
       <button nz-button [nzType]="'default'" style="width:200px"
       *ngFor="let option of Aairports" (click)="clickedawy4(option)">
@@ -685,7 +685,7 @@
                           <label *ngIf="russian()"
                             style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
-          <nz-input [(ngModel)]="to4" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
+          <nz-input [(ngModel)]="to4" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedto($event.target.value)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
           *ngFor="let option of ABirports" (click)="clickedawyto4(option)">
@@ -744,7 +744,7 @@
                       <label *ngIf="russian()"
                         style="font-size: 16px;   font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">От</label>
       <br>
-      <nz-input [(ngModel)]="from5" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedfrom($event)"></nz-input>
+      <nz-input [(ngModel)]="from5" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedfrom($event.target.value)"></nz-input>
 
       <button nz-button [nzType]="'default'" style="width:200px"
       *ngFor="let option of Aairports" (click)="clickedawy5(option)">
@@ -775,7 +775,7 @@
                           <label *ngIf="russian()"
                             style="font-size: 16px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">К</label>
           <br>
-          <nz-input [(ngModel)]="to5" [nzPlaceHolder]=""  style=" width: 200px" (ngModelChange)="changedto($event)"></nz-input>
+          <nz-input [(ngModel)]="to5" [nzPlaceHolder]=""  style=" width: 200px" (input)="changedto($event.target.value)"></nz-input>
 
           <button nz-button [nzType]="'default'" style="width:200px"
           *ngFor="let option of ABirports" (click)="clickedawyto5(option)">

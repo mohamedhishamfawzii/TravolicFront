@@ -290,6 +290,78 @@ this.service.addmulti(this.service.multiArgs).then(
 
     console.log("filtered flights data", this.flightsData);
   }
+  english(){
+    if(this.service.en){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  spanish(){
+    if(this.service.sp){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  italian(){
+    if(this.service.it){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  russian(){
+    if(this.service.ru){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  turkish(){
+    if(this.service.tr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  chinese(){
+    if(this.service.ch){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  japanese(){
+    if(this.service.jp){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  german(){
+    if(this.service.gr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  french(){
+    if(this.service.fr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
 
 
 }
