@@ -81,7 +81,6 @@ console.log('coming from multi maaaan !!');
 this.filter=false;
 this.service.addmulti(this.service.multiArgs).then(
   (result)=>{
-    console.log(result);
         this.flights = result;
         this.flightsDataUnfiltered = this.flights.data;
         this.flightsData=this.flights.data;
@@ -96,19 +95,15 @@ this.service.addmulti(this.service.multiArgs).then(
       if (params['data'] !== undefined) {
         // Get the param straight
         this.data = params['data'];
-        console.log('took it ' + this.data);
         this.service.getflights(this.data).then((result) => {
           this.flights = result.json();
-          console.log(this.flights);
           this.flightsDataUnfiltered = this.flights.response.data;
           // this.flightsData = this.flightsDataUnfiltered;
           // console.log("Flights:",this.flightsData);
           this.onChange_filter();
           this.flightsNumber = this.flightsData.number_of_results;
-          console.log("response:",this.flights.response.data);
           this.loaded = true;
           this.loading = false;
-          console.log(this.flights.response.number_of_results);
         });
       }
     });}
@@ -288,7 +283,6 @@ this.service.addmulti(this.service.multiArgs).then(
       }
     });
 
-    console.log("filtered flights data", this.flightsData);
   }
   english(){
     if(this.service.en){

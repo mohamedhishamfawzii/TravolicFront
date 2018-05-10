@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   countries;
   currency ='USD' ;
   currencies = ['EGP','USD','EUR'];
-  language = 'English';
+  language;
   location;
   isCollapsed = false;
   width = screen.width;
@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
   constructor(private backendConnect: BackendService,private http: Http) { }
 
   ngOnInit() {
-
+this.language='English';
     this.backendConnect.currency = "USD";
     this.http.get('json/countries.json')
       .subscribe(res => this.countries = res.json());

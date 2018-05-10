@@ -14,7 +14,7 @@ multi;
 multiArgs;
  currency : string ;
  language:string;
- en = true ;
+ en=true;
  gr=false;
  it=false;
  ru=false;

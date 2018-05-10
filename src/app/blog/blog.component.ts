@@ -10,6 +10,9 @@ export class BlogComponent implements OnInit {
   constructor(private backendConnect: BackendService) { }
 
   ngOnInit() {
+    console.log(this.backendConnect.language);
+      console.log(this.backendConnect.en);
+
     this.backendConnect.getArticles().then((result) => {
       this.blog = result.json();
       this.blog=this.blog.response;

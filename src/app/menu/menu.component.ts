@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from '../backend.service';
+import {ActivatedRoute, Router, RouterModule, Routes} from '@angular/router';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -13,7 +15,7 @@ export class MenuComponent implements OnInit {
 flight;
 blog;
 news;
-  constructor(private backendConnect: BackendService) {
+  constructor(private backendConnect: BackendService,private route: Router) {
   }
 
   ngOnInit() {
@@ -94,6 +96,21 @@ news;
   else{
     return false;
   }
+  }
+  blognav(){
+    console.log("clicked");
+    this.route.navigate(['/community/blog']);
+
+  }
+  homenav(){
+    console.log("clicked");
+    this.route.navigate(['/']);
+
+  }
+  newsnav(){
+    console.log("clicked");
+    this.route.navigate(['/community/news']);
+
   }
 
 }

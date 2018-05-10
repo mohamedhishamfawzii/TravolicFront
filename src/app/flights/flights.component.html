@@ -264,9 +264,7 @@
 
 
 <nz-layout *ngIf="mobVersion" class="cont">
-  <div style="background: white; text-align: center">
-    <img src="../../assets/travolic.png" style="margin-top: 15px;" height="50" width="170"/>
-  </div>
+
   <nz-modal [nzVisible]="isVisible" [nzTitle]="'Filters'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"
             (nzOnOk)="handleOk($event)">
     <ng-template #modalContent>
@@ -357,7 +355,6 @@
 
   <nz-content style="margin-bottom:20px" class="cont">
 
-    <app-menu></app-menu>
     <!--<app-searchdivresults></app-searchdivresults>-->
     <div style="border-radius: 50px; margin: 20px;">
 
@@ -523,7 +520,7 @@
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
                           <span class="airport">   {{option['depart']}}</span>
                         </div>
-                       <nz-avatar class="divider"  nzShape="circle" style="width:50px; left:50px; height:50px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
+                       <nz-avatar class="divider"  nzShape="circle" style="width:50px; height:50px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
 
                         <div class="segment destination">
                           <time>{{option['arrive_at']['hour']}}:{{option['arrive_at']['minute']}}</time>

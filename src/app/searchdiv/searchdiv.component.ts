@@ -9,7 +9,7 @@ import { Console } from '@angular/core/src/console';
   styleUrls: ['./searchdiv.component.css']
 })
 export class SearchdivComponent implements OnInit {
-  type = 'oneway';
+  type = 'round';
   adults = ['1 adult', '2 adults', '3 adults', '4 adults', '5 adults', '6 adults', '7 adults', '8 adults', '9 adults'];
   children = ['1 child', '2 children', '3 children', '4 children', '5 children', '6 children', '7 children', '8 children', '9 children'];
   infants = ['1 infant', '2 infants', '3 infants', '4 infants', '5 infants', '6 infants', '7 infants', '8 infants', '9 infants'];
@@ -43,7 +43,7 @@ export class SearchdivComponent implements OnInit {
   theTwodates;
   date;
   oneDate = true;
-  class;
+  class='e';
   direct = false;
   location;
   isSpinningFrom = false;
@@ -65,6 +65,7 @@ export class SearchdivComponent implements OnInit {
   i;
 
   ngOnInit() {
+    this.switch();
 
     console.log(this.backendConnect.currency);
     this.Aairports = [];
@@ -317,6 +318,10 @@ if (this.from === undefined) {
         this.errmsg = 'you have to select Date';
         this.error = true;
 
+      }
+      if(this.adultss+this.childrenn >9 || this.infantss > this.childrenn ){
+        this.errmsg = 'no of adults plus children should not exceed 9 , and no of infants can not be more than the no of adults ';
+        this.error = true;
       }
     }
     else {
