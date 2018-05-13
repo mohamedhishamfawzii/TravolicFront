@@ -22,6 +22,7 @@ import { ArticleComponent } from './article/article.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShareButtonModule } from '@ngx-share/button';
 import {ShareButtonsModule} from 'ngx-sharebuttons';
+import { AboutusComponent } from './aboutus/aboutus.component';
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: 'flights/search', component: FlightsComponent},
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     { path: 'community/blog', component: BlogComponent},
       { path: 'community/news', component: NewsComponent},
           { path: 'community/blog/:id', component: ArticleComponent},
+          { path: 'community/aboutus', component: AboutusComponent},
 ] ;
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     SearchdivresultsComponent,
     BlogComponent,
     NewsComponent,
-    ArticleComponent
+    ArticleComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule, NgZorroAntdModule.forRoot(), FormsModule , ShareButtonModule.forRoot(),ShareButtonsModule.forRoot(),

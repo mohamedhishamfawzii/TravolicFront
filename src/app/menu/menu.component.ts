@@ -112,5 +112,9 @@ news;
     this.route.navigate(['/community/news']);
 
   }
+  aboutnav(){
+      console.log("clicked");
+      this.route.navigate(['/community/aboutus']);
+  }
 
 }

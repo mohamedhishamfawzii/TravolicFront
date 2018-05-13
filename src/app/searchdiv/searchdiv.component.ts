@@ -22,6 +22,7 @@ export class SearchdivComponent implements OnInit {
   from3;
   from4;
   from5;
+  temp;
   multiArgs;
   to2;
   to3;
@@ -320,7 +321,7 @@ if (this.from === undefined) {
 
       }
       if(this.adultss+this.childrenn >9 || this.infantss > this.childrenn ){
-        this.errmsg = 'no of adults plus children should not exceed 9 , and no of infants can not be more than the no of adults ';
+        this.errmsg = 'number of adults plus children should not exceed 9 , and number of infants can not be more than the number of adults ';
         this.error = true;
       }
     }
@@ -340,7 +341,13 @@ if (this.from === undefined) {
       this.route.navigate(['/flights/search/',this.parameters]);
     }
   }
+switchair(){
+  console.log("switching");
+this.temp=this.to;
+this.to=this.from;
+this.from=this.temp;
 
+}
   switch() {
     if (this.type == 'round') {
       this.showdiv=true;

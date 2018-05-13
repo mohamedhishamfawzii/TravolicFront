@@ -220,7 +220,10 @@
 
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
-                        <nz-avatar nzShape="circle" style="right:100px; width:50px; height:50px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
+                      <label style=" color: rgb(0,0,0) ;  float: left;font-family: 'Cairo', sans-serif; font-size:16px"> Marketing Airline {{option['marketing_airline_name']}} , </label>
+                      <label style=" color: rgb(0,0,0) ;  float: left;font-family: 'Cairo', sans-serif; font-size:16px"> Operating Airline {{option['operating_airline_name']}}  </label>
+
+                        <nz-avatar nzShape="circle" style="right:100px; width:70px; height:70px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
                       <div class="segments">
                         <div class="segment departure">
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
@@ -236,9 +239,9 @@
 
                     </div>
                     <br>
-                    <label style=" color: rgb(219,213,39) ;  float: right;font-family: 'Cairo', sans-serif; font-size:16px"> Provided by : {{data['vendor']}}  </label>
+                    <label style=" color: rgb(0,0,0) ;  float: right;font-family: 'Cairo', sans-serif; font-size:16px"> {{data['vendor']}}  </label>
 <br>
-                    <label style=" color: rgb(219,213,39) ;  font-family: 'Cairo', sans-serif; font-size:16px" > Duration : {{data.duration[0]}}</label>
+                    <label style=" color: rgb(0,0,0) ;  font-family: 'Cairo', sans-serif; font-size:16px" > Duration : {{data.duration[0]}}</label>
 
 
                     <br>

@@ -10,7 +10,16 @@ import {BackendService} from '../backend.service';
 })
 export class NavbarComponent implements OnInit {
 
- languages = ['English','German','Français','Italian','Turkish','Chinese','Spanish','Japanese','Russian'];
+ languages = [{'name':'English',model:'English'},
+ {'name':'Deutsche',model:'German'},
+  {'name':'Français',model:'Français'},
+  {'name':'italiano',model:'Italian'},
+ {'name':'Türk',model:'Turkish'},
+  {'name':'中文',model:'Chinese'},
+  {'name':'Español',model:'Spanish'},
+  {'name':'日本語',model:'Japanese'},
+  {'name':'русский',model:'Russian'}
+];
   country;
   countries;
   currency ='USD' ;

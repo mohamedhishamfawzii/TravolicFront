@@ -210,7 +210,7 @@
       <nz-datepicker *ngIf="oneDate" class="row1element" nzSize="large"
                      style="margin-right:3px;margin-left:3px;width: 80%" [nzPlaceHolder]="'Departure Date'"
                      [(ngModel)]="date"></nz-datepicker>
-      <nz-rangepicker *ngIf="twoDates" nzSize="large" 
+      <nz-rangepicker *ngIf="twoDates" nzSize="large"
                       [(ngModel)]="theTwodates" [nzPlaceholder]="['Departure date', 'Return date']" ></nz-rangepicker>
 
 
@@ -937,6 +937,9 @@
         </ng-template>
       </nz-option>
     </nz-select>
+
+    <button (click)="switchair()" nz-button [nzType]="'primary'" [nzShape]="'circle'">
+    <i class="anticon anticon-swap"></i>   </button>
   </span>
         <span class="row1element">
           <label *ngIf="english()"
@@ -1021,11 +1024,11 @@
                           <label *ngIf="russian()"
                             style="font-size: 20px;  margin-right:5px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: #128de7 ;">Класс</label>
   <nz-select nzSize="large" style=" width: 115px;" [(ngModel)]="class" [nzPlaceHolder]="''" nzAllowClear>
-    <nz-option [nzLabel]="'Premium'" [nzValue]="'p'">
-    </nz-option>
     <nz-option [nzLabel]="'Economy'" [nzValue]="'e'">
     </nz-option>
-       <nz-option [nzLabel]="'Business'" [nzValue]="'b'">
+    <nz-option [nzLabel]="'Premium'" [nzValue]="'p'">
+    </nz-option>
+       <nz-option [nzLabel]="'Business Class'" [nzValue]="'b'">
     </nz-option>
        <nz-option [nzLabel]="'First class'" [nzValue]="'f'">
     </nz-option>

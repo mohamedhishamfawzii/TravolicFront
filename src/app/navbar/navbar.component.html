@@ -46,8 +46,8 @@
         nzShowSearch>
         <nz-option
           *ngFor="let option of languages"
-          [nzLabel]="option"
-          [nzValue]="option"
+          [nzLabel]="option.name"
+          [nzValue]="option.model"
         >
         </nz-option>
       </nz-select>
@@ -92,8 +92,8 @@
              nzShowSearch >
     <nz-option
       *ngFor="let option of languages"
-      [nzLabel]="option"
-      [nzValue]="option"
+      [nzLabel]="option.name"
+      [nzValue]="option.model"
     >
     </nz-option>
   </nz-select>
