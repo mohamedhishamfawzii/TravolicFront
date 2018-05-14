@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BackendService} from '../backend.service';
+import {NzNotificationService} from 'ng-zorro-antd';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {BackendService} from '../backend.service';
 })
 export class InfoComponent implements OnInit {
 
-  constructor(private backendConnect: BackendService) { }
+  constructor(private backendConnect: BackendService, private _notification: NzNotificationService) { }
 
 view=false;
 mail;
@@ -92,6 +93,7 @@ mail;
   }
   newslettersend(){
   console.log(this.backendConnect.addNewsletter(this.mail,this.backendConnect.country,this.backendConnect.city,this.backendConnect.language));
+  this._notification.create('success', 'Newsletter', 'You are now subscribed to the newsletter !');
  this.view=false;
   }
 
