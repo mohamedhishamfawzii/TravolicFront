@@ -1,0 +1,88 @@
+<div style="text-align:center; background-color:#128de7;"class="type-word"></div>
+<div  style="background-color:#128de7;" class="tabs">
+  <div class="tab">
+    <div class="mountain"></div>
+    <div class="mountain-large"></div>
+    <div class="mountain"></div>
+    <div class="clouds">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+    <div class="base"></div>
+  </div>
+  <div class="tab">
+    <div class="planet-sml"></div>
+    <div class="planet-med"></div>
+    <div class="planet-lg"></div>
+    <div class="planet-ring"></div>
+    <div class="moon">
+      <div class="crater"></div>
+      <div class="crater"></div>
+      <div class="crater-lg"></div>
+      <div class="crater"></div>
+      <div class="crater"></div>
+    </div>
+  </div>
+  <div class="tab">
+    <div class="night-sky"></div>
+    <div class="night-sky-2"></div>
+    <div class="moon-light"></div>
+    <div class="fog"></div>
+    <div class="building-lvl-1"></div>
+    <div class="building-lvl-1-core"></div>
+    <div class="building-lvl-1-window"></div>
+    <div class="building-lvl-2-divide"></div>
+    <div class="building-lvl-2-core"></div>
+    <div class="building-lvl-3-divide"></div>
+    <div class="building-lvl-3-core"></div>
+    <div class="building-lvl-roof"></div>
+  </div>
+  <div class="tab">
+    <div class="building-block"></div>
+    <div class="building-block-sat-dot"></div>
+    <div class="building-block-sat"></div>
+    <div class="building-block-window">
+      <div class="cat"></div>
+    </div>
+    <div class="building-block-roof">
+      <div class="building-block-roof-tile"></div>
+      <div class="building-block-roof-tile"></div>
+      <div class="building-block-roof-tile"></div>
+      <div class="building-block-roof-tile"></div>
+      <div class="building-block-roof-tile"></div>
+      <div class="building-block-roof-tile"></div>
+      <div class="building-block-roof-tile"></div>
+      <div class="building-block-roof-tile"></div>
+    </div>
+  </div>
+  <div class="tab">
+    <div class="sea"></div>
+    <div class="sea-fore"></div>
+    <div class="boat">
+      <div class="boat-hull"></div>
+      <div class="boat-top"></div>
+    </div>
+    <div class="boat-far">
+      <div class="boat-mast"></div>
+    </div>
+  </div>
+</div>
+
+<div style="width:70%"*ngFor="let option of blog" class="card-container">
+  <div class="card u-clearfix">
+    <div class="card-body">
+      <h2 class="card-title">{{option.title}}</h2>
+      <div class="card-read"><a href="/community/blog/{{option._id}}" >Read the article</a></div>
+    </div>
+    <div class="wrap">
+   <img src="{{option.img}}" alt="" class="card-media" />
+
+  </div>
+  </div>
+  <div class="card-shadow"></div>
+</div>

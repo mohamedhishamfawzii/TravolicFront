@@ -9,7 +9,7 @@ import { Console } from '@angular/core/src/console';
   styleUrls: ['./searchdiv.component.css']
 })
 export class SearchdivComponent implements OnInit {
-  type = 'oneway';
+  type = 'round';
   adults = ['1 adult', '2 adults', '3 adults', '4 adults', '5 adults', '6 adults', '7 adults', '8 adults', '9 adults'];
   children = ['1 child', '2 children', '3 children', '4 children', '5 children', '6 children', '7 children', '8 children', '9 children'];
   infants = ['1 infant', '2 infants', '3 infants', '4 infants', '5 infants', '6 infants', '7 infants', '8 infants', '9 infants'];
@@ -22,6 +22,8 @@ export class SearchdivComponent implements OnInit {
   from3;
   from4;
   from5;
+  temp;
+  multiArgs;
   to2;
   to3;
   to4;
@@ -42,7 +44,7 @@ export class SearchdivComponent implements OnInit {
   theTwodates;
   date;
   oneDate = true;
-  class;
+  class='e';
   direct = false;
   location;
   isSpinningFrom = false;
@@ -64,6 +66,8 @@ export class SearchdivComponent implements OnInit {
   i;
 
   ngOnInit() {
+    this.switch();
+
     console.log(this.backendConnect.currency);
     this.Aairports = [];
     if (this.width < 860) {
@@ -78,17 +82,23 @@ export class SearchdivComponent implements OnInit {
             console.log('location result', this.location);
             this.airports.forEach((air) => {
               if (air.City === this.location.city) {
+                this.Aairports.push(air.IATA);
                 this.from = air.IATA;
               }
             });
             if (this.from === undefined) {
+              this.Aairports = [];
               this.airports.forEach((air) => {
                 if (air.Country === this.location.country) {
+                  this.Aairports.push(air.IATA);
                   this.from = air.IATA;
                 }
 
               });
             }
+if (this.from === undefined) {
+    this.Aairports = [];}
+
             console.log(this.from);
             console.log(this.airports);
           }
@@ -310,6 +320,10 @@ export class SearchdivComponent implements OnInit {
         this.error = true;
 
       }
+      if(this.adultss+this.childrenn >9 || this.infantss > this.childrenn ){
+        this.errmsg = 'number of adults plus children should not exceed 9 , and number of infants can not be more than the number of adults ';
+        this.error = true;
+      }
     }
     else {
       this.error = false;
@@ -327,24 +341,34 @@ export class SearchdivComponent implements OnInit {
       this.route.navigate(['/flights/search/',this.parameters]);
     }
   }
+switchair(){
+  console.log("switching");
+this.temp=this.to;
+this.to=this.from;
+this.from=this.temp;
 
+}
   switch() {
     if (this.type == 'round') {
       this.showdiv=true;
       this.twoDates = true;
       this.oneDate = false;
       this.multi=false;
+      this.backendConnect.multi=false;
+
     }
     if (this.type == 'oneway') {
       this.showdiv=true;
       this.twoDates = false;
       this.oneDate = true;
       this.multi=false;
+        this.backendConnect.multi=false;
     }
     if (this.type =='mul') {
       this.showdiv=false;
       this.multi=true;
       console.log("here");
+        this.backendConnect.multi=true;
       }
   }
   plus(){
@@ -384,5 +408,97 @@ export class SearchdivComponent implements OnInit {
           break;
       }
 
+    }
+    searchMulti(){
+      this.route.navigate(['/flights/search/']);
+      switch(this.counter){
+     case 2:{
+       this.multiArgs=[{
+       'to': this.to ,
+       'from':this.from,
+       'date': this.date
+     },{
+     'to': this.to2 ,
+     'from':this.from2,
+     'date': this.date2
+   } ]
+
+   break;
+
+     }
+
+     case 3:{
+       this.multiArgs=[{
+       'to': this.to ,
+       'from':this.from,
+       'date': this.date
+     },{
+     'to': this.to2 ,
+     'from':this.from2,
+     'date': this.date2
+   },
+   {
+   'to': this.to3 ,
+   'from':this.from3,
+   'date': this.date3
+ }
+
+  ]
+   break;
+
+ }
+ case 4:{
+   this.multiArgs=[{
+   'to': this.to ,
+   'from':this.from,
+   'date': this.date
+ },{
+ 'to': this.to2 ,
+ 'from':this.from2,
+ 'date': this.date2
+},
+{
+'to': this.to3 ,
+'from':this.from3,
+'date': this.date3
+},{
+  'to': this.to4 ,
+  'from':this.from4,
+  'date': this.date4
+}
+
+]
+break;
+}
+case 5:{
+  this.multiArgs=[{
+  'to': this.to ,
+  'from':this.from,
+  'date': this.date
+},{
+'to': this.to2 ,
+'from':this.from2,
+'date': this.date2
+},
+{
+'to': this.to3 ,
+'from':this.from3,
+'date': this.date3
+},{
+ 'to': this.to4 ,
+ 'from':this.from4,
+ 'date': this.date4
+},{
+  'to': this.to5 ,
+  'from':this.from5,
+  'date': this.date5
+}
+]
+break;
+}
+}
+
+console.log(this.multiArgs);
+this.backendConnect.multiArgs=this.multiArgs
     }
   }

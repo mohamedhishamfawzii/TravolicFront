@@ -16,10 +16,21 @@ import { SearchdivComponent } from './searchdiv/searchdiv.component';
 import { InfoComponent } from './info/info.component';
 import { LoadingpageComponent } from './loadingpage/loadingpage.component';
 import { SearchdivresultsComponent } from './searchdivresults/searchdivresults.component';
+import { BlogComponent } from './blog/blog.component';
+import { NewsComponent } from './news/news.component';
+import { ArticleComponent } from './article/article.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShareButtonModule } from '@ngx-share/button';
+import {ShareButtonsModule} from 'ngx-sharebuttons';
+import { AboutusComponent } from './aboutus/aboutus.component';
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: 'flights/search', component: FlightsComponent},
   { path: 'flights/search/:data', component: FlightsComponent},
+    { path: 'community/blog', component: BlogComponent},
+      { path: 'community/news', component: NewsComponent},
+          { path: 'community/blog/:id', component: ArticleComponent},
+          { path: 'community/aboutus', component: AboutusComponent},
 ] ;
 @NgModule({
   declarations: [
@@ -31,17 +42,21 @@ const appRoutes: Routes = [
     InfoComponent,FlightsComponent, LoadingpageComponent,
     InfoComponent,
     FlightsComponent,
-    SearchdivresultsComponent
+    SearchdivresultsComponent,
+    BlogComponent,
+    NewsComponent,
+    ArticleComponent,
+    AboutusComponent
   ],
   imports: [
-    BrowserModule, NgZorroAntdModule.forRoot(), FormsModule ,
-    ReactiveFormsModule,
+    BrowserModule, NgZorroAntdModule.forRoot(), FormsModule , ShareButtonModule.forRoot(),ShareButtonsModule.forRoot(),
+    ReactiveFormsModule,HttpClientModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,HttpModule,   RouterModule.forRoot(
       appRoutes// <-- debugging purposes only
     )
   ],
-  providers: [BackendService ,HttpModule,{ provide: NZ_LOCALE, useValue: enUS }],
+  providers: [HttpClientModule,BackendService ,HttpModule,{ provide: NZ_LOCALE, useValue: enUS }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

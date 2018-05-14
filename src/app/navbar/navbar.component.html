@@ -1,5 +1,7 @@
 <div *ngIf="mobVersion" style="margin:10px;width:{{width}};">
-
+  <div *ngIf="mobVersion" style="background: white; text-align: center">
+<a href="/" >    <img href="/" src="../../assets/travolic.png" style="margin-top: 15px;" height="70" width="170"/></a>
+  </div>
   <div style="text-align: center;">
     <div style="text-align: center;margin-right:20px; margin-left:20px;margin-top: 20px">
       <!--<i style="margin-right:9px;margin-left:9px;font-size: 18px;color: white" class="anticon anticon-global"></i>-->
@@ -44,8 +46,8 @@
         nzShowSearch>
         <nz-option
           *ngFor="let option of languages"
-          [nzLabel]="option"
-          [nzValue]="option"
+          [nzLabel]="option.name"
+          [nzValue]="option.model"
         >
         </nz-option>
       </nz-select>
@@ -57,10 +59,8 @@
 <div *ngIf="webVersion">
 
 
-  <img src="../../assets/travolic.png" style="margin-top: 5px" height="50" width="170"/>
-  <button class="sel" nz-button [nzType]="'default'">
-    <i class="anticon anticon-user"></i><span>Login</span>
-  </button>
+<a href="/" > <img  src="../../assets/travolic.png" style="margin-top: 5px" height="70" width="200"/></a>
+
   <nz-select class="sel"
              [nzPlaceHolder]="'Country'"
              [(ngModel)]="country"
@@ -90,8 +90,8 @@
              nzShowSearch >
     <nz-option
       *ngFor="let option of languages"
-      [nzLabel]="option"
-      [nzValue]="option"
+      [nzLabel]="option.name"
+      [nzValue]="option.model"
     >
     </nz-option>
   </nz-select>

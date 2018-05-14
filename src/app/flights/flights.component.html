@@ -2,31 +2,54 @@
 <body *ngIf="loaded">
 <nz-layout *ngIf="webVersion" class="cont">
   <nz-header style="background-color: white;">
-    <app-navbar></app-navbar>
   </nz-header>
   <nz-content style="margin-bottom:20px" class="cont">
 
-    <app-menu></app-menu>
-    <app-searchdivresults></app-searchdivresults>
+<app-searchdiv></app-searchdiv>
     <div style="border-radius: 50px; margin: 20px;">
 
       <nz-layout style=" color:white;background: transparent;">
-        <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null"
+        <nz-sider *ngIf="filter" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null"
                   style="background-color: #107ECF; padding:10px;border-radius: 20px;">
           <div
             style="margin: 10px; padding-bottom: 15px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
 
             <div style="width: 100%; margin-bottom: 10px;">
-              <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Stops</span>
+              <span *ngIf="english()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Stops</span>
+              <span *ngIf="german()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Haltestellen</span>
+              <span *ngIf="french()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">S'arrête</span>
+              <span *ngIf="italian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Fermate</span>
+              <span *ngIf="spanish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Paradas</span>
+              <span *ngIf="turkish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Duraklar</span>
+              <span *ngIf="chinese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">停止</span>
+              <span *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">停止</span>
+              <span *ngIf="russian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Останавливает</span>
+
             </div>
             <div>
               <label nz-checkbox [(ngModel)]="direct" (ngModelChange)="onChange_filter()"
                      style="margin-left: 8px; width: 100%">
-                <span style="font-family: 'Cairo', sans-serif; font-size:12px">direct</span>
+                <span  *ngIf="english()" style="font-family: 'Cairo', sans-serif; font-size:12px">direct</span>
+                <span *ngIf="german()" style="font-family: 'Cairo', sans-serif; font-size:12px">Direkte</span>
+                <span *ngIf="french()" style="font-family: 'Cairo', sans-serif; font-size:12px">Direct</span>
+                <span  *ngIf="italian()"style="font-family: 'Cairo', sans-serif; font-size:12px">Diretto</span>
+                <span *ngIf="spanish()" style="font-family: 'Cairo', sans-serif; font-size:12px">Directo</span>
+                <span *ngIf="turkish()" style="font-family: 'Cairo', sans-serif; font-size:12px">Dolaysız</span>
+                <span *ngIf="chinese()" style="font-family: 'Cairo', sans-serif; font-size:12px">直接</span>
+                <span *ngIf="japanese()" style="font-family: 'Cairo', sans-serif; font-size:12px">ダイレクト</span>
+                <span *ngIf="russian()" style="font-family: 'Cairo', sans-serif; font-size:12px">Непосредственный</span>
               </label>
               <label nz-checkbox [(ngModel)]="stops" (ngModelChange)="onChange_filter()"
                      style="width: 100%;">
-                <span style="font-family: 'Cairo', sans-serif; font-size:12px">one or more stops</span>
+                <span *ngIf="english()" style="font-family: 'Cairo', sans-serif; font-size:12px">one or more stops</span>
+                <span *ngIf="german()" style="font-family: 'Cairo', sans-serif; font-size:12px"> mehr Stopps</span>
+                <span *ngIf="french()" style="font-family: 'Cairo', sans-serif; font-size:12px">plusieurs arrêts</span>
+                <span  *ngIf="italian()"style="font-family: 'Cairo', sans-serif; font-size:12px">più soste</span>
+                <span *ngIf="spanish()" style="font-family: 'Cairo', sans-serif; font-size:12px"> más paradas</span>
+                <span *ngIf="turkish()" style="font-family: 'Cairo', sans-serif; font-size:12px"> daha fazla durak</span>
+                <span *ngIf="chinese()" style="font-family: 'Cairo', sans-serif; font-size:12px">两站或更多站</span>
+                <span *ngIf="japanese()" style="font-family: 'Cairo', sans-serif; font-size:12px">二つ以上の停止</span>
+                <span *ngIf="russian()" style="font-family: 'Cairo', sans-serif; font-size:12px">Две или более остановки</span>
               </label>
             </div>
 
@@ -36,9 +59,25 @@
             style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3);">
 
             <div style="margin-bottom: 5px;">
-              <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Times</span>
+              <span *ngIf="english()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Times</span>
+              <span *ngIf="german()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Mal</span>
+              <span *ngIf="french()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Fois</span>
+              <span *ngIf="italian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Volte</span>
+              <span *ngIf="spanish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Veces</span>
+              <span *ngIf="turkish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Kez</span>
+              <span *ngIf="chinese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">时报</span>
+              <span *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">タイムズ</span>
+              <span *ngIf="russian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Времен</span>
             </div>
-            <span style="font-family: 'Cairo', sans-serif; font-size:12px;">Departure</span>
+            <span *ngIf="english()" style="font-family: 'Cairo', sans-serif; font-size:12px;">Departure</span>
+            <span *ngIf="german()" style="font-family: 'Cairo', sans-serif; font-size:12px">Abfahrt</span>
+            <span *ngIf="french()" style="font-family: 'Cairo', sans-serif; font-size:12px">Départ</span>
+            <span  *ngIf="italian()"style="font-family: 'Cairo', sans-serif; font-size:12px">Partenza</span>
+            <span *ngIf="spanish()" style="font-family: 'Cairo', sans-serif; font-size:12px">Salida</span>
+            <span *ngIf="turkish()" style="font-family: 'Cairo', sans-serif; font-size:12px">kalkış</span>
+            <span *ngIf="chinese()" style="font-family: 'Cairo', sans-serif; font-size:12px">离开</span>
+            <span *ngIf="japanese()" style="font-family: 'Cairo', sans-serif; font-size:12px">出発</span>
+            <span *ngIf="russian()" style="font-family: 'Cairo', sans-serif; font-size:12px">Вылет из</span>
             <br>
             <div style="padding-bottom: 12px;">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: left">{{departure_from}}</span>
@@ -48,7 +87,15 @@
                        [nzTipFormatter]="time_formatter" [nzMin]=0 [nzMax]=23 [nzStep]=1 [nzDefaultValue]="[0, 23]">
             </nz-slider>
 
-            <span style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
+            <span *ngIf="english()"style="font-family: 'Cairo', sans-serif; font-size:12px; padding-bottom: 5px;">Arrival</span>
+            <span *ngIf="german()" style="font-family: 'Cairo', sans-serif; font-size:12px">Abfahrt</span>
+            <span *ngIf="french()" style="font-family: 'Cairo', sans-serif; font-size:12px">Départ</span>
+            <span  *ngIf="italian()"style="font-family: 'Cairo', sans-serif; font-size:12px">Partenza</span>
+            <span *ngIf="spanish()" style="font-family: 'Cairo', sans-serif; font-size:12px">Salida</span>
+            <span *ngIf="turkish()" style="font-family: 'Cairo', sans-serif; font-size:12px">kalkış</span>
+            <span *ngIf="chinese()" style="font-family: 'Cairo', sans-serif; font-size:12px">离开</span>
+            <span *ngIf="japanese()" style="font-family: 'Cairo', sans-serif; font-size:12px">出発</span>
+            <span *ngIf="russian()" style="font-family: 'Cairo', sans-serif; font-size:12px">Вылет из</span>
             <br>
             <div style="padding-bottom: 12px;">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: left">{{arrival_from}}</span>
@@ -63,7 +110,15 @@
             style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3);">
 
             <div style="span-bottom: 12px;">
-              <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Duration</span>
+              <span *ngIf="english()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Duration</span>
+              <span *ngIf="german()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Dauer</span>
+              <span *ngIf="french()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Durée</span>
+              <span *ngIf="italian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Durata</span>
+              <span *ngIf="spanish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Duración</span>
+              <span *ngIf="turkish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Sure</span>
+              <span *ngIf="chinese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">持续时间</span>
+              <span *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">継続時間</span>
+              <span *ngIf="russian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Продолжительность</span>
             </div>
             <div style="padding-bottom: 12px;">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: left">{{duration_from}}</span>
@@ -77,26 +132,19 @@
           </div>
 
 
-          <div
+          <!-- <div
             style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3);">
 
             <div style="width: 100%; margin-bottom: 7px;">
               <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Airlines</span>
             </div>
 
-            <label nz-checkbox (ngModelChange)="_console($event)"
-                   style="margin-left: 8px; width: 100%">
-              <span style="font-family: 'Cairo', sans-serif; font-size:12px">Air Canada</span>
-            </label>
-            <label nz-checkbox (ngModelChange)="_console($event)"
-                   style="width: 100%;">
-              <span style="font-family: 'Cairo', sans-serif; font-size:12px">Egypt Air</span>
-            </label>
+            <nz-checkbox-group [(ngModel)]="airlinesCheckboxList" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
 
-          </div>
+          </div> -->
 
 
-          <div
+          <!-- <div
             style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
 
             <div style="width: 100%; margin-bottom: 7px;">
@@ -116,14 +164,22 @@
               <span style="font-family: 'Cairo', sans-serif; font-size:12px">Star Alliance</span>
             </label>
 
-          </div>
+          </div> -->
 
 
           <div
             style="margin: 10px;">
 
             <div style="span-bottom: 12px;">
-              <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Price</span>
+              <span *ngIf="english()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Price</span>
+              <span *ngIf="german()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Preis</span>
+              <span *ngIf="french()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Prix</span>
+              <span *ngIf="italian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Prezzo</span>
+              <span *ngIf="spanish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Precio</span>
+              <span *ngIf="turkish()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Fiyat</span>
+              <span *ngIf="chinese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">价钱</span>
+              <span *ngIf="japanese()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">価格</span>
+              <span *ngIf="russian()" style=" font-family: 'Cairo', sans-serif; font-size:18px;">Цена</span>
             </div>
             <div style="padding-bottom: 12px;">
               <span style="font-family: 'Cairo', sans-serif; font-size:12px; float: left">{{price_from}}</span>
@@ -159,10 +215,15 @@
                     <button nz-button style="float: right; margin:5px; "
                             [nzType]="'primary'" [nzSize]="'large'" (click)="redirect(data['link'])">Select
                     </button>
+                          <br>
+
 
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
-                        <nz-avatar nzShape="circle" style="right:100px; width:50px; height:50px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
+                      <label style=" color: rgb(0,0,0) ;  float: left;font-family: 'Cairo', sans-serif; font-size:16px"> Marketing Airline {{option['marketing_airline_name']}} , </label>
+                      <label style=" color: rgb(0,0,0) ;  float: left;font-family: 'Cairo', sans-serif; font-size:16px"> Operating Airline {{option['operating_airline_name']}}  </label>
+
+                        <nz-avatar nzShape="circle" style="right:100px; width:70px; height:70px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
                       <div class="segments">
                         <div class="segment departure">
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
@@ -177,6 +238,12 @@
                       </div>
 
                     </div>
+                    <br>
+                    <label style=" color: rgb(0,0,0) ;  float: right;font-family: 'Cairo', sans-serif; font-size:16px"> {{data['vendor']}}  </label>
+<br>
+                    <label style=" color: rgb(0,0,0) ;  font-family: 'Cairo', sans-serif; font-size:16px" > Duration : {{data.duration[0]}}</label>
+
+
                     <br>
                     <br>
                     <div style="background-color: rgb(219,213,39) ; height: 30px;"></div>
@@ -200,9 +267,7 @@
 
 
 <nz-layout *ngIf="mobVersion" class="cont">
-  <div style="background: white; text-align: center">
-    <img src="../../assets/travolic.png" style="margin-top: 15px;" height="50" width="170"/>
-  </div>
+
   <nz-modal [nzVisible]="isVisible" [nzTitle]="'Filters'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"
             (nzOnOk)="handleOk($event)">
     <ng-template #modalContent>
@@ -272,44 +337,6 @@
 
 
         <div
-          style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3);">
-
-          <div style="width: 100%; margin-bottom: 7px;">
-            <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Airlines</span>
-          </div>
-
-          <label nz-checkbox (ngModelChange)="_console($event)"
-                 style="margin-left: 8px; width: 100%">
-            <span style="font-family: 'Cairo', sans-serif; font-size:12px">Air Canada</span>
-          </label>
-          <label nz-checkbox (ngModelChange)="_console($event)"
-                 style="width: 100%;">
-            <span style="font-family: 'Cairo', sans-serif; font-size:12px">Egypt Air</span>
-          </label>
-
-        </div>
-
-
-        <div
-          style="margin: 10px; padding-bottom: 10px; color: white; border-bottom: .5px solid rgba(255,255,255,.3); margin-bottom: 10px">
-
-          <div style="width: 100%; margin-bottom: 7px;">
-            <span style=" font-family: 'Cairo', sans-serif; font-size:18px;">Alliances</span>
-          </div>
-
-          <label nz-checkbox (ngModelChange)="_console($event)"
-                 style="margin-left: 8px; width: 100%">
-            <span style="font-family: 'Cairo', sans-serif; font-size:12px">Air Canada</span>
-          </label>
-          <label nz-checkbox (ngModelChange)="_console($event)"
-                 style="width: 100%;">
-            <span style="font-family: 'Cairo', sans-serif; font-size:12px">Egypt Air</span>
-          </label>
-
-        </div>
-
-
-        <div
           style="margin: 10px;">
 
           <div style="span-bottom: 12px;">
@@ -331,7 +358,6 @@
 
   <nz-content style="margin-bottom:20px" class="cont">
 
-    <app-menu></app-menu>
     <!--<app-searchdivresults></app-searchdivresults>-->
     <div style="border-radius: 50px; margin: 20px;">
 
@@ -483,19 +509,21 @@
                     <button nz-button style="float: right; margin-top: 11px;"
                             [nzType]="'primary'" [nzSize]="'small'" (click)="redirect(data['link'])">Select
                     </button>
+                    <br>
+                    <label style=" float: right;font-family: 'Cairo', sans-serif; font-size:12px"> Provided by : {{data['vendor']}}</label>
+                    <br>
+                    <label style="float: right; font-family: 'Cairo', sans-serif; font-size:12px" > Duration : {{data.duration[0]}}</label>
+
 
 
                     <div class="flight-info" *ngFor="let option of data['flights']">
                       <div class="segments">
                         <div class="segment departure">
-                            <img src="../../assests/airlines/" +{{option['marketing_airline']}}+".png"/>
-                            <span class="airport">   {{option['marketing_airline']}}</span>
-                            <span class="airport">  operated by {{option['operating_airline']}}</span>
 
                           <time> {{option['depart_at']['hour']}}:{{option['depart_at']['minute']}}</time>
                           <span class="airport">   {{option['depart']}}</span>
                         </div>
-                        <div class="divider"><span class="plane"></span></div>
+                       <nz-avatar class="divider"  nzShape="circle" style="width:50px; height:50px" nzSize="large" nzIcon="user" nzSrc="../../assets/airlines/{{option['marketing_airline']}}.png"></nz-avatar>
 
                         <div class="segment destination">
                           <time>{{option['arrive_at']['hour']}}:{{option['arrive_at']['minute']}}</time>
@@ -515,7 +543,7 @@
 
             </div>
             <div style="text-align: center;">
-              <button
+              <button *ngIf="filter"
                 style="margin-top:10px;padding: 8px; margin-bottom:20px; width: auto ; height: auto" nz-button
                 [nzType]="'primary'" [nzSize]="'medium'" (click)="showModal()">
                 <i class="anticon anticon-filter" style="font-size: 16px;"></i>

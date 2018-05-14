@@ -28,15 +28,22 @@ export class FlightsComponent implements OnInit {
   price_from = 'USD 0';
   price_to = 'USD 8000';
   isCollapsed;
-  loading = true;
-  loaded = false;
+  loading;
+  loaded ;
   data;
   parameters;
   flights;
   mobVersion;
+  filter=true;
   stops = true;
   direct = true;
   price = [0, 8000];
+
+  airlinesCheckboxList = [
+    { label: 'Apple\n', value: 'Apple\n', checked: true },
+    { label: 'Pear\n', value: 'Pear\n', checked: false },
+    { label: 'Orange\n', value: 'Orange\n', checked: false },
+  ];
 
   webVersion = true;
   width = screen.width;
@@ -63,31 +70,47 @@ export class FlightsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loading = true;
+    this.loaded = false;
     if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;
     }
+    if(this.service.multi){
+console.log('coming from multi maaaan !!');
+this.filter=false;
+this.service.addmulti(this.service.multiArgs).then(
+  (result)=>{
+        this.flights = result;
+        this.flightsDataUnfiltered = this.flights.data;
+        this.flightsData=this.flights.data;
+        this.flightsNumber = this.flights.number_of_results;
+        this.loaded = true;
+        this.loading = false;
+
+  }
+);
+    }else{
     this.route.params.subscribe((params: Params) => {
       if (params['data'] !== undefined) {
         // Get the param straight
         this.data = params['data'];
-        console.log('took it ' + this.data);
         this.service.getflights(this.data).then((result) => {
           this.flights = result.json();
-          console.log(this.flights);
           this.flightsDataUnfiltered = this.flights.response.data;
-          this.flightsData = this.flightsDataUnfiltered;
+          // this.flightsData = this.flightsDataUnfiltered;
           // console.log("Flights:",this.flightsData);
           this.onChange_filter();
           this.flightsNumber = this.flightsData.number_of_results;
-          console.log(this.flights.response.data);
           this.loaded = true;
           this.loading = false;
-          console.log(this.flights.response.number_of_results);
         });
       }
-    });
-    // setTimeout(this.onChange_filter(),1000);
+    });}
+  }
+
+  generateAirlines(){
+
   }
 
   redirect(link) {
@@ -95,20 +118,40 @@ export class FlightsComponent implements OnInit {
   console.log(this.service.addRedirection(link,this.service.country,this.service.city));
   }
 
-  format_time(value) {
+  parse_time(value) {
     let hour, minute, period;
     const time = value.split(':', 2);
     hour = Number(time[0]);
     minute = Number(time[1].substring(0,2));
     period = time[1].substring(3,5);
 
-    if(period == 'PM')
+    if(period == 'PM' && hour != 12)
       hour += 12;
 
     if(period == 'AM' && hour == 12)
       hour = 0;
 
     return [hour, minute, period];
+  }
+
+  parse_duration(value:string){
+    let hour:string = '', minute:string = '';
+
+    if(value.indexOf('h') == -1 || value.indexOf('m') == -1){
+      return [50,0];
+    }
+
+    let i = 0;
+    while(value[i] != 'h'){
+      hour += value[i];
+      i++;
+    }
+    i++;
+    while(value[i] != 'm'){
+      minute += value[i];
+      i++;
+    }
+    return [Number(hour),Number(minute)];
   }
 
   time_formatter(value) {
@@ -172,51 +215,147 @@ export class FlightsComponent implements OnInit {
 
 
   onChange_filter() {
-    let flightsDataDirect = [];
-    let flightsDataArrival = [];
+    let flightsDataFilteredByStops = [];
+    let flightsDataFilteredByTimes = [];
+    let flightsDataFilteredByDuration = [];
+
     this.flightsData = [];
+
+    //filter stops into flightsDataFilteredByStops
 
     this.flightsDataUnfiltered.forEach((ticket, index) => {
       if (this.direct == true) {
         if (ticket.flights.length == 1) {
-          flightsDataDirect.push(ticket);
+          flightsDataFilteredByStops.push(ticket);
         }
-        // else
-        //   return;
       }
       if (this.stops == true) {
         if (ticket.flights.length > 1) {
-          flightsDataDirect.push(ticket);
+          flightsDataFilteredByStops.push(ticket);
         }
-        // else
-        //   return;
       }
     });
 
-    flightsDataDirect.forEach((ticket, index) => {
+    //filter times into flightsDataFilteredByTimes
 
-      const formattedDeparture_from = this.format_time(this.departure_from);
-      const formattedDeparture_to = this.format_time(this.departure_to);
+    flightsDataFilteredByStops.forEach((ticket, index) => {
 
-      if (Number(ticket.flights[0].depart_at.hour) >= formattedDeparture_from[0]
-              && Number(ticket.flights[0].depart_at.hour) <= formattedDeparture_to[0]) {
-          flightsDataArrival.push(ticket);
+      const parsedDeparture_from = this.parse_time(this.departure_from);
+      const parsedDeparture_to = this.parse_time(this.departure_to);
+
+      const parsedArrival_from = this.parse_time(this.arrival_from);
+      const parsedArrival_to = this.parse_time(this.arrival_to);
+
+      if (Number(ticket.flights[0].depart_at.hour) >= parsedDeparture_from[0]
+              && Number(ticket.flights[0].depart_at.hour) <= parsedDeparture_to[0]) {
+          if (Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) >= parsedArrival_from[0]
+                  && Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) <= parsedArrival_to[0]) {
+            flightsDataFilteredByTimes.push(ticket);
+          }
       }
+    });
 
-      const formettedArrival_from = this.format_time(this.arrival_from);
-      const formettedArrival_to = this.format_time(this.arrival_to);
+    //filter duration into flightsDataFilteredByDuration
 
-      if (Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) >= formettedArrival_from[0]
-              && Number(ticket.flights[ticket.flights.length - 1].arrive_at.hour) <= formettedArrival_to[0]) {
-        flightsDataArrival.push(ticket);
+    flightsDataFilteredByTimes.forEach((ticket, index) => {
+
+      const parsedDuration_from = this.parse_duration(this.duration_from);
+      const parsedDuration_to = this.parse_duration(this.duration_to);
+
+      if(ticket.duration != undefined){
+
+        let parsedTicketDuration = this.parse_duration(ticket.duration[0]);
+
+        if(parsedTicketDuration[0] >= parsedDuration_from[0] && parsedTicketDuration[0] <= parsedDuration_to[0]){
+          flightsDataFilteredByDuration.push(ticket);
+        }
+
       }
 
     });
 
-    flightsDataArrival.forEach((ticket, index) => {
+
+    //filter prices into flightsData
+
+    flightsDataFilteredByDuration.forEach((ticket, index) => {
       if (Number(ticket.price.value) >= this.price[0] && Number(ticket.price.value <= this.price[1])) {
         this.flightsData.push(ticket);
       }
     });
+
   }
+  english(){
+    if(this.service.en){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  spanish(){
+    if(this.service.sp){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  italian(){
+    if(this.service.it){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  russian(){
+    if(this.service.ru){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  turkish(){
+    if(this.service.tr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  chinese(){
+    if(this.service.ch){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  japanese(){
+    if(this.service.jp){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  german(){
+    if(this.service.gr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+  french(){
+    if(this.service.fr){
+    return true;
+  }
+  else{
+    return false;
+  }
+  }
+
+
 }

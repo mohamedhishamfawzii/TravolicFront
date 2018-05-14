@@ -1,16 +1,9 @@
 <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 <body class="cont" *ngIf="mobVersion">
-<div *ngIf="mobVersion" style="background: white; text-align: center">
-  <img src="../../assets/travolic.png" style="margin-top: 15px;" height="50" width="170"/>
-</div>
-
-<app-menu *ngIf="mobVersion"></app-menu>
 <app-searchdiv *ngIf="mobVersion"></app-searchdiv>
-<div *ngIf="mobVersion" style="border-radius: 50px; margin: 20px;">
 
-</div>
 <app-info *ngIf="mobVersion"></app-info>
-<div *ngIf="mobVersion" class="row1">
+<div class="row1">
   <div style=" float:right; margin-top:20px; ">
     <label *ngIf="english()"
       style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
@@ -53,20 +46,80 @@
 </div>
 </body>
 <nz-layout class="cont" *ngIf="webVersion">
-  <nz-header style="background-color: white;">
-    <app-navbar></app-navbar>
-  </nz-header>
+
   <nz-content style="margin-bottom:20px" class="cont">
 
-    <app-menu></app-menu>
     <div style="background-image: url('../../assets/bg-png.png'); background-repeat: no-repeat; background-size: contain; background-position: center top;">
+      <div class="row1">
+        <label class="row1element" *ngIf="english()"
+               style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">THE
+          CHEAPEST TICKET TO YOUR DESTINATION IS ONE CLICK AWAY</label>
+          <label class="row1element" *ngIf="german()"
+                 style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Das günstigste Ticket zu Ihrem Ziel ist nur einen Klick entfernt
+            </label>
+            <label class="row1element" *ngIf="italian()"
+                   style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Il biglietto più economico per la tua destinazione è a un clic di distanza
+              </label>
+              <label class="row1element" *ngIf="chinese()"
+                     style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+                到目的地的最便宜的机票只需点击一下即可</label>
+                <label class="row1element" *ngIf="japanese()"
+                       style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">あなたの目的地への最も安いチケットはワンクリックです
+                  </label>
+                  <label class="row1element" *ngIf="spanish()"
+                         style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+                    El billete más barato a su destino es un clic de distancia</label>
+                    <label class="row1element" *ngIf="turkish()"
+                           style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Hedefinize en ucuz bilet bir tık uzakta
+                    </label>
+                      <label class="row1element" *ngIf="russian()"
+                             style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">Самый дешевый билет к месту назначения является одним щелчком мыши
+                        </label>
+                        <label class="row1element" *ngIf="french()"
+                               style="font-size: 30px; font-family: 'cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
+                        Le billet le moins cher vers votre destination est à un clic</label>
+        <br>
+        <label class="row1element" *ngIf="english()"
+               style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">STEP TO YOUR TRIP</label>
+               <label class="row1element" *ngIf="italian()"
+                      style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Passo al tuo viaggio</label>
+                      <label class="row1element" *ngIf="spanish()"
+                             style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Paso a tu viaje</label>
+                             <label class="row1element" *ngIf="japanese()"
+                                    style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">あなたの旅行へのステップ</label>
+                                    <label class="row1element" *ngIf="chinese()"
+                                           style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">步骤给您的出行</label>
+                                           <label class="row1element" *ngIf="turkish()"
+                                                  style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">seyahatiniz için Adım</label>
+                                                  <label class="row1element" *ngIf="french()"
+                                                         style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Étape à votre voyage</label>
+                                                         <label class="row1element" *ngIf="russian()"
+                                                                style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Шаг к вашей поездке</label>
+                                                                <label class="row1element" *ngIf="german()"
+                                                                       style="font-size: 25px; font-family: 'cairo' , sans-serif; color: white;margin-bottom: 20px;  ">Schritt zu deiner Reise</label>
+          <br>
+
+          </div>
       <app-searchdiv></app-searchdiv>
+      <!-- <app-flights></app-flights> -->
       <app-info></app-info>
     </div>
   </nz-content>
+
 </nz-layout>
-<div  *ngIf="webVersion"class="row1">
+
+<div  *ngIf="webVersion" class="row1">
   <div style=" float:right; margin-top:20px; ">
+
+<div class="socialbtns">
+<ul>
+<li><a href="https://www.facebook.com/travolic.LLC/" class="fa fa-lg fa-facebook"></a></li>
+<li><a href="https://www.instagram.com/travolic.llc/" class="fa fa-lg fa-instagram"></a></li>
+
+</ul>
+</div>
+
+
     <label *ngIf="english()"
       style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
       Stay in touch
@@ -97,12 +150,7 @@
       style=" margin-right: 30px;font-size: 30px; font-family: 'Cairo' , sans-serif; font-weight:normal;color: rgb(219,213,39) ;">
   Оставайтесь на связи    </label>
     <br>
-
     <i style="   margin-top:5px;margin-right: 30px; font-size: 20px ;font-family: 'Cairo' , sans-serif;"
        class="anticon anticon-mail">info@travolic.com</i>
-
   </div>
-
-
-
 </div>

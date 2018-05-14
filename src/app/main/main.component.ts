@@ -13,12 +13,13 @@ export class MainComponent implements OnInit {
   webVersion = true;
   width = screen.width;
 
+
   ngOnInit() {
+    
     if (this.width < 860 ) {
       this.mobVersion = true;
       this.webVersion = false;
     }
-
   }
   english(){
     if(this.backendConnect.en){

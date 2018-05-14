@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from '../backend.service';
+import {ActivatedRoute, Router, RouterModule, Routes} from '@angular/router';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,11 +12,14 @@ export class MenuComponent implements OnInit {
   webVersion = true;
   width = screen.width;
   width_text = 0.8 * (screen.width / 7);
-
-  constructor(private backendConnect: BackendService) {
+flight;
+blog;
+news;
+  constructor(private backendConnect: BackendService,private route: Router) {
   }
 
   ngOnInit() {
+
     if (this.width < 860) {
       this.mobVersion = true;
       this.webVersion = false;
@@ -91,6 +96,25 @@ export class MenuComponent implements OnInit {
   else{
     return false;
   }
+  }
+  blognav(){
+    console.log("clicked");
+    this.route.navigate(['/community/blog']);
+
+  }
+  homenav(){
+    console.log("clicked");
+    this.route.navigate(['/']);
+
+  }
+  newsnav(){
+    console.log("clicked");
+    this.route.navigate(['/community/news']);
+
+  }
+  aboutnav(){
+      console.log("clicked");
+      this.route.navigate(['/community/aboutus']);
   }
 
 }
